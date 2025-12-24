@@ -27,6 +27,7 @@ This document is the **authoritative index** of all valid project documentation.
 | DOC-08 | modules/api/README.md | API Module Skeleton | Active |
 | DOC-09 | modules/ingestion/README.md | Ingestion Module Skeleton | Active |
 | DOC-10 | modules/chunking/README.md | Chunking & Normalisation Skeleton | Active |
+| DOC-11 | modules/indexing/README.md | Indexing Module Skeleton | Active |
 
 ---
 
