@@ -1,0 +1,90 @@
+---
+# PLK_KB - Docker Compose Stack
+# Stage 2 – Architecture & Foundations
+# 
+# Services:
+# - postgres: Metadata and governance database
+# - minio: Object storage for documents and artefacts
+# - opensearch: Full-text search index
+# - qdrant: Vector database for semantic search
+
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: plk-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-plk_kb}
+      POSTGRES_USER: ${POSTGRES_USER:-plk_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-plk_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - plk_network
+
+  minio:
+    image: minio/minio:latest
+    container_name: plk-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-change_me}
+    ports:
+      - "${MINIO_API_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - ./volumes/minio:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - plk_network
+
+  opensearch:
+    image: opensearchproject/opensearch:2.11.0
+    container_name: plk-opensearch
+    environment:
+      discovery.type: single-node
+      OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
+      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_PASSWORD:-Change_Me123!}
+    ports:
+      - "${OPENSEARCH_PORT:-9200}:9200"
+    volumes:
+      - ./volumes/opensearch:/usr/share/opensearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s https://localhost:9200 -u admin:${OPENSEARCH_PASSWORD:-Change_Me123!} --insecure | grep -q cluster_name || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - plk_network
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: plk-qdrant
+    ports:
+      - "${QDRANT_PORT:-6333}:6333"
+      - "${QDRANT_GRPC_PORT:-6334}:6334"
+    volumes:
+      - ./volumes/qdrant:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - plk_network
+
+networks:
+  plk_network:
+    driver: bridge
