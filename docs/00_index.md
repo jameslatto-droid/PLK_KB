@@ -28,6 +28,8 @@ This document is the **authoritative index** of all valid project documentation.
 | DOC-09 | modules/ingestion/README.md | Ingestion Module Skeleton | Active |
 | DOC-10 | modules/chunking/README.md | Chunking & Normalisation Skeleton | Active |
 | DOC-11 | modules/indexing/README.md | Indexing Module Skeleton | Active |
+| DOC-12 | 99_ai_usage_rules.md | AI Usage Rules | Active |
+| DOC-13 | 09_stage_3_planning_and_implementation.md | Stage 3 Planning & Implementation | Active |
 
 ---
 

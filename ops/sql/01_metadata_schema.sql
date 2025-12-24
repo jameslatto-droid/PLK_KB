@@ -75,12 +75,6 @@ CREATE TABLE audit_log (
     timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create indexes for common queries
-CREATE INDEX idx_documents_authority ON documents(authority_level);
-CREATE INDEX idx_documents_status ON documents(status);
-CREATE INDEX idx_document_versions_document_id ON document_versions(document_id);
-CREATE INDEX idx_artefacts_version_id ON artefacts(version_id);
-CREATE INDEX idx_artefacts_type ON artefacts(artefact_type);
-CREATE INDEX idx_chunks_artefact_id ON chunks(artefact_id);
-CREATE INDEX idx_access_rules_document_id ON access_rules(document_id);
-CREATE INDEX idx_audit_log_timestamp ON audit_log(timestamp);
+-- Stage 2 note:
+-- Indexes are intentionally omitted at this stage to avoid premature optimisation.
+-- Add indexes only during Stage 3 implementation (see docs/09_stage_3_planning_and_implementation.md).
