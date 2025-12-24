@@ -26,6 +26,7 @@ This document is the **authoritative index** of all valid project documentation.
 | DOC-07 | 07_database_schema.md | Database Schema | Active |
 | DOC-08 | modules/api/README.md | API Module Skeleton | Active |
 | DOC-09 | modules/ingestion/README.md | Ingestion Module Skeleton | Active |
+| DOC-10 | modules/chunking/README.md | Chunking & Normalisation Skeleton | Active |
 
 ---
 
