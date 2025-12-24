@@ -24,6 +24,7 @@ This document is the **authoritative index** of all valid project documentation.
 | DOC-05 | 05_authority_and_access_model.md | Authority & Access Model | Active |
 | DOC-06 | 06_module_contracts.md | Module Contracts | Active |
 | DOC-07 | 07_database_schema.md | Database Schema | Active |
+| DOC-08 | modules/api/README.md | API Module Skeleton | Active |
 
 ---
 
