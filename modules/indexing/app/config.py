@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 _ENV_PATH = Path(__file__).resolve().parents[3] / "env" / ".env"
@@ -21,8 +21,7 @@ class Settings(BaseSettings):
 
     index_name: str = "plk_chunks_v1"
 
-    class Config:
-        env_prefix = ""
+    model_config = SettingsConfigDict(env_prefix="")
 
 
 settings = Settings()

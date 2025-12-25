@@ -18,6 +18,7 @@ from modules.metadata.app.repository import (  # type: ignore
     DocumentVersionRepository,
     ArtefactRepository,
 )
+from modules.authority.app.policy import validate_authority_level  # type: ignore
 
 from .config import settings
 
@@ -52,6 +53,7 @@ def _compute_checksum(path: Path) -> str:
 
 
 def ingest_txt(document_id: str, title: str, path: Path, document_type: str, authority_level: str):
+    validate_authority_level(authority_level)
     version_id = uuid.uuid4().hex
     version_label = "A"
     artefact_id = uuid.uuid4().hex

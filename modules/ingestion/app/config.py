@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from dotenv import load_dotenv
 
 
@@ -23,8 +23,7 @@ class Settings(BaseSettings):
     minio_secret_key: str = os.getenv("MINIO_ROOT_PASSWORD", "change_me")
     minio_bucket: str = os.getenv("MINIO_BUCKET", "plk")
 
-    class Config:
-        env_prefix = ""
+    model_config = SettingsConfigDict(env_prefix="")
 
 
 settings = Settings()

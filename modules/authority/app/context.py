@@ -1,10 +1,12 @@
-from dataclasses import dataclass
-from typing import List
+from dataclasses import dataclass, field
+from typing import List, Optional
 
 
 @dataclass(frozen=True)
 class AuthorityContext:
     user: str
-    roles: List[str]
-    project_codes: List[str]
-    discipline: str
+    roles: List[str] = field(default_factory=list)
+    project_codes: List[str] = field(default_factory=list)
+    discipline: str = "general"
+    classification: Optional[str] = None
+    commercial_sensitivity: Optional[str] = None

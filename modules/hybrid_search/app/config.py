@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 _ENV_PATH = Path(__file__).resolve().parents[3] / "env" / ".env"
@@ -28,8 +28,7 @@ class Settings(BaseSettings):
 
     default_top_k: int = int(os.getenv("HYBRID_TOP_K", "10"))
 
-    class Config:
-        env_prefix = ""
+    model_config = SettingsConfigDict(env_prefix="")
 
 
 settings = Settings()

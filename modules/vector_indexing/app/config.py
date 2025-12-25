@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 _ENV_PATH = Path(__file__).resolve().parents[3] / "env" / ".env"
@@ -22,8 +22,7 @@ class Settings(BaseSettings):
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
     search_top_k: int = int(os.getenv("VECTOR_SEARCH_TOP_K", "5"))
 
-    class Config:
-        env_prefix = ""
+    model_config = SettingsConfigDict(env_prefix="")
 
 
 settings = Settings()

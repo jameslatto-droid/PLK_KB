@@ -1,14 +1,28 @@
-# Authority module
+# Authority Module (Stage 5)
 
-Purpose: enforce retrieval-level authority and access decisions before any search pipeline runs. The module is isolated from search engines and only talks to the metadata database.
+Enforces authority & access decisions before any retrieval occurs. The module is isolated from search engines and talks only to the metadata database.
 
-Authority evaluation flow:
-- Build an `AuthorityContext` containing the actor, roles, project_codes, and discipline for the request.
-- Fetch documents and their `access_rules` from the metadata DB.
-- Apply authority-level gating (only the canonical set is eligible) and require an explicit, fully matching access rule.
-- Return only the document_ids the context may see; downstream retrieval must pre-filter on this set.
+Key rules:
+- Allowed authority levels: AUTHORITATIVE, REFERENCE, DRAFT, EXTERNAL. Anything else is rejected.
+- Access rules evaluate with OR semantics; a document is allowed if any rule fully matches.
+- Missing access rules => deny by default.
+- Matching requires project_code, discipline, classification, commercial_sensitivity, and role intersection when those fields are present on the rule.
 
-Enforcement at retrieval:
-- Guarantees that lexical, vector, and hybrid searches never receive unauthorised document IDs.
-- Avoids UI or LLM bypasses and keeps policy near the data boundary.
-- UI- or LLM-side filtering is forbidden because it can be tampered with, and post-filtering leaks identifiers or snippets.
+APIs:
+- `evaluate_document_access(context, document_id) -> AccessDecision` (allows/denies + reasons + matched_rule_id)
+- `get_allowed_document_ids(context) -> set[str]` (pre-filter for search paths)
+- `validate_authority_level(level)` (fail-fast validation for ingestion)
+- `load_default_context()` (builds context from env defaults: PLK_CONTEXT_* and PLK_ACTOR)
+
+CLI examples (from repo root):
+- Validate level: `python -m modules.authority.app.cli validate AUTHORITATIVE`
+- Evaluate doc: `python -m modules.authority.app.cli eval-doc DEMO-TXT-001 --roles viewer --projects P1`
+- Batch allowed: `python -m modules.authority.app.cli eval-batch --roles viewer --projects P1`
+
+Env defaults:
+- `PLK_ACTOR` (default local_user)
+- `PLK_CONTEXT_ROLES` (csv, default viewer)
+- `PLK_CONTEXT_PROJECT_CODES` (csv, optional)
+- `PLK_CONTEXT_DISCIPLINE` (default general)
+- `PLK_CONTEXT_CLASSIFICATION` (optional)
+- `PLK_CONTEXT_COMMERCIAL_SENSITIVITY` (optional)
