@@ -2,9 +2,11 @@
 
 from typing import Dict, List, Optional, Set
 
-from modules.vector_indexing.app.embeddings import embed_text  # type: ignore
 from modules.authority.app.context import AuthorityContext  # type: ignore
 from modules.authority.app.evaluator import get_allowed_document_ids  # type: ignore
+from modules.metadata.app import models as metadata_models  # type: ignore
+from modules.metadata.app.repository import AuditLogRepository  # type: ignore
+from modules.vector_indexing.app.embeddings import embed_text  # type: ignore
 from opensearchpy import OpenSearch
 from qdrant_client import QdrantClient
 from qdrant_client.http import models as qmodels
@@ -69,6 +71,14 @@ def _search_semantic(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[
         limit=top_k,
         with_payload=True,
         with_vectors=False,
+        query_filter=qmodels.Filter(
+            must=[
+                qmodels.FieldCondition(
+                    key="document_id",
+                    match=qmodels.MatchAny(any=list(allowed_doc_ids)),
+                )
+            ]
+        ),
     )
     points: List[qmodels.ScoredPoint] = getattr(response, "points", [])
 
@@ -76,8 +86,6 @@ def _search_semantic(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[
     for p in points:
         payload = p.payload or {}
         doc_id = payload.get("document_id")
-        if doc_id and doc_id not in allowed_doc_ids:
-            continue
         chunk_id = payload.get("chunk_id") or str(p.id)
         results.append(
             {
@@ -117,6 +125,7 @@ def hybrid_search(
     k = top_k or settings.default_top_k
     allowed_doc_ids = get_allowed_document_ids(context)
     if not allowed_doc_ids:
+        _log_audit(query=query, context=context, allowed_doc_ids=allowed_doc_ids, results=[])
         return []
     
     lex = _search_lexical(query, k, allowed_doc_ids)
@@ -173,4 +182,32 @@ def hybrid_search(
         )
 
     results.sort(key=lambda x: x["final_score"], reverse=True)
+    _log_audit(query=query, context=context, allowed_doc_ids=allowed_doc_ids, results=results)
     return results
+
+
+def _log_audit(
+    *,
+    query: str,
+    context: AuthorityContext,
+    allowed_doc_ids: Set[str],
+    results: List[Dict],
+) -> None:
+    returned_doc_ids = {r.get("document_id") for r in results if r.get("document_id")}
+    event = metadata_models.AuditLog(
+        actor=context.user,
+        action="hybrid_search",
+        details={
+            "query": query,
+            "authority_context": {
+                "user": context.user,
+                "roles": context.roles,
+                "project_codes": context.project_codes,
+                "discipline": context.discipline,
+            },
+            "considered_document_ids": sorted(allowed_doc_ids),
+            "returned_document_ids": sorted(returned_doc_ids),
+            "result_count": len(results),
+        },
+    )
+    AuditLogRepository.insert_event(event)

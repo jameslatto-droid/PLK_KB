@@ -342,7 +342,7 @@ class AuditLogRepository:
                     event.version_id,
                     event.model_version,
                     event.index_version,
-                    event.details,
+                    Json(event.details) if event.details is not None else None,
                 ),
             )
             returned = cur.fetchone()
