@@ -1,5 +1,5 @@
 from typing import List, Optional, Dict, Any
-
+from psycopg2.extras import Json
 from .db import connection_cursor
 from .models import (
     Document,
@@ -9,6 +9,7 @@ from .models import (
     AccessRule,
     AuditLog,
 )
+
 
 
 class DocumentRepository:
@@ -174,6 +175,28 @@ class ArtefactRepository:
             rows = cur.fetchall()
             return [dict(row) for row in rows]
 
+    @staticmethod
+    def get(artefact_id: str) -> Optional[Dict[str, Any]]:
+        with connection_cursor(dict_cursor=True) as cur:
+            cur.execute(
+                """
+                SELECT
+                    artefact_id,
+                    version_id,
+                    artefact_type,
+                    storage_path,
+                    tool_name,
+                    tool_version,
+                    confidence_level,
+                    created_at
+                FROM artefacts
+                WHERE artefact_id = %s
+                """,
+                (artefact_id,),
+            )
+            row = cur.fetchone()
+            return dict(row) if row else None
+
 
 class ChunkRepository:
     @staticmethod
@@ -195,7 +218,7 @@ class ChunkRepository:
                     chunk.artefact_id,
                     chunk.chunk_type,
                     chunk.content,
-                    chunk.metadata,
+                    Json(chunk.metadata),
                 ),
             )
 
@@ -215,6 +238,28 @@ class ChunkRepository:
                 ORDER BY chunk_id
                 """,
                 (artefact_id,),
+            )
+            rows = cur.fetchall()
+            return [dict(row) for row in rows]
+
+    @staticmethod
+    def list_all_with_lineage() -> List[Dict[str, Any]]:
+        """Fetch all chunks with document_id resolved via artefact -> version."""
+        with connection_cursor(dict_cursor=True) as cur:
+            cur.execute(
+                """
+                SELECT
+                    c.chunk_id,
+                    c.artefact_id,
+                    c.chunk_type,
+                    c.content,
+                    c.metadata,
+                    dv.document_id
+                FROM chunks c
+                JOIN artefacts a ON c.artefact_id = a.artefact_id
+                JOIN document_versions dv ON a.version_id = dv.version_id
+                ORDER BY c.chunk_id
+                """
             )
             rows = cur.fetchall()
             return [dict(row) for row in rows]

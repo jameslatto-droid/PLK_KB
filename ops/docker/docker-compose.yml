@@ -56,13 +56,15 @@ services:
     environment:
       discovery.type: single-node
       OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
-      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_PASSWORD:-Change_Me123!}
+      # Persist admin password as 'admin' to align with seeded data directory
+      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_PASSWORD:-admin}
     ports:
       - "${OPENSEARCH_PORT:-9200}:9200"
     volumes:
       - ./volumes/opensearch:/usr/share/opensearch/data
     healthcheck:
-      test: ["CMD-SHELL", "curl -s https://localhost:9200 -u admin:${OPENSEARCH_PASSWORD:-Change_Me123!} --insecure | grep -q cluster_name || exit 1"]
+      # Use the current admin credential to avoid auth errors when the data dir already has admin/admin
+      test: ["CMD-SHELL", "curl -s https://localhost:9200 -u admin:admin --insecure | grep -q cluster_name || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5

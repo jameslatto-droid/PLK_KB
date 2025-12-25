@@ -1,32 +1,39 @@
-"""
-Indexing pipeline contract.
+"""Lexical indexing pipeline."""
 
-Consumes chunks and writes derived index state.
-No retrieval logic permitted.
-No authority decisions permitted.
-No embeddings generated in Stage 2.
-"""
+from typing import List, Dict, Any
 
-from app.models import IndexBuildRequest
+from .opensearch_client import bulk_index, create_index, delete_index, get_client
+from .config import settings
+
+from modules.metadata.app.repository import ChunkRepository  # type: ignore
 
 
-def build_lexical_index(req: IndexBuildRequest):
-    """
-    Contract:
-    - consume chunks
-    - produce OpenSearch index entries
-    - record index version
-    """
-    raise NotImplementedError("Lexical indexing not implemented (Stage 2)")
+def _load_all_chunks_with_lineage() -> List[Dict[str, Any]]:
+    # Fetch all chunks and resolve document_id via artefact -> version -> document join
+    rows = ChunkRepository.list_all_with_lineage()
+    return rows
 
 
-def build_vector_index(req: IndexBuildRequest):
-    """
-    Contract:
-    - consume chunks
-    - produce Qdrant vector entries
-    - record index version
+def _to_opensearch_doc(row: Dict[str, Any]) -> Dict[str, Any]:
+    meta = row.get("metadata") or {}
+    return {
+        "chunk_id": row["chunk_id"],
+        "artefact_id": row["artefact_id"],
+        "document_id": row["document_id"],
+        "content": row["content"],
+        "chunk_index": meta.get("chunk_index"),
+        "char_start": meta.get("char_start"),
+        "char_end": meta.get("char_end"),
+    }
 
-    Stage 2: does NOT generate embeddings. This is a stub.
-    """
-    raise NotImplementedError("Vector indexing not implemented (Stage 2)")
+
+def index_all_chunks() -> int:
+    client = get_client()
+    delete_index(client, settings.index_name)
+    create_index(client, settings.index_name)
+
+    rows = _load_all_chunks_with_lineage()
+    docs = [_to_opensearch_doc(r) for r in rows]
+    if docs:
+        bulk_index(client, settings.index_name, docs)
+    return len(docs)

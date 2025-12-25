@@ -21,3 +21,5 @@ Environment variables (optionally via env/.env):
 - POSTGRES_USER (default: plk_user)
 - POSTGRES_PASSWORD (default: change_me)
 - POSTGRES_PORT (default: 5432)
+
+“No other module may execute raw SQL against Postgres. All DB access routes through this module.”
