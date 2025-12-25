@@ -1,0 +1,4 @@
+psycopg2-binary==2.9.9
+pydantic==1.10.15
+pytest==7.4.4
+python-dotenv==1.0.1
