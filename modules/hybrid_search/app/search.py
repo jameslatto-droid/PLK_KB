@@ -1,8 +1,10 @@
 """Hybrid search combining lexical (OpenSearch) and semantic (Qdrant)."""
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 from modules.vector_indexing.app.embeddings import embed_text  # type: ignore
+from modules.authority.app.context import AuthorityContext  # type: ignore
+from modules.authority.app.evaluator import get_allowed_document_ids  # type: ignore
 from opensearchpy import OpenSearch
 from qdrant_client import QdrantClient
 from qdrant_client.http import models as qmodels
@@ -23,9 +25,19 @@ def _normalize_scores(items: List[Dict], key: str) -> None:
         item[f"normalized_{key}"] = (item.get(key) or 0.0) / max_score
 
 
-def _search_lexical(query: str, top_k: int) -> List[Dict]:
+def _search_lexical(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[Dict]:
     client: OpenSearch = get_os_client()
-    body = {"query": {"match": {"content": query}}}
+    if not allowed_doc_ids:
+        return []
+    
+    body = {
+        "query": {
+            "bool": {
+                "must": [{"match": {"content": query}}],
+                "filter": [{"terms": {"document_id": list(allowed_doc_ids)}}]
+            }
+        }
+    }
     resp = client.search(index=settings.opensearch_index, body=body, size=top_k)
     hits = resp.get("hits", {}).get("hits", [])
     results: List[Dict] = []
@@ -44,8 +56,11 @@ def _search_lexical(query: str, top_k: int) -> List[Dict]:
     return results
 
 
-def _search_semantic(query: str, top_k: int) -> List[Dict]:
+def _search_semantic(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[Dict]:
     client: QdrantClient = get_qdrant_client()
+    if not allowed_doc_ids:
+        return []
+    
     vector = embed_text(query)
 
     response = client.query_points(
@@ -60,11 +75,14 @@ def _search_semantic(query: str, top_k: int) -> List[Dict]:
     results: List[Dict] = []
     for p in points:
         payload = p.payload or {}
+        doc_id = payload.get("document_id")
+        if doc_id and doc_id not in allowed_doc_ids:
+            continue
         chunk_id = payload.get("chunk_id") or str(p.id)
         results.append(
             {
                 "chunk_id": chunk_id,
-                "document_id": payload.get("document_id"),
+                "document_id": doc_id,
                 "artefact_id": payload.get("artefact_id"),
                 "semantic_score": p.score or 0.0,
             }
@@ -85,10 +103,24 @@ def _hydrate_entry(entry: Dict) -> None:
     entry.setdefault("artefact_id", row.get("artefact_id"))
 
 
-def hybrid_search(query: str, top_k: Optional[int] = None) -> List[Dict]:
+def hybrid_search(
+    query: str,
+    context: AuthorityContext,
+    top_k: Optional[int] = None
+) -> List[Dict]:
+    """
+    Hybrid search with authority enforcement.
+    
+    Retrieves allowed document_ids based on context before querying search engines.
+    Returns empty list if no documents are authorized.
+    """
     k = top_k or settings.default_top_k
-    lex = _search_lexical(query, k)
-    sem = _search_semantic(query, k)
+    allowed_doc_ids = get_allowed_document_ids(context)
+    if not allowed_doc_ids:
+        return []
+    
+    lex = _search_lexical(query, k, allowed_doc_ids)
+    sem = _search_semantic(query, k, allowed_doc_ids)
 
     merged: Dict[str, Dict] = {}
     for item in lex:
