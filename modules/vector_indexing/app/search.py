@@ -2,6 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 from typing import List
+from uuid import uuid4
 
 from qdrant_client.http import models as qmodels
 
@@ -24,12 +25,15 @@ def _parse_list(raw: str) -> List[str]:
 
 def search(query: str, limit: int | None = None, *, context: AuthorityContext | None = None) -> None:
     ctx = context or load_default_context()
-    audit_logger.search_query(actor=ctx.user, query=query, context=ctx)
+    query_id = str(uuid4())
+    audit_logger.search_query(actor=ctx.user, query=query, context=ctx, query_id=query_id)
 
-    allowed_doc_ids = get_allowed_document_ids(ctx)
+    allowed_doc_ids = get_allowed_document_ids(ctx, query_id=query_id)
     if not allowed_doc_ids:
         print("No results (unauthorized)")
-        audit_logger.search_results_returned(actor=ctx.user, count=0, document_ids=[], context=ctx)
+        audit_logger.search_results_returned(
+            actor=ctx.user, count=0, document_ids=[], context=ctx, query_id=query_id
+        )
         return
 
     client = get_client()
@@ -56,7 +60,9 @@ def search(query: str, limit: int | None = None, *, context: AuthorityContext | 
 
     if not results:
         print("No results")
-        audit_logger.search_results_returned(actor=ctx.user, count=0, document_ids=[], context=ctx)
+        audit_logger.search_results_returned(
+            actor=ctx.user, count=0, document_ids=[], context=ctx, query_id=query_id
+        )
         return
 
     returned_doc_ids = []
@@ -74,6 +80,7 @@ def search(query: str, limit: int | None = None, *, context: AuthorityContext | 
         count=len(results),
         document_ids=returned_doc_ids,
         context=ctx,
+        query_id=query_id,
     )
 
 

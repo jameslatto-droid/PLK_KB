@@ -13,10 +13,17 @@ from .repository import fetch_documents_with_rules
 
 @dataclass(frozen=True)
 class AccessDecision:
-    document_id: str
+    document_id: Optional[str]
     allowed: bool
     reasons: List[str] = field(default_factory=list)
-    matched_rule_id: Optional[int] = None
+    matched_rule_ids: List[int] = field(default_factory=list)
+
+    def to_record(self) -> Dict[str, object]:
+        return {
+            "decision": "ALLOW" if self.allowed else "DENY",
+            "reasons": list(self.reasons),
+            "matched_rule_ids": list(self.matched_rule_ids),
+        }
 
 
 def _group_rows(rows: List[Dict]) -> Dict[str, Dict]:
@@ -40,13 +47,15 @@ def _group_rows(rows: List[Dict]) -> Dict[str, Dict]:
     return grouped
 
 
-def evaluate_document_access(context: AuthorityContext, document_id: str) -> AccessDecision:
+def evaluate_document_access(
+    context: AuthorityContext, document_id: str, *, query_id: Optional[str] = None
+) -> AccessDecision:
     grouped = _group_rows(fetch_documents_with_rules([document_id]))
     decision = _evaluate_grouped_document(context, document_id, grouped)
     if decision.allowed:
-        audit_logger.authz_allow(context=context, decision=decision)
+        audit_logger.authz_allow(context=context, decision=decision, query_id=query_id)
     else:
-        audit_logger.authz_deny(context=context, decision=decision)
+        audit_logger.authz_deny(context=context, decision=decision, query_id=query_id)
     return decision
 
 
@@ -69,8 +78,12 @@ def _evaluate_grouped_document(
     for rule in rules:
         matched, reason = rule_match_reason(rule, context)
         if matched:
+            matched_ids = [rule.rule_id] if rule.rule_id is not None else []
             return AccessDecision(
-                document_id=document_id, allowed=True, matched_rule_id=rule.rule_id
+                document_id=document_id,
+                allowed=True,
+                reasons=["rule_match"],
+                matched_rule_ids=matched_ids,
             )
         if reason:
             failure_reasons.append(f"rule_{rule.rule_id}:{reason}")
@@ -79,14 +92,14 @@ def _evaluate_grouped_document(
     return AccessDecision(document_id=document_id, allowed=False, reasons=reasons)
 
 
-def get_allowed_document_ids(context: AuthorityContext) -> Set[str]:
+def get_allowed_document_ids(context: AuthorityContext, *, query_id: Optional[str] = None) -> Set[str]:
     grouped = _group_rows(fetch_documents_with_rules())
     allowed: Set[str] = set()
     for doc_id in grouped.keys():
         decision = _evaluate_grouped_document(context, doc_id, grouped)
         if decision.allowed:
-            audit_logger.authz_allow(context=context, decision=decision)
+            audit_logger.authz_allow(context=context, decision=decision, query_id=query_id)
             allowed.add(doc_id)
         else:
-            audit_logger.authz_deny(context=context, decision=decision)
+            audit_logger.authz_deny(context=context, decision=decision, query_id=query_id)
     return allowed

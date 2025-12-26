@@ -40,15 +40,16 @@ def main(argv=None):
         ),
     )
 
-    results = hybrid_search(args.query, context=context, top_k=args.size or settings.default_top_k)
+    response = hybrid_search(args.query, context=context, top_k=args.size or settings.default_top_k)
+    results = response.get("results", [])
     if not results:
         print("No results")
         return
 
     for r in results:
         print(
-            f"{r['chunk_id']} doc={r['document_id']} final={r['final_score']:.4f} "
-            f"lex={r['lexical_score']:.4f} sem={r['semantic_score']:.4f} snippet={r['snippet']}"
+            f"{r['chunk_id']} doc={r['document_id']} final={r['scores']['final']:.4f} "
+            f"lex={r['scores']['lexical']:.4f} sem={r['scores']['semantic']:.4f} snippet={r['snippet']}"
         )
 
 

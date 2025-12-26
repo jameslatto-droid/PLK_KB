@@ -72,9 +72,9 @@ def test_allow_when_rule_matches(cleanup_ids):
     _add_rule(doc_id, project_code="P1", discipline="eng", roles=["viewer"])
 
     context = AuthorityContext(user="alice", roles=["viewer"], project_codes=["P1"], discipline="eng")
-    decision = evaluate_document_access(context, doc_id)
+    decision = evaluate_document_access(context, doc_id, query_id=str(uuid.uuid4()))
     assert decision.allowed is True
-    assert decision.matched_rule_id is not None
+    assert decision.matched_rule_ids
 
 
 def test_or_logic_allows_on_any_rule(cleanup_ids):
@@ -84,7 +84,7 @@ def test_or_logic_allows_on_any_rule(cleanup_ids):
     _add_rule(doc_id, project_code="P2", discipline="eng", roles=["viewer"])
 
     context = AuthorityContext(user="bob", roles=["viewer"], project_codes=["P2"], discipline="eng")
-    decision = evaluate_document_access(context, doc_id)
+    decision = evaluate_document_access(context, doc_id, query_id=str(uuid.uuid4()))
     assert decision.allowed is True
 
 
@@ -93,7 +93,7 @@ def test_default_deny_when_no_rules(cleanup_ids):
     cleanup_ids.append(doc_id)
 
     context = AuthorityContext(user="carol", roles=["viewer"], project_codes=["P1"], discipline="eng")
-    decision = evaluate_document_access(context, doc_id)
+    decision = evaluate_document_access(context, doc_id, query_id=str(uuid.uuid4()))
     assert decision.allowed is False
     assert "no_access_rules" in decision.reasons
 
@@ -104,7 +104,7 @@ def test_unknown_authority_denied(cleanup_ids):
     _add_rule(doc_id, project_code="P1", discipline="eng", roles=["viewer"])
 
     context = AuthorityContext(user="dave", roles=["viewer"], project_codes=["P1"], discipline="eng")
-    decision = evaluate_document_access(context, doc_id)
+    decision = evaluate_document_access(context, doc_id, query_id=str(uuid.uuid4()))
     assert decision.allowed is False
     assert "unknown_authority" in decision.reasons
 
@@ -115,7 +115,7 @@ def test_missing_context_classification_denies(cleanup_ids):
     _add_rule(doc_id, project_code=None, discipline="eng", classification="SECRET", roles=["viewer"])
 
     context = AuthorityContext(user="erin", roles=["viewer"], project_codes=[], discipline="eng", classification=None)
-    decision = evaluate_document_access(context, doc_id)
+    decision = evaluate_document_access(context, doc_id, query_id=str(uuid.uuid4()))
     assert decision.allowed is False
     assert decision.reasons
 
@@ -128,6 +128,6 @@ def test_get_allowed_document_ids_respects_default_deny(cleanup_ids):
     # denied_doc intentionally has no rules
 
     context = AuthorityContext(user="frank", roles=["viewer"], project_codes=["P1"], discipline="eng")
-    allowed = get_allowed_document_ids(context)
+    allowed = get_allowed_document_ids(context, query_id=str(uuid.uuid4()))
     assert allowed_doc in allowed
     assert denied_doc not in allowed

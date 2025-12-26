@@ -145,10 +145,11 @@ from modules.hybrid_search.app.search import hybrid_search
 
 
 def run(label: str, context: AuthorityContext):
-    results = hybrid_search("alpha project", context=context, top_k=5)
+    response = hybrid_search("alpha project", context=context, top_k=5)
+    results = response.get("results", [])
     print(f"\n{label}: {len(results)} result(s)")
     for r in results:
-        print(f" - {r['document_id']} | chunk={r['chunk_id']} | score={r['final_score']:.3f}")
+        print(f" - {r['document_id']} | chunk={r['chunk_id']} | score={r['scores']['final']:.3f}")
 
 
 ctx_both = AuthorityContext(

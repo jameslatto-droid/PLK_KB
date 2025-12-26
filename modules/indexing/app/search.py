@@ -2,6 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 from typing import List
+from uuid import uuid4
 
 from opensearchpy import OpenSearch
 
@@ -23,9 +24,10 @@ def _parse_list(raw: str) -> List[str]:
 
 def search(query: str, *, size: int = 5, context: AuthorityContext | None = None):
     ctx = context or load_default_context()
-    audit_logger.search_query(actor=ctx.user, query=query, context=ctx)
+    query_id = str(uuid4())
+    audit_logger.search_query(actor=ctx.user, query=query, context=ctx, query_id=query_id)
 
-    allowed_doc_ids = get_allowed_document_ids(ctx)
+    allowed_doc_ids = get_allowed_document_ids(ctx, query_id=query_id)
     if not allowed_doc_ids:
         print("No results (unauthorized)")
         audit_logger.search_results_returned(
@@ -33,6 +35,7 @@ def search(query: str, *, size: int = 5, context: AuthorityContext | None = None
             count=0,
             document_ids=[],
             context=ctx,
+            query_id=query_id,
         )
         return
 
@@ -54,6 +57,7 @@ def search(query: str, *, size: int = 5, context: AuthorityContext | None = None
             count=0,
             document_ids=[],
             context=ctx,
+            query_id=query_id,
         )
         return
 
@@ -71,6 +75,7 @@ def search(query: str, *, size: int = 5, context: AuthorityContext | None = None
         count=len(hits),
         document_ids=returned_doc_ids,
         context=ctx,
+        query_id=query_id,
     )
 
 

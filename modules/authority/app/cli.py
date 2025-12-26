@@ -2,6 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 from typing import List
+from uuid import uuid4
 
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
@@ -40,14 +41,16 @@ def cmd_validate(args: argparse.Namespace) -> None:
 
 def cmd_eval_doc(args: argparse.Namespace) -> None:
     context = _context_from_args(args)
-    decision = evaluate_document_access(context, args.document_id)
+    decision = evaluate_document_access(context, args.document_id, query_id=str(uuid4()))
     status = "ALLOW" if decision.allowed else "DENY"
-    print(f"{status} document_id={decision.document_id} reasons={decision.reasons} matched_rule={decision.matched_rule_id}")
+    print(
+        f"{status} document_id={decision.document_id} reasons={decision.reasons} matched_rules={decision.matched_rule_ids}"
+    )
 
 
 def cmd_eval_batch(args: argparse.Namespace) -> None:
     context = _context_from_args(args)
-    allowed = get_allowed_document_ids(context)
+    allowed = get_allowed_document_ids(context, query_id=str(uuid4()))
     for doc_id in sorted(allowed):
         print(doc_id)
 

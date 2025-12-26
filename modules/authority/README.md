@@ -9,8 +9,8 @@ Key rules:
 - Matching requires project_code, discipline, classification, commercial_sensitivity, and role intersection when those fields are present on the rule.
 
 APIs:
-- `evaluate_document_access(context, document_id) -> AccessDecision` (allows/denies + reasons + matched_rule_id)
-- `get_allowed_document_ids(context) -> set[str]` (pre-filter for search paths)
+- `evaluate_document_access(context, document_id, query_id=...) -> AccessDecision` (allows/denies + reasons + matched_rule_ids)
+- `get_allowed_document_ids(context, query_id=...) -> set[str]` (pre-filter for search paths)
 - `validate_authority_level(level)` (fail-fast validation for ingestion)
 - `load_default_context()` (builds context from env defaults: PLK_CONTEXT_* and PLK_ACTOR)
 

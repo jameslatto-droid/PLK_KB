@@ -1,9 +1,11 @@
 """Hybrid search combining lexical (OpenSearch) and semantic (Qdrant)."""
 
-from typing import Dict, List, Optional, Set
+from datetime import datetime, timezone
+from typing import Dict, List, Optional
+from uuid import uuid4
 
 from modules.authority.app.context import AuthorityContext  # type: ignore
-from modules.authority.app.engine import get_allowed_document_ids  # type: ignore
+from modules.authority.app.engine import AccessDecision, evaluate_document_access  # type: ignore
 from modules.authority.app.policy import load_default_context  # type: ignore
 from modules.metadata.app.audit import audit_logger  # type: ignore
 from modules.vector_indexing.app.embeddings import embed_text  # type: ignore
@@ -27,16 +29,12 @@ def _normalize_scores(items: List[Dict], key: str) -> None:
         item[f"normalized_{key}"] = (item.get(key) or 0.0) / max_score
 
 
-def _search_lexical(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[Dict]:
+def _search_lexical(query: str, top_k: int) -> List[Dict]:
     client: OpenSearch = get_os_client()
-    if not allowed_doc_ids:
-        return []
-    
     body = {
         "query": {
             "bool": {
                 "must": [{"match": {"content": query}}],
-                "filter": [{"terms": {"document_id": list(allowed_doc_ids)}}]
             }
         }
     }
@@ -58,11 +56,8 @@ def _search_lexical(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[D
     return results
 
 
-def _search_semantic(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[Dict]:
+def _search_semantic(query: str, top_k: int) -> List[Dict]:
     client: QdrantClient = get_qdrant_client()
-    if not allowed_doc_ids:
-        return []
-    
     vector = embed_text(query)
 
     response = client.query_points(
@@ -71,14 +66,6 @@ def _search_semantic(query: str, top_k: int, allowed_doc_ids: Set[str]) -> List[
         limit=top_k,
         with_payload=True,
         with_vectors=False,
-        query_filter=qmodels.Filter(
-            must=[
-                qmodels.FieldCondition(
-                    key="document_id",
-                    match=qmodels.MatchAny(any=list(allowed_doc_ids)),
-                )
-            ]
-        ),
     )
     points: List[qmodels.ScoredPoint] = getattr(response, "points", [])
 
@@ -111,32 +98,88 @@ def _hydrate_entry(entry: Dict) -> None:
     entry.setdefault("artefact_id", row.get("artefact_id"))
 
 
+def _require_value(value: object, label: str) -> None:
+    if value is None or value == "":
+        raise RuntimeError(f"Missing required field: {label}")
+
+
+def _explain_match(lexical_score: float, semantic_score: float) -> str:
+    if lexical_score > 0 and semantic_score > 0:
+        return (
+            "Matched lexical and semantic retrieval "
+            f"(lexical_score={lexical_score:.6f}, semantic_score={semantic_score:.6f})."
+        )
+    if lexical_score > 0:
+        return f"Matched lexical retrieval (lexical_score={lexical_score:.6f})."
+    if semantic_score > 0:
+        return f"Matched semantic retrieval (semantic_score={semantic_score:.6f})."
+    raise RuntimeError("Missing explanation metadata: no positive match score")
+
+
+def _explain_allowed(matched_rule_ids: List[int], reasons: List[str]) -> str:
+    if not matched_rule_ids:
+        raise RuntimeError("Missing explanation metadata: matched_rule_ids empty for ALLOW")
+    reason_str = ", ".join(reasons) if reasons else "rule_match"
+    return f"Access decision ALLOW via {reason_str}; matched_rule_ids={matched_rule_ids}."
+
+
+def _explain_ranked(lexical_norm: float, semantic_norm: float, final_score: float) -> str:
+    return (
+        "Ranked by hybrid score = 0.5*lexical_norm + 0.5*semantic_norm "
+        f"({final_score:.6f} = 0.5*{lexical_norm:.6f} + 0.5*{semantic_norm:.6f})."
+    )
+
+
+def _build_response(
+    *,
+    query_id: str,
+    timestamp: str,
+    query: str,
+    results: List[Dict],
+) -> Dict:
+    _require_value(query_id, "query_id")
+    _require_value(timestamp, "timestamp")
+    _require_value(query, "query")
+    return {
+        "query_id": query_id,
+        "timestamp": timestamp,
+        "query": query,
+        "results": results,
+    }
+
+
 def hybrid_search(
     query: str,
     context: Optional[AuthorityContext] = None,
-    top_k: Optional[int] = None
-) -> List[Dict]:
+    top_k: Optional[int] = None,
+    *,
+    query_id: Optional[str] = None,
+) -> Dict:
     """
     Hybrid search with authority enforcement.
     
-    Retrieves allowed document_ids based on context before querying search engines.
-    Returns empty list if no documents are authorized.
+    Retrieves candidates, evaluates authority per document, and filters denied results.
     """
     ctx = context or load_default_context()
     k = top_k or settings.default_top_k
-    audit_logger.search_query(actor=ctx.user, query=query, context=ctx)
-    allowed_doc_ids = get_allowed_document_ids(ctx)
-    if not allowed_doc_ids:
-        audit_logger.search_results_returned(
-            actor=ctx.user,
-            count=0,
-            document_ids=[],
-            context=ctx,
-        )
-        return []
-    
-    lex = _search_lexical(query, k, allowed_doc_ids)
-    sem = _search_semantic(query, k, allowed_doc_ids)
+    qid = query_id or str(uuid4())
+    timestamp = datetime.now(timezone.utc).isoformat()
+    audit_logger.query_received(
+        actor=ctx.user,
+        query_id=qid,
+        context=ctx,
+        outcome={"query": query, "top_k": k},
+    )
+    audit_logger.search_query(actor=ctx.user, query=query, context=ctx, query_id=qid)
+
+    lex = _search_lexical(query, k)
+    sem = _search_semantic(query, k)
+    audit_logger.search_executed(
+        actor=ctx.user,
+        query_id=qid,
+        context=ctx,
+        outcome={"lexical_count": len(lex), "semantic_count": len(sem)},
+    )
 
     merged: Dict[str, Dict] = {}
     for item in lex:
@@ -170,30 +213,78 @@ def hybrid_search(
             }
 
     results: List[Dict] = []
+    decisions: Dict[str, AccessDecision] = {}
+    denied_count = 0
     for entry in merged.values():
         lexical_norm = entry.get("lexical_norm", 0.0)
         semantic_norm = entry.get("semantic_norm", 0.0)
         final_score = 0.5 * lexical_norm + 0.5 * semantic_norm
         _hydrate_entry(entry)
+        doc_id = entry.get("document_id")
+        if not doc_id:
+            raise RuntimeError("Missing required field: document_id")
+        decision = decisions.get(doc_id)
+        if decision is None:
+            decision = evaluate_document_access(ctx, doc_id, query_id=qid)
+            decisions[doc_id] = decision
+        if not decision.allowed:
+            denied_count += 1
+            continue
+        if not entry.get("content"):
+            raise RuntimeError("Missing required field: snippet source content")
+        _require_value(entry.get("chunk_id"), "chunk_id")
+        _require_value(entry.get("document_id"), "document_id")
         snippet = (entry.get("content") or "")[:200]
+        explanation = {
+            "why_matched": _explain_match(
+                entry.get("lexical_score", 0.0), entry.get("semantic_score", 0.0)
+            ),
+            "why_allowed": _explain_allowed(decision.matched_rule_ids, decision.reasons),
+            "why_ranked": _explain_ranked(lexical_norm, semantic_norm, final_score),
+        }
         results.append(
             {
-                "chunk_id": entry["chunk_id"],
                 "document_id": entry.get("document_id"),
-                "artefact_id": entry.get("artefact_id"),
-                "lexical_score": entry.get("lexical_score", 0.0),
-                "semantic_score": entry.get("semantic_score", 0.0),
-                "final_score": final_score,
+                "chunk_id": entry.get("chunk_id"),
                 "snippet": snippet,
+                "scores": {
+                    "lexical": entry.get("lexical_score", 0.0),
+                    "semantic": entry.get("semantic_score", 0.0),
+                    "final": final_score,
+                },
+                "authority": {
+                    "decision": "ALLOW",
+                    "matched_rule_ids": list(decision.matched_rule_ids),
+                },
+                "explanation": explanation,
             }
         )
 
-    results.sort(key=lambda x: x["final_score"], reverse=True)
+    results.sort(key=lambda x: x["scores"]["final"], reverse=True)
+    audit_logger.authority_evaluated(
+        actor=ctx.user,
+        query_id=qid,
+        context=ctx,
+        outcome={"evaluated": len(decisions), "denied": denied_count, "allowed": len(results)},
+    )
+    audit_logger.results_filtered(
+        actor=ctx.user,
+        query_id=qid,
+        context=ctx,
+        outcome={"input": len(merged), "returned": len(results)},
+    )
     returned_doc_ids = [r.get("document_id") for r in results if r.get("document_id")]
     audit_logger.search_results_returned(
         actor=ctx.user,
         count=len(results),
         document_ids=returned_doc_ids,
         context=ctx,
+        query_id=qid,
     )
-    return results
+    audit_logger.response_returned(
+        actor=ctx.user,
+        query_id=qid,
+        context=ctx,
+        outcome={"count": len(results)},
+    )
+    return _build_response(query_id=qid, timestamp=timestamp, query=query, results=results)
