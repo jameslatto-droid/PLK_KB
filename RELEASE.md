@@ -83,3 +83,9 @@ READY — Deployment is manual and service-bound, with explicit configuration an
 
 - Run: `python scripts/demo_runner.py`
 - PASS means ingestion, indexing, and authorization checks completed with expected result counts for superuser/test users and deny-by-default for restricted users.
+
+# CI Smoke Test
+
+- Run: `pytest tests/ci/test_smoke.py`
+- Guarantees: metadata bootstrap, artefact registration, chunking, indexing, search, and authority checks succeed when required services are available.
+- Skips with explicit reasons when Postgres, OpenSearch, or Qdrant are unavailable.
