@@ -57,3 +57,48 @@ ops/           Deployment and operational assets
 - Users: Small internal engineering team
 
 Refer to `docs/00_index.md` for the authoritative documentation list.
+
+---
+
+## CI Service Dependency Notes
+
+The PLK_KB repository includes both pure logic tests and integration-level tests.
+
+### Required External Services (Integration Tests)
+
+The following services must be running for full integration test coverage:
+
+**Postgres**
+- Host: localhost
+- Port: 5432
+- Database: plk_metadata
+- User: plk_user
+
+**OpenSearch**
+- Host: localhost
+- Port: 9200
+- Auth: admin/admin (dev default)
+- HTTPS: enabled with cert checks disabled in dev
+
+**Qdrant**
+- REST Port: 6333
+- gRPC Port: 6334
+
+**ML Embeddings**
+- Python package: sentence-transformers
+- Required for semantic and hybrid search paths
+
+### If any of these services are unavailable:
+
+- Integration tests may be skipped (not failed)
+- Unit and authority logic tests must still pass
+
+### CI Expectations
+
+CI environments without services are expected to:
+- Pass unit tests
+- Skip service-bound tests with explicit reasons
+
+CI environments with services enabled should run full test suites
+
+This distinction is intentional and enforced to prevent false negatives while preserving fail-closed production behavior.

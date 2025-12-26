@@ -4,6 +4,8 @@ from pathlib import Path
 
 import pytest
 
+psycopg2 = pytest.importorskip("psycopg2")
+
 ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -12,11 +14,34 @@ from modules.authority.app.context import AuthorityContext  # type: ignore
 from modules.authority.app.engine import evaluate_document_access, get_allowed_document_ids  # type: ignore
 from modules.authority.app.policy import validate_authority_level  # type: ignore
 from modules.metadata.app import models  # type: ignore
+from modules.metadata.app.config import settings  # type: ignore
 from modules.metadata.app.repository import (  # type: ignore
     AccessRuleRepository,
     DocumentRepository,
 )
 from modules.metadata.app.db import connection_cursor  # type: ignore
+
+
+def _db_available() -> bool:
+    try:
+        conn = psycopg2.connect(
+            dbname=settings.db_name,
+            user=settings.db_user,
+            password=settings.db_password,
+            host=settings.db_host,
+            port=settings.db_port,
+            connect_timeout=1,
+        )
+        conn.close()
+        return True
+    except Exception:
+        return False
+
+
+pytestmark = pytest.mark.skipif(
+    not _db_available(),
+    reason="Postgres not available (set POSTGRES_* env vars and start service)",
+)
 
 
 @pytest.fixture()
