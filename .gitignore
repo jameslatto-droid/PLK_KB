@@ -54,3 +54,5 @@ node_modules/
 *.log
 .cache/
 temp/
+
+ops/docker/volumes/
