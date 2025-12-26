@@ -1,0 +1,32 @@
+import PageShell from "@/components/PageShell";
+import StageStepper from "@/components/StageStepper";
+import EmptyState from "@/components/EmptyState";
+
+export default function IngestPage() {
+  return (
+    <PageShell pageKey="ingest">
+      <section className="panel">
+        <p className="panel-heading">Ingest</p>
+        <h2 className="mt-2 text-2xl font-semibold text-ink-900">Register New Artefacts</h2>
+        <p className="mt-2 text-sm text-ink-600">
+          Capture artefacts, register metadata, and open the pipeline for downstream chunking.
+        </p>
+      </section>
+
+      <section className="panel">
+        <p className="panel-heading">Pipeline Context</p>
+        <p className="mt-2 text-sm text-ink-600">
+          Ingestion and metadata registration occur here. Successful registration unlocks chunking and
+          indexing.
+        </p>
+      </section>
+
+      <StageStepper currentStep="ingestion" />
+
+      <EmptyState
+        title="No ingestion job queued"
+        description="TODO: add ingest controls, artefact path validation, and metadata preview."
+      />
+    </PageShell>
+  );
+}
