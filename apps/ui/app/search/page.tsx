@@ -1,11 +1,11 @@
 import PageShell from "@/components/PageShell";
 import StageStepper from "@/components/StageStepper";
-import EmptyState from "@/components/EmptyState";
 import WhyPanel from "@/components/WhyPanel";
+import SearchPanel from "@/components/SearchPanel";
 
 export default function SearchPage() {
   return (
-    <PageShell pageKey="search">
+    <PageShell pageKey="search" useMock={false}>
       <section className="panel">
         <p className="panel-heading">Search</p>
         <h2 className="mt-2 text-2xl font-semibold text-ink-900">Explainable Hybrid Search</h2>
@@ -26,10 +26,7 @@ export default function SearchPage() {
 
       <WhyPanel />
 
-      <EmptyState
-        title="Search results will appear here"
-        description="TODO: wire the hybrid search endpoint and surface result explanations."
-      />
+      <SearchPanel />
     </PageShell>
   );
 }

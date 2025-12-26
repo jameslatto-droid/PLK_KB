@@ -1,6 +1,7 @@
 import PageShell from "@/components/PageShell";
 import StageStepper from "@/components/StageStepper";
 import EmptyState from "@/components/EmptyState";
+import BackendStatusPanel from "@/components/BackendStatusPanel";
 
 export default function DashboardPage() {
   return (
@@ -22,9 +23,11 @@ export default function DashboardPage() {
 
       <StageStepper currentStep="response" />
 
+      <BackendStatusPanel />
+
       <EmptyState
         title="Pipeline telemetry will appear here"
-        description="TODO: wire live system summaries, active jobs, and last audit decisions. No API calls yet."
+        description="TODO: add live system summaries, active jobs, and last audit decisions. This area is still mock."
       />
     </PageShell>
   );

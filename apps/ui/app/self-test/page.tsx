@@ -1,10 +1,10 @@
 import PageShell from "@/components/PageShell";
 import StageStepper from "@/components/StageStepper";
-import EmptyState from "@/components/EmptyState";
+import SelfTestPanel from "@/components/SelfTestPanel";
 
 export default function SelfTestPage() {
   return (
-    <PageShell pageKey="self-test">
+    <PageShell pageKey="self-test" useMock={false}>
       <section className="panel">
         <p className="panel-heading">System Self-Test</p>
         <h2 className="mt-2 text-2xl font-semibold text-ink-900">Deterministic Pipeline Validation</h2>
@@ -22,10 +22,7 @@ export default function SelfTestPage() {
 
       <StageStepper currentStep="response" />
 
-      <EmptyState
-        title="No self-test executed"
-        description="TODO: wire the CI smoke test runner and surface PASS/FAIL evidence."
-      />
+      <SelfTestPanel />
     </PageShell>
   );
 }
