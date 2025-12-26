@@ -56,3 +56,5 @@ node_modules/
 temp/
 
 ops/docker/volumes/
+
+ops/scripts/stage5_tmp/
