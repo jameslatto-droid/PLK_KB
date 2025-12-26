@@ -93,9 +93,12 @@ def _hydrate_entry(entry: Dict) -> None:
     row = get_chunk_with_document(entry["chunk_id"])
     if not row:
         return
-    entry.setdefault("content", row.get("content"))
-    entry.setdefault("document_id", row.get("document_id"))
-    entry.setdefault("artefact_id", row.get("artefact_id"))
+    if not entry.get("content"):
+        entry["content"] = row.get("content")
+    if not entry.get("document_id"):
+        entry["document_id"] = row.get("document_id")
+    if not entry.get("artefact_id"):
+        entry["artefact_id"] = row.get("artefact_id")
 
 
 def _require_value(value: object, label: str) -> None:

@@ -78,3 +78,8 @@ READY — Deployment is manual and service-bound, with explicit configuration an
 - Service-bound tests are explicitly skipped when dependencies are unavailable.
 - This behavior is intentional to prevent false CI failures.
 - CI environments with services enabled should run full test suites.
+
+# Demo Runner
+
+- Run: `python scripts/demo_runner.py`
+- PASS means ingestion, indexing, and authorization checks completed with expected result counts for superuser/test users and deny-by-default for restricted users.
