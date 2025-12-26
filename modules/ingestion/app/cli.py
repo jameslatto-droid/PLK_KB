@@ -1,6 +1,8 @@
 import argparse
 import hashlib
 import io
+import json
+import logging
 import sys
 import uuid
 from pathlib import Path
@@ -19,8 +21,12 @@ from modules.metadata.app.repository import (  # type: ignore
     ArtefactRepository,
 )
 from modules.authority.app.policy import validate_authority_level  # type: ignore
+from modules.extraction.registry import extract_file  # Stage 8
+from modules.extraction.allowlist import get_file_tier, get_tier_description  # Stage 8
 
 from .config import settings
+
+logger = logging.getLogger(__name__)
 
 
 def _minio_client():
@@ -53,10 +59,59 @@ def _compute_checksum(path: Path) -> str:
 
 
 def ingest_txt(document_id: str, title: str, path: Path, document_type: str, authority_level: str):
+    """
+    Ingest a file using Stage 8 extraction pipeline.
+    
+    Stage 8 Changes:
+    - Uses extractor registry for file type handling
+    - Supports tiered allowlist (Tier 1, 2, 3)
+    - Stores extraction metadata
+    - Fails explicitly on unsupported types
+    """
     validate_authority_level(authority_level)
     version_id = uuid.uuid4().hex
     version_label = "A"
     artefact_id = uuid.uuid4().hex
+    
+    # Stage 8: Extract text using registry
+    enable_tier_2 = settings.enable_tier_2
+    tier = get_file_tier(path)
+    extraction_result, extraction_reason = extract_file(path, enable_tier_2=enable_tier_2)
+    
+    # Log extraction status
+    logger.info(
+        "Extraction for %s: status=%s tier=%s reason=%s",
+        path.name,
+        extraction_result["status"],
+        tier.value,
+        extraction_reason,
+    )
+    
+    if extraction_result["warnings"]:
+        for warning in extraction_result["warnings"]:
+            logger.warning("Extraction warning for %s: %s", path.name, warning)
+    
+    if extraction_result["errors"]:
+        for error in extraction_result["errors"]:
+            logger.error("Extraction error for %s: %s", path.name, error)
+    
+    # Determine if ingestion should proceed
+    if extraction_result["status"] == "failed":
+        # Print extraction details to stdout for UI capture
+        print(json.dumps({
+            "extraction_status": "failed",
+            "tier": tier.value,
+            "tier_description": get_tier_description(tier),
+            "reason": extraction_reason,
+            "errors": extraction_result["errors"],
+        }))
+        raise RuntimeError(f"Extraction failed for {path.name}: {extraction_reason}")
+    
+    # Extraction succeeded or partial - proceed with ingestion
+    extracted_text = extraction_result.get("text", "")
+    if not extracted_text:
+        logger.warning("Extraction returned no text for %s", path.name)
+        extracted_text = ""  # Empty text is acceptable
 
     client = _minio_client()
     _ensure_bucket(client, settings.minio_bucket)
@@ -66,6 +121,7 @@ def ingest_txt(document_id: str, title: str, path: Path, document_type: str, aut
     raw_key = _object_path("raw", document_id, version_id, filename)
     artefact_key = _object_path("artefacts", document_id, version_id, "extracted_text.txt")
 
+    # Store raw file
     with path.open("rb") as f:
         client.put_object(
             settings.minio_bucket,
@@ -75,13 +131,25 @@ def ingest_txt(document_id: str, title: str, path: Path, document_type: str, aut
             content_type="text/plain",
         )
 
-    text_bytes = path.read_bytes()
+    # Store extracted text
+    text_bytes = extracted_text.encode("utf-8")
     client.put_object(
         settings.minio_bucket,
         artefact_key,
         data=io.BytesIO(text_bytes),
         length=len(text_bytes),
         content_type="text/plain",
+    )
+    
+    # Store extraction metadata
+    extraction_metadata_key = _object_path("artefacts", document_id, version_id, "extraction_metadata.json")
+    metadata_bytes = json.dumps(extraction_result, indent=2).encode("utf-8")
+    client.put_object(
+        settings.minio_bucket,
+        extraction_metadata_key,
+        data=io.BytesIO(metadata_bytes),
+        length=len(metadata_bytes),
+        content_type="application/json",
     )
 
     doc = md_models.Document(
@@ -101,16 +169,33 @@ def ingest_txt(document_id: str, title: str, path: Path, document_type: str, aut
     )
     DocumentVersionRepository.insert(version)
 
+    # Stage 8: Enhanced artefact metadata
+    extractor_name = extraction_result.get("metadata", {}).get("extractor", "unknown")
+    extractor_version = extraction_result.get("metadata", {}).get("version", "unknown")
+    confidence_score = extraction_result.get("confidence")
+    
     artefact = md_models.Artefact(
         artefact_id=artefact_id,
         version_id=version_id,
         artefact_type="EXTRACTED_TEXT",
         storage_path=f"s3://{settings.minio_bucket}/{artefact_key}",
-        tool_name="ingestion_txt",
-        tool_version="0.1",
-        confidence_level="DECLARED",
+        tool_name=f"extraction_{extractor_name}",
+        tool_version=extractor_version,
+        confidence_level=extraction_result["status"].upper(),  # SUCCESS, PARTIAL, FAILED
     )
     ArtefactRepository.insert(artefact)
+    
+    # Print success details to stdout for UI capture
+    print(json.dumps({
+        "document_id": document_id,
+        "version_id": version_id,
+        "artefact_id": artefact_id,
+        "extraction_status": extraction_result["status"],
+        "extraction_confidence": confidence_score,
+        "extractor": extractor_name,
+        "tier": tier.value,
+        "warnings": extraction_result["warnings"],
+    }))
 
     return version_id, artefact_id
 

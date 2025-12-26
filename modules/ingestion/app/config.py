@@ -18,10 +18,17 @@ class Settings(BaseSettings):
     postgres_password: str = os.getenv("POSTGRES_PASSWORD", "change_me")
     postgres_port: int = int(os.getenv("POSTGRES_PORT", "5432"))
 
-    minio_endpoint: str = os.getenv("MINIO_ENDPOINT", "http://localhost:9000")
+    _minio_endpoint_raw: str = os.getenv("MINIO_ENDPOINT", "http://localhost:9000")
+    minio_endpoint: str = (
+        _minio_endpoint_raw if "://" in _minio_endpoint_raw else f"http://{_minio_endpoint_raw}"
+    )
     minio_access_key: str = os.getenv("MINIO_ROOT_USER", "minioadmin")
     minio_secret_key: str = os.getenv("MINIO_ROOT_PASSWORD", "change_me")
     minio_bucket: str = os.getenv("MINIO_BUCKET", "plk")
+    
+    # Stage 8: Extraction configuration
+    enable_tier_2: bool = os.getenv("PLK_ENABLE_TIER_2", "false").lower() == "true"
+    max_extract_mb: int = int(os.getenv("PLK_MAX_EXTRACT_MB", "100"))
 
     model_config = SettingsConfigDict(env_prefix="")
 
