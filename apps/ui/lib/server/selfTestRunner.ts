@@ -45,6 +45,12 @@ const ROOT = "/home/jim/PLK_KB";
 const runs = new Map<string, SelfTestRun>();
 let activeRunId: string | null = null;
 
+export type UserContextInput = {
+  actor: string;
+  roles: string[];
+  classification: string;
+};
+
 function nowIso(): string {
   return new Date().toISOString();
 }
@@ -68,13 +74,16 @@ function successRun(run: SelfTestRun) {
   pushEvent(run, { stage: "SELF_TEST", status: "ok", message: "PASS", details: "All stages completed." });
 }
 
-function withContextEnv(): NodeJS.ProcessEnv {
+function withContextEnv(context?: UserContextInput): NodeJS.ProcessEnv {
   loadEnv();
+  const actor = context?.actor ?? "jim";
+  const roles = context?.roles?.length ? context.roles : ["SUPERUSER"];
+  const classification = context?.classification ?? "REFERENCE";
   return {
     ...process.env,
-    PLK_ACTOR: "jim",
-    PLK_CONTEXT_ROLES: "SUPERUSER",
-    PLK_CONTEXT_CLASSIFICATION: "REFERENCE",
+    PLK_ACTOR: actor,
+    PLK_CONTEXT_ROLES: roles.join(","),
+    PLK_CONTEXT_CLASSIFICATION: classification,
   };
 }
 
@@ -275,8 +284,8 @@ async function runSearch(run: SelfTestRun, env: NodeJS.ProcessEnv): Promise<void
   });
 }
 
-async function executeSelfTest(run: SelfTestRun): Promise<void> {
-  const env = withContextEnv();
+async function executeSelfTest(run: SelfTestRun, context?: UserContextInput): Promise<void> {
+  const env = withContextEnv(context);
   try {
     run.currentStage = "BOOTSTRAP";
     pushEvent(run, { stage: "BOOTSTRAP", status: "info", message: "Bootstrapping metadata schema" });
@@ -303,7 +312,7 @@ async function executeSelfTest(run: SelfTestRun): Promise<void> {
   }
 }
 
-export function startSelfTest(): SelfTestRun {
+export function startSelfTest(context?: UserContextInput): SelfTestRun {
   if (activeRunId) {
     const existing = runs.get(activeRunId);
     if (existing) {
@@ -322,7 +331,7 @@ export function startSelfTest(): SelfTestRun {
   runs.set(runId, run);
   activeRunId = runId;
   pushEvent(run, { stage: "SELF_TEST", status: "info", message: "Self-test started" });
-  setImmediate(() => executeSelfTest(run));
+  setImmediate(() => executeSelfTest(run, context));
   return run;
 }
 

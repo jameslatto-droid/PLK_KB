@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import PipelineLogPanel from "@/components/PipelineLogPanel";
+import { useUserContext } from "@/components/UserContext";
 
 const navItems = [
   { href: "/", label: "Dashboard" },
@@ -18,6 +19,7 @@ const navItems = [
 export default function LayoutShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [logCollapsed, setLogCollapsed] = useState(false);
+  const { active, presets, setActiveUser } = useUserContext();
 
   return (
     <div className="min-h-screen px-6 py-6">
@@ -31,12 +33,27 @@ export default function LayoutShell({ children }: { children: ReactNode }) {
             <span className="badge">local</span>
           </div>
           <div className="panel flex flex-col gap-2 bg-white/60 p-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">Current Context</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-500">Active User Context (dev-only)</p>
             <div className="flex flex-wrap gap-2 text-xs">
-              <span className="pill">user: jim</span>
-              <span className="pill">roles: SUPERUSER</span>
-              <span className="pill">classification: REFERENCE</span>
+              <span className="pill">user: {active.actor}</span>
+              <span className="pill">roles: {active.roles.join(", ")}</span>
+              <span className="pill">classification: {active.classification}</span>
             </div>
+            <label className="mt-2 flex items-center gap-2 text-xs font-semibold text-ink-600">
+              Switch user:
+              <select
+                className="rounded-lg border border-ink-200 bg-white px-2 py-1 text-xs"
+                value={active.id}
+                onChange={(event) => setActiveUser(event.target.value)}
+              >
+                {presets.map((preset) => (
+                  <option key={preset.id} value={preset.id}>
+                    {preset.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <p className="text-[11px] text-ink-500">No auth system yet — this only sets PLK_ACTOR / roles / classification for backend calls.</p>
           </div>
         </header>
 

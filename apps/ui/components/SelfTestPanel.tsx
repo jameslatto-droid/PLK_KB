@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { fetchSelfTest, startSelfTest, type SelfTestRun } from "@/lib/apiClient";
+import { fetchSelfTest, startSelfTestWithContext, type SelfTestRun } from "@/lib/apiClient";
 import { usePipelineLog } from "@/components/PipelineLogContext";
+import { useUserContext } from "@/components/UserContext";
 
 const POLL_MS = 1500;
 
@@ -11,6 +12,7 @@ export default function SelfTestPanel() {
   const [error, setError] = useState<string | null>(null);
   const [starting, setStarting] = useState(false);
   const { setEvents } = usePipelineLog();
+  const { active } = useUserContext();
 
   useEffect(() => {
     if (!run) return;
@@ -41,7 +43,11 @@ export default function SelfTestPanel() {
   const start = async () => {
     setStarting(true);
     try {
-      const nextRun = await startSelfTest();
+      const nextRun = await startSelfTestWithContext({
+        actor: active.actor,
+        roles: active.roles,
+        classification: active.classification,
+      });
       setRun(nextRun);
       setError(null);
     } catch (err) {
@@ -66,6 +72,7 @@ export default function SelfTestPanel() {
           <p className="mt-1 text-sm text-ink-600">
             Uses the internal fixture at /home/jim/PLK_KB/ops/scripts/stage5_tmp. No user data is touched.
           </p>
+          <p className="mt-1 text-xs text-ink-500">Actor: {active.actor} · Roles: {active.roles.join(", ")} · Classification: {active.classification}</p>
         </div>
         <button
           type="button"

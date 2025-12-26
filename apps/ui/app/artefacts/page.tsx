@@ -1,10 +1,10 @@
 import PageShell from "@/components/PageShell";
 import StageStepper from "@/components/StageStepper";
-import EmptyState from "@/components/EmptyState";
+import ArtefactsPanel from "@/components/ArtefactsPanel";
 
 export default function ArtefactsPage() {
   return (
-    <PageShell pageKey="artefacts">
+    <PageShell pageKey="artefacts" useMock={false}>
       <section className="panel">
         <p className="panel-heading">Artefacts</p>
         <h2 className="mt-2 text-2xl font-semibold text-ink-900">Artefact Inventory</h2>
@@ -22,10 +22,7 @@ export default function ArtefactsPage() {
 
       <StageStepper currentStep="chunking" />
 
-      <EmptyState
-        title="Artefacts will appear here"
-        description="TODO: show artefact list, rule coverage, and chunking status for each artefact."
-      />
+      <ArtefactsPanel />
     </PageShell>
   );
 }

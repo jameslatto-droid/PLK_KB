@@ -5,13 +5,21 @@ import { loadEnv } from "@/lib/server/env";
 const PYTHON = "/home/jim/PLK_KB/.venv/bin/python";
 const ROOT = "/home/jim/PLK_KB";
 
-async function runSearch(query: string, topK: number) {
+type ContextPayload = {
+  actor?: string;
+  roles?: string[];
+  classification?: string;
+};
+
+async function runSearch(query: string, topK: number, context?: ContextPayload) {
   loadEnv();
   const env = {
     ...process.env,
-    PLK_ACTOR: "jim",
-    PLK_CONTEXT_ROLES: "SUPERUSER",
-    PLK_CONTEXT_CLASSIFICATION: "REFERENCE",
+    PLK_ACTOR: context?.actor ?? "jim",
+    PLK_CONTEXT_ROLES: Array.isArray(context?.roles) && context?.roles?.length
+      ? context?.roles.join(",")
+      : "SUPERUSER",
+    PLK_CONTEXT_CLASSIFICATION: context?.classification ?? "REFERENCE",
   };
 
   const script = [
@@ -71,11 +79,12 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
   const query = typeof body.query === "string" ? body.query.trim() : "";
   const topK = typeof body.top_k === "number" ? body.top_k : 5;
+  const context = (body.context ?? {}) as ContextPayload;
   if (!query) {
     return Response.json({ error: "query required" }, { status: 400 });
   }
   try {
-    const result = await runSearch(query, topK);
+    const result = await runSearch(query, topK, context);
     return Response.json(result);
   } catch (err) {
     const message = err instanceof Error ? err.message : "search failed";

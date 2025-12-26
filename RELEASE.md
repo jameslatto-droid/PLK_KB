@@ -39,14 +39,15 @@ READY — Deployment is manual and service-bound, with explicit configuration an
 - `.env` loading locations:
   - `env/.env` (application modules)
   - `ops/docker/.env` (docker-compose)
-- Note: ensure POSTGRES_DB matches the metadata module configuration (`plk_metadata` default in code vs `plk_kb` default in docker-compose); set POSTGRES_DB explicitly to keep them aligned.
+- Note: ensure POSTGRES_DB matches the metadata module configuration (`plk_metadata` default in code and docker-compose); set POSTGRES_DB explicitly to keep them aligned.
+  - WSL constraint: Postgres data must NOT live on Windows-mounted filesystems (e.g., `/mnt/c`, `/mnt/e`). Use a Docker volume or ext4-backed path.
+  - Storage placement: MinIO, OpenSearch, and (with caution) Qdrant data may reside on Windows-backed mounts like `/mnt/e/Data_Index` to absorb growth, but Postgres must remain on ext4.
 
 # Preflight Checks (Required Before Deploy)
 
 - Service status:
   - `docker-compose -f ops/docker/docker-compose.yml ps`
 - Postgres schema accessibility:
-  - `docker exec -i plk-postgres psql -U plk_user -d plk_kb -c "\dt"`
   - `docker exec -i plk-postgres psql -U plk_user -d plk_metadata -c "\dt"`
 - OpenSearch health:
   - `curl -s https://localhost:9200 -u admin:admin --insecure | grep -q cluster_name`

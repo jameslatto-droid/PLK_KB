@@ -1,10 +1,10 @@
 import PageShell from "@/components/PageShell";
 import StageStepper from "@/components/StageStepper";
-import EmptyState from "@/components/EmptyState";
+import IngestionPanel from "@/components/IngestionPanel";
 
 export default function IngestPage() {
   return (
-    <PageShell pageKey="ingest">
+    <PageShell pageKey="ingest" useMock={false}>
       <section className="panel">
         <p className="panel-heading">Ingest</p>
         <h2 className="mt-2 text-2xl font-semibold text-ink-900">Register New Artefacts</h2>
@@ -23,10 +23,7 @@ export default function IngestPage() {
 
       <StageStepper currentStep="ingestion" />
 
-      <EmptyState
-        title="No ingestion job queued"
-        description="TODO: add ingest controls, artefact path validation, and metadata preview."
-      />
+      <IngestionPanel />
     </PageShell>
   );
 }

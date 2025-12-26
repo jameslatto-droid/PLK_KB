@@ -1,7 +1,23 @@
 import { getSelfTest, startSelfTest } from "@/lib/server/selfTestRunner";
 
-export async function POST() {
-  const run = startSelfTest();
+type ContextPayload = {
+  actor?: string;
+  roles?: string[];
+  classification?: string;
+};
+
+export async function POST(request: Request) {
+  const body = await request.json().catch(() => ({} as any));
+  const context = body?.context as ContextPayload;
+  const run = startSelfTest(
+    context
+      ? {
+          actor: context.actor ?? "jim",
+          roles: Array.isArray(context.roles) && context.roles.length ? context.roles : ["SUPERUSER"],
+          classification: context.classification ?? "REFERENCE",
+        }
+      : undefined
+  );
   return Response.json(run);
 }
 

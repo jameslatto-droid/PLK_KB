@@ -15,13 +15,14 @@ services:
     image: postgres:15-alpine
     container_name: plk-postgres
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-plk_kb}
+      POSTGRES_DB: ${POSTGRES_DB:-plk_metadata}
       POSTGRES_USER: ${POSTGRES_USER:-plk_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - ./volumes/postgres:/var/lib/postgresql/data
+      # Postgres must stay on ext4 (WSL cannot host PG data on /mnt/*)
+      - /home/jim/PLK_KB/ops/docker/volumes/postgres:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-plk_user}"]
       interval: 10s
@@ -41,7 +42,7 @@ services:
       - "${MINIO_API_PORT:-9000}:9000"
       - "${MINIO_CONSOLE_PORT:-9001}:9001"
     volumes:
-      - ./volumes/minio:/data
+      - /mnt/e/Data_Index/minio:/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 30s
@@ -61,7 +62,7 @@ services:
     ports:
       - "${OPENSEARCH_PORT:-9200}:9200"
     volumes:
-      - ./volumes/opensearch:/usr/share/opensearch/data
+      - /mnt/e/Data_Index/opensearch:/usr/share/opensearch/data
     healthcheck:
       # Use the current admin credential to avoid auth errors when the data dir already has admin/admin
       test: ["CMD-SHELL", "curl -s https://localhost:9200 -u admin:admin --insecure | grep -q cluster_name || exit 1"]
@@ -78,9 +79,13 @@ services:
       - "${QDRANT_PORT:-6333}:6333"
       - "${QDRANT_GRPC_PORT:-6334}:6334"
     volumes:
-      - ./volumes/qdrant:/qdrant/storage
+      - /mnt/e/Data_Index/qdrant:/qdrant/storage
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      # Use bash with /dev/tcp to probe /readyz without curl/wget
+      test:
+        - CMD-SHELL
+        - |
+          bash -c 'exec 3<>/dev/tcp/localhost/6333 && printf "GET /readyz HTTP/1.0\r\nHost: localhost\r\n\r\n" >&3 && head -n1 <&3 | grep 200'
       interval: 10s
       timeout: 5s
       retries: 5

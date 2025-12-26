@@ -1,8 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { fetchBackendStatus, runSearch, type BackendStatusResponse, type SearchResponse } from "@/lib/apiClient";
+import {
+  fetchBackendStatus,
+  runSearchWithContext,
+  type BackendStatusResponse,
+  type SearchResponse,
+} from "@/lib/apiClient";
 import { usePipelineLog } from "@/components/PipelineLogContext";
+import { useUserContext } from "@/components/UserContext";
 
 export default function SearchPanel() {
   const [query, setQuery] = useState("deployment test");
@@ -11,6 +17,7 @@ export default function SearchPanel() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const { setEvents } = usePipelineLog();
+  const { active } = useUserContext();
 
   useEffect(() => {
     let active = true;
@@ -46,7 +53,11 @@ export default function SearchPanel() {
     setLoading(true);
     setError(null);
     try {
-      const result = await runSearch(query);
+      const result = await runSearchWithContext(query, {
+        actor: active.actor,
+        roles: active.roles,
+        classification: active.classification,
+      });
       setResponse(result);
       const now = new Date().toISOString();
       setEvents([
@@ -54,8 +65,8 @@ export default function SearchPanel() {
           ts: now,
           stage: "SEARCH",
           status: "ok",
-          message: `Hybrid search executed for: ${result.response.query}`,
-          details: `query_id=${result.response.query_id}`,
+          message: `Hybrid search for: ${result.response.query} (actor=${active.actor})`,
+          details: `query_id=${result.response.query_id} roles=${active.roles.join(",")}`,
         },
         {
           ts: now,
@@ -91,6 +102,12 @@ export default function SearchPanel() {
   return (
     <section className="panel">
       <p className="panel-heading">Search Console</p>
+      <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-ink-500">
+        <span className="pill">actor: {active.actor}</span>
+        <span className="pill">roles: {active.roles.join(", ")}</span>
+        <span className="pill">classification: {active.classification}</span>
+        <span className="pill">dev-only context switcher in header</span>
+      </div>
       <div className="mt-2 flex flex-wrap items-center gap-3">
         <input
           value={query}

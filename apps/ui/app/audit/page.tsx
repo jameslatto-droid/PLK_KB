@@ -1,11 +1,11 @@
 import PageShell from "@/components/PageShell";
 import StageStepper from "@/components/StageStepper";
-import EmptyState from "@/components/EmptyState";
 import WhyPanel from "@/components/WhyPanel";
+import AccessRulesPanel from "@/components/AccessRulesPanel";
 
 export default function AuditPage() {
   return (
-    <PageShell pageKey="audit">
+    <PageShell pageKey="audit" useMock={false}>
       <section className="panel">
         <p className="panel-heading">Audit / Decisions</p>
         <h2 className="mt-2 text-2xl font-semibold text-ink-900">Explainable Authority Ledger</h2>
@@ -23,12 +23,9 @@ export default function AuditPage() {
 
       <StageStepper currentStep="authority" />
 
-      <WhyPanel />
+      <AccessRulesPanel />
 
-      <EmptyState
-        title="Audit trail will appear here"
-        description="TODO: surface query IDs, decision reasons, and matched rule IDs."
-      />
+      <WhyPanel />
     </PageShell>
   );
 }
