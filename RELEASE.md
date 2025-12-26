@@ -58,12 +58,13 @@ READY — Deployment is manual and service-bound, with explicit configuration an
 # Safe Deployment Order
 
 1. Start services: `docker-compose -f ops/docker/docker-compose.yml up -d`
-2. Apply schema: `docker exec -i plk-postgres psql -U plk_user -d plk_kb < ops/sql/01_metadata_schema.sql`
-3. Ingest and index (example): `python -m modules.ingestion.app.cli ingest-txt --document-id DEMO-001 --title "Demo" --path ops/scripts/stage5_tmp/public.txt --document-type DEMO --authority-level AUTHORITATIVE`
-4. Chunk and index:
+2. Bootstrap artefacts table: `python -m modules.metadata.app.bootstrap`
+3. Apply schema: `docker exec -i plk-postgres psql -U plk_user -d plk_kb < ops/sql/01_metadata_schema.sql`
+4. Ingest and index (example): `python -m modules.ingestion.app.cli ingest-txt --document-id DEMO-001 --title "Demo" --path ops/scripts/stage5_tmp/public.txt --document-type DEMO --authority-level AUTHORITATIVE`
+5. Chunk and index:
    - `python -m modules.indexing.app.pipeline`
    - `python -m modules.vector_indexing.app.pipeline`
-5. Hybrid search smoke test: `python -m modules.hybrid_search.app.cli "alpha project" --size 3`
+6. Hybrid search smoke test: `python -m modules.hybrid_search.app.cli "alpha project" --size 3`
 
 # Rollback Strategy
 
