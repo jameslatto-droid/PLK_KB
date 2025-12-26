@@ -1,19 +1,43 @@
 import { spawn } from "node:child_process";
+import path from "node:path";
 
 import { loadEnv } from "@/lib/server/env";
 
-const PYTHON = "/home/jim/PLK_KB/.venv/bin/python";
-const ROOT = "/home/jim/PLK_KB";
+const DEFAULT_ROOT = path.resolve(process.cwd(), "..", "..");
+const ROOT = process.env.PLK_ROOT || DEFAULT_ROOT;
+const PYTHON = process.env.PLK_PYTHON || path.join(ROOT, ".venv", "bin", "python");
+const MAX_OUTPUT_BYTES = 500_000;
+const MAX_MS = 30_000;
 
 function runPython(script: string[]): Promise<string> {
   return new Promise((resolve, reject) => {
     const proc = spawn(PYTHON, script, { cwd: ROOT, env: process.env });
     let stdout = "";
     let stderr = "";
-    proc.stdout.on("data", (d) => (stdout += d.toString()));
-    proc.stderr.on("data", (d) => (stderr += d.toString()));
-    proc.on("error", (err) => reject(err));
+    const timer = setTimeout(() => {
+      proc.kill("SIGKILL");
+      reject(new Error("python execution timed out"));
+    }, MAX_MS);
+    proc.stdout.on("data", (d) => {
+      stdout += d.toString();
+      if (stdout.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error("python output exceeded limit"));
+      }
+    });
+    proc.stderr.on("data", (d) => {
+      stderr += d.toString();
+      if (stderr.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error("python error output exceeded limit"));
+      }
+    });
+    proc.on("error", (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
     proc.on("close", (code) => {
+      clearTimeout(timer);
       if (code !== 0) {
         reject(new Error(stderr || `python exited ${code}`));
       } else {

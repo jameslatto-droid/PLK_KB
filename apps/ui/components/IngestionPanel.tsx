@@ -4,11 +4,22 @@ import { useEffect, useState } from "react";
 import { fetchIngest, startIngest, type IngestJob } from "@/lib/apiClient";
 import { usePipelineLog } from "@/components/PipelineLogContext";
 import { useUserContext } from "@/components/UserContext";
+import StageStepper from "@/components/StageStepper";
 
 const POLL_MS = 2000;
+const DEFAULT_ROOT = process.env.NEXT_PUBLIC_PLK_INGESTION_ROOT || "/home/jim/PLK_KB/data/testdata";
+
+// Map job stage to stepper step
+function mapStageToStep(stage?: string): "ingestion" | "chunking" | "indexing-text" | "indexing-vector" | "search" | "authority" | "response" {
+  if (!stage) return "ingestion";
+  const lower = stage.toLowerCase();
+  if (lower.includes("chunk")) return "chunking";
+  if (lower.includes("index")) return "indexing-text"; // Default to text indexing stage
+  return "ingestion";
+}
 
 export default function IngestionPanel() {
-  const [rootPath, setRootPath] = useState("/mnt/d/TestData");
+  const [rootPath, setRootPath] = useState(DEFAULT_ROOT);
   const [job, setJob] = useState<IngestJob | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [starting, setStarting] = useState(false);
@@ -59,15 +70,18 @@ export default function IngestionPanel() {
   };
 
   return (
-    <section className="panel">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <p className="panel-heading">Ingestion Runner</p>
-          <h3 className="mt-2 text-lg font-semibold text-ink-900">Register + Chunk + Index</h3>
-          <p className="mt-1 text-sm text-ink-600">Dev-only convenience. Calls Python CLIs (ingest → chunk → index) with full audit and authority context.</p>
-          <p className="mt-1 text-xs text-ink-500">Actor: {active.actor} · Roles: {active.roles.join(", ")} · Classification: {active.classification}</p>
-        </div>
-        <button
+    <>
+      <StageStepper currentStep={mapStageToStep(job?.currentStage)} />
+      
+      <section className="panel">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="panel-heading">Ingestion Runner</p>
+            <h3 className="mt-2 text-lg font-semibold text-ink-900">Register + Chunk + Index</h3>
+            <p className="mt-1 text-sm text-ink-600">Dev-only convenience. Calls Python CLIs (ingest → chunk → index) with full audit and authority context.</p>
+            <p className="mt-1 text-xs text-ink-500">Actor: {active.actor} · Roles: {active.roles.join(", ")} · Classification: {active.classification}</p>
+          </div>
+          <button
           type="button"
           className="rounded-full border border-ink-200 bg-ink-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white"
           onClick={start}
@@ -84,14 +98,14 @@ export default function IngestionPanel() {
             className="rounded-xl border border-ink-200 bg-white px-3 py-2 text-sm"
             value={rootPath}
             onChange={(e) => setRootPath(e.target.value)}
-            placeholder="/mnt/d/TestData"
+            placeholder={DEFAULT_ROOT}
           />
           <span className="text-xs text-ink-500">Expected Windows path: D:\\TestData → mounted as /mnt/d/TestData</span>
         </label>
         <div className="rounded-xl border border-ink-100 bg-ink-50/60 p-3 text-xs text-ink-600">
           <p className="font-semibold text-ink-700">What happens</p>
           <ol className="list-decimal pl-4">
-            <li>Discover .txt files under the root</li>
+            <li>Discover text files (.txt, .md, .csv, .log, .json, .rtf) under the root (recursive)</li>
             <li>Ingest via modules.ingestion.app.cli (MinIO + Postgres)</li>
             <li>Chunk each artefact</li>
             <li>Rebuild OpenSearch + Qdrant indexes</li>
@@ -145,5 +159,6 @@ export default function IngestionPanel() {
         )}
       </div>
     </section>
+    </>
   );
 }

@@ -43,8 +43,8 @@ export default function PipelineLogPanel({ collapsed, onToggle }: PipelineLogPan
   }
 
   return (
-    <div className="panel sticky top-6 h-fit">
-      <div className="flex items-center justify-between">
+    <div className="panel sticky top-6 flex max-h-[calc(100vh-4rem)] flex-col">
+      <div className="flex flex-shrink-0 items-center justify-between">
         <div>
           <p className="text-sm font-semibold text-ink-700">Pipeline Log</p>
           <p className="text-xs text-ink-500">Visible stages with explainable decisions.</p>
@@ -67,7 +67,7 @@ export default function PipelineLogPanel({ collapsed, onToggle }: PipelineLogPan
         </div>
       </div>
 
-      <div className="mt-4 space-y-4">
+      <div className="mt-4 flex-1 space-y-4 overflow-y-auto">
         {sortedEvents.length === 0 ? (
           <p className="text-xs text-ink-500">No events yet. Run a pipeline action to populate this log.</p>
         ) : (

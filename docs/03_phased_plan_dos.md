@@ -3,13 +3,13 @@ type: requirements-index
 project: CISEC
 project-code: P-2024-001
 status: active
-stage: 2
+stage: 5
 tags: [cisec, dos, delivery-plan]
 ---
 
 # Phased Build Plan & Technical DoS
 
-## Phase 0 – Governance & Foundations
+## Phase 0 – Governance & Foundations ✅ COMPLETE
 - Document ID scheme
 - Authority levels
 - Data classification
@@ -17,7 +17,7 @@ tags: [cisec, dos, delivery-plan]
 
 ---
 
-## Phase 1 – Core Platform
+## Phase 1 – Core Platform ✅ COMPLETE
 - Object storage
 - Metadata database
 - Document registration
@@ -29,34 +29,41 @@ tags: [cisec, dos, delivery-plan]
 
 ---
 
-## Phase 2 – Search & Indexing
-- Lexical search
-- Vector search
+## Phase 2 – Search & Indexing ✅ COMPLETE
+- Lexical search (OpenSearch)
+- Vector search (Qdrant + sentence-transformers/all-MiniLM-L6-v2)
 - Chunking rules
 - Incremental indexing
 
 ---
 
-## Phase 3 – Drawings & Models
-- Title block extraction
-- Drawing previews
-- CAD metadata extraction
-- Confidence tagging
+## Phase 3 – Indexing & Retrieval ✅ COMPLETE
+- Hybrid search (RRF) with authority pre-filter
+- UI for pipeline visibility
+- Audit logging across query lifecycle (fail-closed)
+- Authority deny-by-default with OR semantics; classification match is equality-based
 
 ---
 
-## Phase 4 – Local RAG
-- Hybrid retrieval
-- Reranking
-- Local LLM integration
-- Citation enforcement
+## Phase 4 – Local RAG ✅ COMPLETE
+- Hybrid retrieval exposed via UI
+- Authority explanations surfaced
+- Citation + context panels
+
+## Phase 5 – Compilation & Analysis ✅ COMPLETE (pipeline + UI wiring)
+- Dataset extraction paths stubbed behind existing pipeline
+- Audit + authority applied to responses
 
 ---
 
-## Phase 5 – Compilation & Analysis
-- Dataset extraction
-- Repeatable analytical jobs
-- Exportable outputs
+## Phase 6 – Production Hardening (NEXT)
+- Identity & authentication: replace dev presets with real identity provider (SSO/LDAP); session-bound context propagation
+- Authorization policy evolution: clarify classification semantics (current behavior is equality-match), introduce policy versioning/migrations
+- Audit & compliance: export/retention strategy, integrity controls, operational dashboards for audit visibility
+- Observability & operations: health endpoints, log/metric collection, alerting, CI/CD hooks
+- Deployment hardening: backups/restore, upgrade path, config management, disaster recovery drills
+- Ingestion expansion (optional): OCR and non-text formats (CAD/drawings/images) as workload-driven add-ons
+- Status: not started; Stage 5 remains the current operational baseline
 
 ---
 

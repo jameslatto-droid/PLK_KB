@@ -1,5 +1,4 @@
 import PageShell from "@/components/PageShell";
-import StageStepper from "@/components/StageStepper";
 import IngestionPanel from "@/components/IngestionPanel";
 
 export default function IngestPage() {
@@ -20,8 +19,6 @@ export default function IngestPage() {
           indexing.
         </p>
       </section>
-
-      <StageStepper currentStep="ingestion" />
 
       <IngestionPanel />
     </PageShell>

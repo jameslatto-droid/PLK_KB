@@ -1,27 +1,27 @@
-# Phase 3 Status – Control Plane & Deterministic Retrieval
+# Phase 3 Status – Indexing & Retrieval
 
-## Completed
-- Step 1: Postgres + schema validation
-- Step 2: Metadata access layer (tested)
-- Step 3: Minimal ingestion (TXT → artefact)
-- Step 4: Deterministic chunking (stable IDs)
-- Step 5: Lexical indexing (OpenSearch)
+**Status**: COMPLETE (Delivered and exceeded scope)
 
-## Current State
-- All deterministic layers operational
-- OpenSearch index: plk_chunks_v1
-- One demo document successfully ingested, chunked, indexed
-- Rebuilds are deterministic and repeatable
+## Delivered
+- OpenSearch lexical index (BM25) with chunk-level metadata
+- Qdrant vector index (sentence-transformers/all-MiniLM-L6-v2)
+- Hybrid search via Reciprocal Rank Fusion (authority pre-filtered)
+- Deterministic ingestion + chunking paths
+- UI coverage: dashboard, self-test, search, ingestion, artefacts, access rules, audit
+- Audit logging wired across pipeline (fail-closed: query fails if audit insert fails)
 
-## Explicitly Deferred
-- PDF ingestion
-- OCR
-- CAD / drawings
-- Vector embeddings
-- Hybrid search
-- User-facing API / UI
+## Residual Risks / Follow-ups
+- Classification matching is **equality-based** in authority (`rule.classification == context.classification`). Any
+  hierarchical clearance model (e.g., SECRET >= CONFIDENTIAL) would require a Stage 6 backend change; presets and docs
+  are adjusted to highlight equality semantics.
+- Ingestion root was hardcoded; now configurable via `NEXT_PUBLIC_PLK_INGESTION_ROOT` (UI only).
+- OCR / CAD extraction and confidence tagging remain explicitly deferred.
 
-## Next Logical Steps
-- Phase 3 Step 6: Vector indexing (Qdrant + embeddings)
-- OR hardening/docs
-- OR API / portal layer
+## Notes
+- Access rules retain OR semantics; deny-by-default with machine-readable reasons.
+- Audit log is append-only (`audit_log` table); no delete/edit paths.
+- Authority filtering occurs before fusion to prevent leaking unauthorized results into ranking.
+
+## Next
+- Stage 6 (Production Hardening): consider hierarchical classification mapping, external auth, multi-tenancy, and
+  deferred extraction features.

@@ -3,7 +3,7 @@ type: summary
 project: CISEC
 project-code: P-2024-001
 status: active
-stage: 2
+stage: 5
 tags: [cisec, knowledge-platform, on-prem, ai]
 ---
 
@@ -52,7 +52,7 @@ ops/           Deployment and operational assets
 
 ## Status
 
-- Stage: Architecture & foundations (Stage 2)
+- Stage: Authority + Audit + UI (Stage 5)
 - Deployment model: Single on-site workstation
 - Users: Small internal engineering team
 
@@ -102,3 +102,26 @@ CI environments without services are expected to:
 CI environments with services enabled should run full test suites
 
 This distinction is intentional and enforced to prevent false negatives while preserving fail-closed production behavior.
+
+---
+
+## Development
+
+Start backend services and the UI:
+
+```bash
+make up
+```
+
+- Backend services run via Docker Compose (`ops/docker/docker-compose.yml`)
+- UI runs locally via Next.js for fast iteration
+
+> Requires Docker Compose v2 (`docker compose`). Legacy `docker-compose` v1 is not supported due to known incompatibilities with modern images (e.g., `KeyError: 'ContainerConfig'`).
+
+### Smoke test (liveness gate)
+
+`make smoke` is the primary liveness check for local dev and CI. It:
+- Uses real services (no mocks) and SUPERUSER context
+- Ingests a temp file, chunks, indexes into a temporary OpenSearch index, runs a minimal lexical search, and verifies audit writes
+- Cleans up its temporary artifacts (index + test rows), and is designed to finish in ≤ 60s
+- Prints clear PASS/FAIL output; failures indicate a broken system, not flaky tests

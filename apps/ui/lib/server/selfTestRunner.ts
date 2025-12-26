@@ -38,9 +38,12 @@ export type SelfTestRun = {
   };
 };
 
-const FIXTURE_PATH = "/home/jim/PLK_KB/ops/scripts/stage5_tmp";
-const PYTHON = "/home/jim/PLK_KB/.venv/bin/python";
-const ROOT = "/home/jim/PLK_KB";
+const DEFAULT_ROOT = path.resolve(process.cwd(), "..", "..");
+const ROOT = process.env.PLK_ROOT || DEFAULT_ROOT;
+const FIXTURE_PATH = path.join(ROOT, "ops", "scripts", "stage5_tmp");
+const PYTHON = process.env.PLK_PYTHON || path.join(ROOT, ".venv", "bin", "python");
+const MAX_OUTPUT_BYTES = 500_000;
+const MAX_MS = 30_000;
 
 const runs = new Map<string, SelfTestRun>();
 let activeRunId: string | null = null;
@@ -99,19 +102,33 @@ function runCommand(
     });
     let stdout = "";
     let stderr = "";
+    const timer = setTimeout(() => {
+      proc.kill("SIGKILL");
+      reject(new Error(`${label} timed out`));
+    }, MAX_MS);
 
     proc.stdout.on("data", (data) => {
       stdout += data.toString();
+      if (stdout.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error(`${label} output exceeded limit`));
+      }
     });
     proc.stderr.on("data", (data) => {
       stderr += data.toString();
+      if (stderr.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error(`${label} error output exceeded limit`));
+      }
     });
 
     proc.on("error", (err) => {
+      clearTimeout(timer);
       reject(new Error(`${label} failed to start: ${err.message}`));
     });
 
     proc.on("close", (code) => {
+      clearTimeout(timer);
       if (code !== 0) {
         reject(new Error(`${label} exited with code ${code}. stderr: ${stderr.trim()}`));
         return;

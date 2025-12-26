@@ -1,10 +1,20 @@
+import path from "node:path";
+
 import { getIngest, startIngest, type UserContextInput } from "@/lib/server/ingestRunner";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
-  const rootPath = typeof body.rootPath === "string" && body.rootPath.trim().length > 0
+  const defaultRoot = path.join(process.env.HOME ?? "/home/jim", "PLK_KB/tmp/testdata");
+  const rawRoot = typeof body.rootPath === "string" && body.rootPath.trim().length > 0
     ? body.rootPath.trim()
-    : "/mnt/d/TestData";
+    : defaultRoot;
+
+  const home = process.env.HOME ?? "/home/jim";
+  const rootPath = path.resolve(
+    rawRoot
+      .replace(/^~(?=\/|$)/, home)
+      .replace(/\$\{HOME\}/g, home)
+  );
   const ctx = body.context as Partial<UserContextInput> | undefined;
   const context: UserContextInput = {
     actor: ctx?.actor ?? "jim",

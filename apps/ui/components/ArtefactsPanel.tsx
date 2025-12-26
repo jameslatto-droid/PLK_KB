@@ -56,13 +56,12 @@ export default function ArtefactsPanel() {
     <section className="panel">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="panel-heading">Artefact Inventory</p>
-          <h3 className="mt-2 text-lg font-semibold text-ink-900">Registered + indexed assets</h3>
-          <p className="mt-1 text-sm text-ink-600">Read-only view sourced from Postgres. Index presence is checked live against OpenSearch and Qdrant.</p>
+          <p className="panel-heading">Artefact Detail Browser</p>
+          <p className="mt-1 text-sm text-ink-600">Select an artefact to view chunking status and index presence.</p>
         </div>
         <button
           type="button"
-          className="rounded-full border border-ink-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink-700"
+          className="rounded-full border border-ink-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink-700 hover:bg-ink-50 disabled:opacity-50"
           onClick={load}
           disabled={loading}
         >

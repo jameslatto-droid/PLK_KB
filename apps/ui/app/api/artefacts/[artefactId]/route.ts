@@ -1,19 +1,43 @@
 import { spawn } from "node:child_process";
+import path from "node:path";
 
 import { loadEnv } from "@/lib/server/env";
 
-const PYTHON = "/home/jim/PLK_KB/.venv/bin/python";
-const ROOT = "/home/jim/PLK_KB";
+const DEFAULT_ROOT = path.resolve(process.cwd(), "..", "..");
+const ROOT = process.env.PLK_ROOT || DEFAULT_ROOT;
+const PYTHON = process.env.PLK_PYTHON || path.join(ROOT, ".venv", "bin", "python");
+const MAX_OUTPUT_BYTES = 500_000;
+const MAX_MS = 30_000;
 
 function runPython(args: string[]): Promise<string> {
   return new Promise((resolve, reject) => {
     const proc = spawn(PYTHON, args, { cwd: ROOT, env: process.env });
     let stdout = "";
     let stderr = "";
-    proc.stdout.on("data", (d) => (stdout += d.toString()));
-    proc.stderr.on("data", (d) => (stderr += d.toString()));
-    proc.on("error", (err) => reject(err));
+    const timer = setTimeout(() => {
+      proc.kill("SIGKILL");
+      reject(new Error("python execution timed out"));
+    }, MAX_MS);
+    proc.stdout.on("data", (d) => {
+      stdout += d.toString();
+      if (stdout.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error("python output exceeded limit"));
+      }
+    });
+    proc.stderr.on("data", (d) => {
+      stderr += d.toString();
+      if (stderr.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error("python error output exceeded limit"));
+      }
+    });
+    proc.on("error", (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
     proc.on("close", (code) => {
+      clearTimeout(timer);
       if (code !== 0) {
         reject(new Error(stderr || `python exited ${code}`));
       } else {
@@ -73,7 +97,7 @@ export async function GET(_: Request, { params }: { params: { artefactId: string
       "# Qdrant count",
       "try:",
       "    qdr = get_qdr()",
-      "    q_count = qdr.count(collection_name=vec_settings.collection_name, count_filter={'must': [{"key": "artefact_id", "match": {"value": artefact_id}}]})",
+      '    q_count = qdr.count(collection_name=vec_settings.collection_name, count_filter={"must": [{"key": "artefact_id", "match": {"value": artefact_id}}]})',
       "    row['qdrant_count'] = getattr(q_count, 'count', None) or getattr(q_count, 'result', None) or 0",
       "except Exception as exc:",
       "    row['qdrant_error'] = str(exc)",

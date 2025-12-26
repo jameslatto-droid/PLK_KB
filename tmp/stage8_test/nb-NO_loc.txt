@@ -1,0 +1,1498 @@
+﻿
+Account.Details	Kontoinformasjon
+Account.Management	Kontoadministrasjon
+AccountInformation.DisplayEmail	Klikk for å vise e-post
+AccountInformation.Email	E-post
+AccountInformation.Header	Kontoinfo
+AccountInformation.OtherDetails	Annen kontoinformasjon:
+AccountInformation.ShowKey	Vis nøkkel
+AccountInformation.TrustedDevices	Godkjente enheter:
+AccountInformation.Username	Brukernavn:
+AccountInformation.UsernameTip	Brukernavnet må inneholde minst 3 tegn og ikke flere enn 15 tegn
+AccountInformation.Website	Administrasjonsnettside for Ubisoft-konti
+AccountSecurity.NotSecure	Kontoen din kan være i fare. Sikre den nå!
+AccountSecurity.NotSecureShort	Forbedre kontosikkerheten din.
+AccountSecurity.Secure	Kontoen din er sikker.
+AccountSecurity.SecureShort	Kontoen din er sikker.
+AccountSecurity.SemiSecure	Kontoen din er ikke så sikker som den kunne ha vært. Forbedre sikkerheten nå!
+AccountSecurity.SemiSecureShort	Sikre kontoen din ytterligere.
+Achievements.Earned	Låst opp
+Achievements.EarnedNotification	Prestasjon opplåst
+Actions.BadgeLocked	Merke låst
+Actions.BadgeUnlocked	Merke låst opp
+Actions.Completed	Fullført
+Actions.EnableReward	Aktiver __REWARD_NAME__-belønningen
+Actions.RewardEnabled	__REWARD_NAME__-belønningen er aktivert
+ActivateProduct.ActivateHere	Aktiver den her.
+ActivateProduct.HaveAKeyPrompt	Har du en nøkkel til dette produktet?
+ActivateProduct.KeyExamples1	AAAA-BBBB-CCCC-DDDD
+ActivateProduct.KeyExamples2	AAA-BBBB-CCCC-DDDD-EEEE
+ActivateProduct.KeyExamplesIntro	Aktiveringskoden kan se slik ut:
+ActivateXbox.Description	Du vil aktivere spillet for følgende kontoer <br><br> Xbox-konto: _XBOX_ACCOUNT_ <br> Ubisoft-konto: _UBISOFT_ACCOUNT_ <br><br>Når du har bekreftet, kan du ikke bytte til en annen Ubisoft-konto for å aktivere spillet. Vær klar over at denne handlingen ikke kan omgjøres.
+ActivateXbox.ErrorDescription	Noe gikk galt med aktiveringen
+ActivateXbox.Title	Aktiver tilgangen din til spillet
+Addon.Install	Installer
+Addon.Play	Spill
+Autorun.AcceptAndContinue	Godta og fortsett
+Autorun.Cancel	Avbryt
+Autorun.Change	Endre
+Autorun.Close	Lukk
+Autorun.DiskSpaceError	Ikke nok plass på disken. Frigjør plass eller prøv å installere et annet sted.
+Autorun.Install	Installer
+Autorun.Language.csCZ	Čeština
+Autorun.Language.daDK	Dansk
+Autorun.Language.deDE	Deutsch
+Autorun.Language.enCA	English (Canadian)
+Autorun.Language.enGB	English (UK)
+Autorun.Language.enUS	English
+Autorun.Language.esES	Español
+Autorun.Language.esMX	Español (México)
+Autorun.Language.fiFI	Suomi
+Autorun.Language.frCA	Français (Canadien)
+Autorun.Language.frFR	Français
+Autorun.Language.huHU	Magyar
+Autorun.Language.itIT	Italiano
+Autorun.Language.jaJP	日本語
+Autorun.Language.koKO	한국어
+Autorun.Language.nbNO	Norsk
+Autorun.Language.nlNL	Nederlands
+Autorun.Language.plPL	Polski
+Autorun.Language.ptBR	Português brasileiro
+Autorun.Language.ptPT	Português
+Autorun.Language.roRO	Română
+Autorun.Language.ruRU	Русский
+Autorun.Language.svSE	Svenska
+Autorun.Language.thTH	ไทย
+Autorun.Language.trTR	Türkçe
+Autorun.Language.ukUA	Українська
+Autorun.Language.zhCN	简体中文
+Autorun.Language.zhTW	繁體中文
+Autorun.LicenseAgreement	Lisensavtale
+Autorun.Manual	Brukerveiledning
+Autorun.Play	Spill
+Autorun.Quit	Avslutt
+Autorun.Readme	LesMeg
+Autorun.Uninstall	Avinstaller
+Autorun.Uplay.Install	Installer Ubisoft Connect
+Autorun.Uplay.InstallLocation	Installeringsmappe for Ubisoft Connect:
+Autorun.Uplay.Installation	Installerer Ubisoft Connect ...
+Autorun.Uplay.Intro	Ubisoft Connect er et knutepunkt for alle Ubisoft-spillene dine. Ubisoft Connect forbedrer spillopplevelsene med ekstrainnhold, sosiale funksjoner og belønninger og sørger for at spillene dine alltid er tilgjengelige og oppdaterte.
+Autorun.Uplay.Language	Språk:
+Autorun.UplayInstallFailed	Installeringen av Ubisoft Connect mislyktes. Prøv igjen. Hvis problemet vedvarer, kan du kontakte kundestøtte hos Ubisoft.
+Beta.AdditionalLink	Mer informasjon
+Beta.AlreadyRegistered	Takk, men du har allerede registrert deg. Du blir kontaktet på e-postadressen du oppga når vi sender ut nyheter, kunngjøringer og meldinger om direktesendte arrangementer. Følg med!
+Beta.ConfirmEmailVerified	Jeg har bekreftet e-postadressen min
+Beta.EmailVerifiedDesc	Vi har sendt deg en e-post som beskriver stegene for å bekrefte e-postadressen din. Følg instruksjonene og gå tilbake til denne siden for å fullføre registreringen.
+Beta.GetStatusFailed	Det er et problem med å koble til registreringstjenesten. Prøv igjen senere.
+Beta.GetStatusFailedHeader	Noe gikk galt.
+Beta.RegisterDesc	Når du registrerer deg, forsikrer du deg om at du får siste nytt, og du får en sjanse til å bli blant de første som spiller nye spill.
+Beta.ResendEmailDesc	E-postbekreftelsen er sendt på nytt til:
+Beta.SignUp	Registrer for PC
+Beta.SignUpAlreadyCompleted	Takk, men du har allerede registrert deg. Du blir kontaktet på adressen __EMAIL__ når vi sender ut nyheter, kunngjøringer og meldinger om direktesendte arrangementer. Følg med!
+Beta.SignUpCompleted	Takk for at du registrerte deg 
+Beta.SignUpCompleted.Header	Takk for at du registrerte deg i __NAME_OF_GAME__
+Beta.SignUpCompletedBody	Du blir kontaktet på følgende e-postadresse i forbindelse med nyheter, kunngjøringer og invitasjoner til direktesendte arrangementer.
+Beta.SignUpCompletedEmail	Du har registrert deg med følgende e-postadresse:
+Beta.SignUpCurrentEmail	Du registrerer deg med Ubisoft-kontoen som er koblet til denne e-postadressen:
+Beta.SignUpEmailValidation	Før du registrerer deg, må du forsikre deg om at e-postadressen over er gyldig og fungerer, da det er denne som vil bli brukt til å gi deg beskjeder om kunngjøringer, oppdateringer og direktesendte arrangementer.
+
+Beta.SignUpFailed	Vi kunne ikke registrere forespørselen din på grunn av serverproblemer. Prøv igjen senere.
+Beta.SignUpFailedHeader	Noe gikk galt.
+Beta.VerifyEmailDesc	E-posten din er ikke bekreftet. Hvis du vil registrere deg, må du bekrefte e-postadressen.
+Broadcast.CapturePresetCustom	Innstillinger
+Broadcast.CapturePresetHigh	Høy
+Broadcast.CapturePresetLow	Lav
+Broadcast.CapturePresetMedium	Medium
+Broadcast.DefaultIngestServer	Standard: __REPLACE_URL__
+Broadcast.HideAdvancedSettings	Skjul avanserte innstillinger
+Broadcast.ShowAdvancedSettings	Vis avanserte innstillinger
+Challenge.LeftFromPreviousWeek	__COLLECT__ belønning gjenstår fra tidligere uker
+Challenges.Completed	Fullført (__COMPLETED__/__TOTAL__)
+Challenges.Congrats	Gratulerer!
+Challenges.Core.Completed	Du har fullført alle de __NUMBER__ utfordringene.
+Challenges.Core.NothingCompleted	Fullfør utfordringer for å få XP
+Challenges.LeftFromPreviousWeek	__COLLECT__ belønninger gjenstår fra tidligere uker
+Challenges.OnboardingAddAllHeaderTitle	Administrer utfordringene dine med ett klikk
+Challenges.OnboardingAddAllInformationText	Nå kan du legge til alle utfordringer og hente alle belønningene med bare ett klikk
+Challenges.Prize	Belønning
+Challenges.SelectChallenge	Velg en utfordring
+Challenges.TimeLimited.Completed	Du har fullført alle utfordringene denne uken og fått:
+ChangeGameInstallationPath.AreYouSure	Er du sikker på at du vil fortsette?
+ChangeGameInstallationPath.Description	De installerte spillene i den gjeldende plasseringen __REPLACE_WITH_GAME_INSTALL_PATH__ vil ikke flyttes til den nye plasseringen.
+ChangeGameInstallationPath.Header	Endre installasjonsplasseringen
+ChangeInstallerCachePath.Description	Installasjonsprogrammene i den gjeldende katalogen __REPLACE_WITH_DOWNLOADS_FOLDER__ vil ikke flyttes til den nye plasseringen.
+ChangeInstallerCachePath.Header	Endre plassering for installasjons-cache
+ChangeUsername.Warning	Brukernavnet ditt kan bare endres hver 30. dag.
+ChangeUsernameConfirm.Message	Er du sikker på at du vil endre brukernavnet ditt?
+ChangeUsernameConfirm.Title	Endre brukernavn
+Chat.GameInvite.BuyFromWeGame	 
+Chat.New.Chat	Ny chat
+Chat.NoGameInvites.Message	 
+ChatPanel.Accept	Godta
+ChatPanel.ConnectionStatus.Connecting	Kobler til …
+ChatPanel.Decline	Avslå
+ChatPanel.DisabledChatPlaceholder	Chatten er deaktivert for folk som ikke er på vennelisten din
+ChatPanel.FailedToDeliverMessage	Vi kunne ikke levere meldingen.
+ChatPanel.GameInviteText	__USER_NAME__ vil at du skal starte __GAME_NAME__ og bli med i spillet
+ChatPanel.GameInviteTextPopup	vil at du skal bli med i et spill
+ChatPanel.InputFieldPlaceholder	Skriv for å chatte
+ChatPanel.InviteFriendToGameDisabled	Denne vennen kan ikke inviteres til spillet ditt
+ChatPanel.InviteToGameDisabled	Du må være i en flerspillerøkt for å sende en spillinvitasjon
+ChatPanel.InviteToToGameDisabledNoOtherGroupMembers	Det er ingen brukere i denne gruppen som kan inviteres til spillet ditt
+ChatPanel.NewMessages	Nye meldinger
+ChatPanel.OfflineMessageReceived	Denne meldingen ble sendt da du var frakoblet, eller fra en bruker på ubisoftconnect.com eller Ubisoft Connect Mobile.
+ChatPanel.PartyInviteText	Hei, __USER_NAME__. Vil du starte __GAME_NAME__ og bli med i et party?
+ChatPanel.PartyInviteTextPopup	vil at du skal bli med i et party
+ChatPanel.RetrieveHistory	Henter historikk
+ChatPanel.RetrieveHistoryFailed	Kunne ikke hente historikk
+ChatPanel.TryAgain	Prøv igjen
+ClientBrandedInstaller.FinishMessage	Installeringen av $(brandingProductName) fortsetter nå i ${PRODUCTNAME}
+ClientBrandedInstaller.WelcomeMessage	Installer ${PRODUCTNAME} for å spille $(brandingProductName)
+ClientInstaller.CheckingPreviousInstallation	Sjekker tidligere installasjoner…
+ClientInstaller.DeleteGamesLabel	Avinstallerer Ubisoft Connect-spill (du får tilgang til dem igjen senere ved å installere Ubisoft Connect på nytt):
+ClientInstaller.DeleteSavesLabel	Slett spilldata som er lagret lokalt
+ClientInstaller.LicensePageAcceptButton	Jeg godtar
+ClientInstaller.LicensePageBottomText	Når du klikker på 'Jeg godtar' for å fortsette, bekrefter du at du har lest og forstår innholdet i lisensavtalen.
+ClientInstaller.LicensePageHeaderSubtext	Les lisensavtalen nøye for å fortsette med installeringen av Ubisoft Connect.
+ClientInstaller.MoreRecentVersionFound	En nyere versjon av Ubisoft Connect er allerede er installert.
+ClientInstaller.UninstallDescription	Ubisoft Connect-programmet blir avinstallert. Klikk på «Avinstaller» for å starte avinstalleringen.
+ClientInstaller.UplayIsRunningInstall	Ubisoft Connect kjører. Avslutt programmet, og prøv igjen.
+ClientInstaller.UplayIsRunningUninstall	Ubisoft Connect kjører og kan ikke avinstalleres. Avslutt programmet, og prøv igjen.
+ClientInstaller.WindowsVersionOutOfDate	Versjonen av Windows du bruker, støttes ikke av dette programmet.
+ClientInstaller.XboxAppIsRunningUninstall	Ubisoft Connect kjører i bakgrunnen og kan ikke avinstalleres. Avslutt Xbox-appen, og prøv igjen.
+Club.AllRewardsTaken	Du har låst opp alle belønningene til dette spillet
+Club.Challenges.Add	Legg til
+Club.Challenges.AddAll	Legg til alle
+Club.Challenges.ChallengeAvailable	Tilgjengelig utfordring
+Club.Challenges.ChallengeInProgress	Utfordring pågår
+Club.Challenges.ChallengeProgression	Poeng:
+Club.Challenges.ChallengesAvailable	Tilgjengelige utfordringer
+Club.Challenges.ChallengesInProgress	Utfordringer pågår
+Club.Challenges.ClassicChallengesCurrentlyNotAvailable	Klassiske utfordringer er ikke tilgjengelige nå.
+Club.Challenges.ClassicChallengesNotAvailable	Klassiske utfordringer er ikke tilgjengelige nå. Kom tilbake senere.
+Club.Challenges.Collect	Hent
+Club.Challenges.CollectAll	Hent alle
+Club.Challenges.CollectYourPrize	Hent belønningen
+Club.Challenges.Collected	Hentet
+Club.Challenges.CommunityChallenge	Brukergruppeutfordring
+Club.Challenges.CommunityChallengesCurrentlyNotAvailable	Nettfellesskapsutfordringer er ikke tilgjengelige for øyeblikket. Kom tilbake senere.
+Club.Challenges.CommunityProgression	Nettfellesskapspoengsum:
+Club.Challenges.EventChallenge	Spesialhendelseutfordring
+Club.Challenges.Expired	Utløpt
+Club.Challenges.NextChallengesAvailableSoon	Neste utfordringer tilgjengelig snart!
+Club.Challenges.PlayerParticipationRequired	Delta for å samle inn eksklusive belønninger
+Club.Challenges.PlayerProgression	Bidraget ditt:
+Club.Challenges.PrizeToCollect	Belønning å samle inn
+Club.Challenges.PrizesToCollect	Belønninger å samle inn
+Club.Challenges.ThresholdCollect	Hent __COMPLETED__/__TOTAL__
+Club.Challenges.WeeklyChallengesCurrentlyNotAvailable	Tidsbegrensede utfordringer er ikke tilgjengelige nå. Kom tilbake senere.
+Club.Challenges.WeeklyChallengesNotAvailableForGame	Tidsbegrensede utfordringer er ikke tilgjengelig for dette spillet.
+Club.Classic	Klassisk
+Club.ClassicChallenges	Klassiske utfordringer
+Club.Level	Nivå __LEVEL__
+Club.Weekly	Tidsbegrenset
+Club.WeeklyChallenges	Tidsbegrenset utfordring
+Club.XP	XP
+Club.XPToNextLevel	__XP_TO_NEXT_LEVEL__ til neste nivå
+Common.About	Om
+Common.Accept	Godta
+Common.AcceptAndContinue	Godta og fortsett
+Common.Achievements	Prestasjoner
+Common.Actions	Handlinger
+Common.ActivateAnotherProduct	Aktiver en annen nøkkel
+Common.AllGames	Alle spill
+Common.Apply	Bruk
+Common.Back	Tilbake
+Common.Beta	Beta
+Common.Browser	Nettleser
+Common.Buy	Kjøp
+Common.BytesPerSecond	B/s
+Common.Cancel	Avbryt
+Common.Categories	Kategorier
+Common.ChangeLater	Du kan endre dette senere i innstillingene.
+Common.Chat	Chat
+Common.ClearAll	Fjern
+Common.Close	Lukk
+Common.ComingSoon	Kommer snart
+Common.Community	Nettfellesskap
+Common.Compact	Kompakt
+Common.Completed	Fullført
+Common.Continue	Fortsett
+Common.ControllerConnected	Håndkontroll tilkoblet
+Common.ControllerDisconnected	Håndkontroll frakoblet
+Common.Conversation	Samtale
+Common.Copy	Kopier
+Common.CrashMsg1	Ubisoft Connect har oppdaget en uopprettelig feil og må avsluttes.
+Common.CrashMsg2	Krasjdump opprettet i "__CRASH_DUMP_PATH__".
+Common.Custom	Tilpasset
+Common.Decline	Avslå
+Common.Discard	Kast
+Common.Done	Ferdig
+Common.Edit	Rediger
+Common.EmailLabel	E-post:
+Common.Expanded	Utvidet
+Common.Filter	Filtrer
+Common.Forum	Brukerstøtte
+Common.Friends	Venner
+Common.GameInvites	Spillinvitasjoner
+Common.Genre	Sjanger:
+Common.GigaBytes	GB
+Common.GoToTop	Til toppen
+Common.Goal	Mål:
+Common.Groups	Grupper
+Common.Highlights	Høydepunkter
+Common.InProgress	Pågår
+Common.Invite	Inviter
+Common.KiloBytes	kB
+Common.KiloBytesPerSecond	kB/s
+Common.LatestNews	Siste nytt
+Common.LaunchGame	Kjør spillet
+Common.Legacy	Standard
+Common.LoadMore	Last inn mer
+Common.LoadPrevious	Last inn forrige
+Common.Loading	Laster inn…
+Common.Manage	Administrer
+Common.MegaBytes	MB
+Common.MegaBytesPerSecond	MB/s
+Common.MoreInformation	Mer informasjon:
+Common.No	Nei
+Common.Notifications	Varsler
+Common.OK	OK
+Common.Off	Av
+Common.On	På
+Common.Oops	Ops, det skjedde noe uventet. Prøv igjen senere.
+Common.OpenFolder	Åpne mappe
+Common.Other	Annet
+Common.Party	Party
+Common.PasswordLabel	Passord:
+Common.Paste	Lim inn
+Common.PleaseContactUbisoftSupport	Hvis problemet vedvarer, bør du kontakte __UBISOFT_SUPPORT__.
+Common.PleaseTryAgain	Prøv igjen.
+Common.Preload	Forhåndslast
+Common.Preloaded	Forhåndslastet
+Common.Preloading	Forhåndslaster
+Common.Quit	Avslutt
+Common.RecentlyPlayed	Spilt nylig
+Common.ReleaseDate	Lanseringsdato:
+Common.Reminder	Påminnelse:
+Common.ResendEmail	Send e-post på nytt
+Common.ResendEmailDesc	E-posten er sendt på nytt til:
+Common.Reset	Tilbakestill
+Common.RestartNow	Omstart nå
+Common.RestartUplay	Start Ubisoft Connect på nytt
+Common.Retry	Prøv igjen
+Common.Rewards	Belønninger
+Common.Save	Lagre
+Common.Search	Søk
+Common.SelectAll	Velg alle
+Common.SelectNone	Ikke velg noen
+Common.Settings	Innstillinger
+Common.Shop	Butikk
+Common.ShoppingCart	Handlekurv
+Common.ShowAll	Vis alt
+Common.Skip	Hopp over
+Common.SortBy	Sorter etter
+Common.SortByAZ	A–Z
+Common.SortStatus	Status
+Common.StartVoiceChat	Start talechat
+Common.Status	Status:
+Common.Status.Off	Av
+Common.Status.On	På
+Common.SupportArticle	støtteartikkelen
+Common.SwitchToBeta	Med denne knappen kan du bytte mellom nåværende versjon av Ubisoft Connect PC og dennes betaversjon.
+Common.SwitchToStandard	Bytt til standard
+Common.TimeLeft	__TIME__ igjen
+Common.TimespanHours	__HOURS__ t
+Common.TimespanHoursMinutes	__HOURS__ t __MINUTES__ m
+Common.TimespanMinutes	__MINUTES__ m
+Common.Total	Totalt
+Common.TryAgain	Prøv igjen
+Common.TryAgainOrCustomerSupport	Prøv igjen om et øyeblikk, eller kontakt kundestøtte.
+Common.UbisoftSupport	Ubisofts kundestøtte
+Common.Units	Units
+Common.Unlink	Koble fra
+Common.UpdateEmail	Oppdater e-postadressen min
+Common.Uplay	Ubisoft Connect
+Common.UplayInstaller	Ubisoft Connect-installeringsprogram
+Common.View	Se
+Common.VisitShop	Dra til butikken
+Common.WeGame	WeGame
+Common.Yes	Ja
+CommunicationPreferences.Header	Kommunikasjonsinnstillinger
+CommunityStats.Title	Statistikk for nettfellesskap
+ConnectBeta.EnableBetaMessage	Dette vil lukke den nåværende Ubisoft Connect-appen og sette eventuelle pågående nedlastinger på pause. Etterpå vil betaversjonen av appen startes.
+ConnectBeta.EnableBetaModalHeading	Er du sikker på at du ønsker å bytte til beta?
+CrashReporter.DontAskAgainLabel	Ikke be meg om å sende krasjrapporter lenger
+CrashReporter.Error	Noe gikk galt. Krasjrapporten din kunne ikke sendes.
+CrashReporter.Info	__GAME_NAME__ krasjet. Hjelp oss ved å sende en krasjrapport, så vi kan finne ut hva som gikk galt.
+CrashReporter.SendBtn	Send krasjrapport
+CrashReporter.Sending	Sender krasjrapport ...
+CrashReporter.Success	Krasjrapporten er sendt inn. Takk for hjelpen!
+CrashReporter.SuccessInfo	Informasjonen du har sendt blir brukt til å etterforske potensielle problemer og gi oss data vi trenger for å løse problemet.
+CrashReporter.Title	Å, nei! Krasj!
+CrashReporter.UserInputDescription	Beskriv med noen få ord hva du gjorde da krasjen skjedde.
+CreateAccount.Button	Opprett konto
+CreateAccount.InfoSharingTitle	Kommunikasjon
+CreateAccountRegistration.AcceptAllTermsLabel	Jeg godtar Ubisofts __TERMS_OF_USE__, __TERMS_OF_SALE__ og __PRIVACY_POLICY__
+CreateAccountRegistration.AgeRestriction	Beklager, du tilfredsstiller dessverre ikke kravene til å opprette en Ubisoft-konto.
+CreateAccountRegistration.DateDescription	Fødselsdato
+CreateAccountRegistration.DayDescription	Dag
+CreateAccountRegistration.EmailDescription	E-post
+CreateAccountRegistration.EmailDomainBlocked	DEA-adresser aksepteres ikke.
+CreateAccountRegistration.EmailInvalidError	Angi en gyldig e-postadresse.
+CreateAccountRegistration.EmailNotAvailableError	E-postadressen du har angitt er allerede tilknyttet en Ubisoft-konto. Hvis du har glemt passordet ditt, kan du gjenopprette det i innloggingsmenyen. Du kan også prøve en annen e-postadresse.
+CreateAccountRegistration.EmailTip	Kan brukes til å gjenopprette passordet ditt.
+CreateAccountRegistration.FailureServiceUnavailable	Kunne ikke opprette konto, prøv igjen senere.
+CreateAccountRegistration.Header	Opprett konto
+CreateAccountRegistration.LabelOptin3rdParty	Del opplysningene om meg med __SELECT_3RD_PARTY__.
+CreateAccountRegistration.LabelOptinUbisoft	Jeg vil motta nyhetsbrev med tilbud på spill fra Ubisoft. Jeg kan avslutte abonnementet når som helst.
+CreateAccountRegistration.LabelOptinUbisoftNoteGermany	Ubisoft kan sende deg e-post om tilsvarende produkter eller tjenester som dem du har kjøpt. Du kan reservere deg mot dette når du vil, uten ekstra kostnad.
+CreateAccountRegistration.MonthApril	April
+CreateAccountRegistration.MonthAugust	August
+CreateAccountRegistration.MonthDecember	Desember
+CreateAccountRegistration.MonthDescription	Måned
+CreateAccountRegistration.MonthFebruary	Februar
+CreateAccountRegistration.MonthJanuary	Januar
+CreateAccountRegistration.MonthJuly	Juli
+CreateAccountRegistration.MonthJune	Juni
+CreateAccountRegistration.MonthMarch	Mars
+CreateAccountRegistration.MonthMay	Mai
+CreateAccountRegistration.MonthNovember	November
+CreateAccountRegistration.MonthOctober	Oktober
+CreateAccountRegistration.MonthSeptember	September
+CreateAccountRegistration.PasswordDescription	Passord
+CreateAccountRegistration.PasswordHideTooltip	Skjul passord
+CreateAccountRegistration.PasswordLengthError	Passordet må være på minst 8 og maks 16 tegn.
+CreateAccountRegistration.PasswordLettersDigitsError	Passordet må inneholde minst 1 stor bokstav, 1 liten bokstav, 1 tall og 1 spesialtegn.
+CreateAccountRegistration.PasswordShowTooltip	Vis passord
+CreateAccountRegistration.PasswordStrength_Better	Bedre
+CreateAccountRegistration.PasswordStrength_Medium	Middels
+CreateAccountRegistration.PasswordStrength_Strong	Sterkt
+CreateAccountRegistration.PasswordStrength_VeryStrong	Veldig sterkt
+CreateAccountRegistration.PasswordStrength_VeryWeak	Meget svakt
+CreateAccountRegistration.PasswordStrength_Weak	Svakt
+CreateAccountRegistration.PasswordTip	Må være fra 8 til 16 tegn langt og ha minst 1 stor bokstav, 1 liten bokstav, 1 tall og 1 spesialtegn.
+CreateAccountRegistration.PasswordUnicodeCharactersError	Passord kan bare inneholde bokstavene A-Z og a-z og tallene 0-9.
+CreateAccountRegistration.PrivacyPolicy	Personvern
+CreateAccountRegistration.Select3rdParty	utvalgte tredjeparter
+CreateAccountRegistration.TermsOfSale	Salgsbetingelser
+CreateAccountRegistration.TermsOfUse	Bruksbetingelser
+CreateAccountRegistration.TosAcceptButton	Fortsett
+CreateAccountRegistration.Under18Error	Du er dessverre ikke kvalifisert til å ha en Ubisoft-konto akkurat nå.
+CreateAccountRegistration.UnsafePassword	Dette passordet er enten kompromittert eller ikke sikkert.
+CreateAccountRegistration.UsernameBadFormatError	Dette brukernavnet er ugyldig.
+CreateAccountRegistration.UsernameDescription	Brukernavn
+CreateAccountRegistration.UsernameInvalidLettersError	Brukernavnet ditt må starte med en bokstav og kan ikke inneholde spesialtegn.
+CreateAccountRegistration.UsernameLengthError	Brukernavnet må ha minst 3 tegn og ikke mer enn 15 tegn
+CreateAccountRegistration.UsernameRestrictedWordError	Dette brukernavnet kan ikke brukes fordi det inneholder et forbudt ord.
+CreateAccountRegistration.UsernameTakenError	Dette brukernavnet er allerede tatt
+CreateAccountRegistration.UsernameTip	Må være fra 3 til 15 tegn langt og kan inneholde både tall og bokstaver. Spesialtegn og mellomrom kan ikke brukes.
+CreateAccountRegistration.UsernameWithinPasswordError	Passordet kan ikke inneholde brukernavnet ditt. Prøv igjen.
+CreateAccountRegistration.YearDescription	År
+DeleteInstallers.AreYouSure	Er du sikker på at du ønsker å fortsette?
+DeleteInstallers.Description	Installasjonsprogrammene i følgende katalog vil slettes:
+DeleteInstallers.DoNotDelete	Ikke slett installasjonsprogrammer mens du installerer et spill.
+DeleteInstallers.Header	Slett alle spillinstallasjonsprogrammer
+DeviceName.Label	Enhetsnavn
+DeviceName.RequiredError	Påkrevd
+DiscNeeded.Change	Endre
+DiscNeeded.Header	Sett inn disken til __GAME_NAME__
+DiscNeeded.InsertDisc	Sett inn disk __DISC_NUMBER__, og trykk på OK
+DiskSpaceError.Description	Det er ikke nok diskplass til å fullføre installasjonen. Frigjør plass på harddisken eller endre installasjonsmappen og prøv på nytt.
+DiskSpaceError.Header	Ikke nok diskplass
+DisplayName.Edit	Rediger brukernavn
+DisplayName.NewName	Nytt brukernavn:
+Download.RemainingTimeUnderAMinute	Nesten i mål
+Download.Restart	Start på nytt
+Download.UnknownTimeLeft	Over en måned
+DownloadManager.ChangeLanguageWarning	Etter at du har skiftet språk, kan det hende nye filer må lastes ned. Det kan hende spillet ikke er spillbart før denne prosessen er fullført.
+DownloadManager.DiskAccessError	Nedlastingen mislyktes på grunn av en disktilgangsfeil.
+DownloadManager.DiskWriteError	Nedlasting mislyktes på grunn av en feil ved diskskriving.
+DownloadManager.OptionalFilesInfo	Spillet er spillbart når alle essensielle filer er lastet ned.
+DownloadManager.OptionalFilesMayBeRequired	Du kan spille, men spillopplevelsen kan være suboptimal til du har lastet ned alt spillinnholdet.
+DownloadManager.PatchAvailable.Download	Last ned oppdateringen
+DownloadManager.PatchAvailableHeader	Oppdatering tilgjengelig.
+DownloadManager.PatchErrorHeader	Spilloppdatering mislyktes.
+DownloadManager.PatchRequiredHeader	Oppdatering kreves.
+DownloadManager.PlayOffline	Spill offline
+DownloadManager.UninstallAreYouSure	Er du sikker på at du vil fortsette?
+DownloadManager.UninstallDescription	Du er i ferd med å avinstallere __GAME_NAME__ fra datamaskinen. Spillet må lastes ned på nytt hvis du ønsker å spille det igjen.
+DownloadManager.UninstallFailedDescription	Noen av filene kunne ikke slettes, da de er i bruk av __GAME_NAME__. Prøv igjen for å slette filene.
+DownloadManager.UninstallFailedHeader	Avinstallasjonen kan ikke fullføres.
+DownloadManager.UninstallHeader	Avinstallerer __GAME_NAME__
+DownloadManager.UninstallSuccess	Spillet ble avinstallert.
+DownloadManager.Uninstalling	Avinstallerer __GAME_NAME__ …
+Downloads.CancelButton	Avbryt
+Downloads.Cancelled	Avbrutt
+Downloads.DiscoveringFiles	Oppdager filer
+Downloads.EmptyView	Ingen eksisterende nedlastinger
+Downloads.InstallationsEmptyView	Ingen installeringer pågår
+Downloads.InstallationsTitle	Installeringer
+Downloads.Installing	Installerer…
+Downloads.MoveToTop	Til toppen
+Downloads.OpenFolderButton	Åpne mappe
+Downloads.PauseButton	Pause
+Downloads.Queued	Lagt i kø
+Downloads.RemoveFromList	Fjern fra liste
+Downloads.ResumeButton	Gjenoppta
+Downloads.RetryButton	Prøv igjen
+Downloads.Title	Nedlastinger
+Downloads.ViewAll	Sjekk alle nedlastinger
+FetchingOptInFailed.Info	Noe gikk galt under innhenting av kommunikasjonsinnstillingene, så de har blitt satt til standard. Hvis du vil endre innstillingene, kan du gå til Ubisofts nettside for kontoadministrasjon etter at du har opprettet kontoen.
+FooterPanel.DownloadingCompleted	Nedlasting fullført
+FrameMenu.Downloads	NEDLASTINGER
+Free.ActivateProduct	Aktiver produkt
+Free.AddToMyGames	Legg til i Mine spill
+Free.PageHeading	Gratisspill
+FreeWeekend.EndedHeader	Denne spillbegivenheten er over.
+FreeWeekend.EndedMessage	Takk for at du deltok! Hvis du likte å spille, kan du kjøpe fullversjonen av spillet.
+FriendSelectionDialog.Header	Velg en venn
+Friends.EditNickname	Rediger kallenavn
+Friends.FriendsSuggestionsHeader	Venneforslag
+Friends.FriendsSuggestionsUnknownSubHeader	Spillere du kanskje kjenner
+Friends.InviteFriends	Inviter venner
+Friends.InviteSent	Invitasjon sendt
+Friends.JoinGameAlreadyJoined	Du har allerede blitt med i denne spilløkten.
+Friends.JoinGameDisabledInfo	Du kan bli med når en spilløkt blir tilgjengelig
+Friends.JoinGameNotPlayable	Installer spillet eller den nyeste oppdateringen for å bli med
+Friends.NoAvailable	Det er ingen tilgjengelige venner å legge til
+Friends.Requests	Venneforespørsler
+Friends.SensitiveNickname	Innholdet kan ha ukvemsord
+Friends.SetNickname	Sett kallenavn
+FriendsGroups.Header	Venner og grupper
+FriendsModule.FriendsHavePlayed	Venner som har spilt dette spillet
+FriendsModule.FriendsHavePlayedNumber	Venner som har spilt dette spillet (__NUMBER__):
+FriendsModule.HasNoFriends	Spill er morsommere med venner, begynn å lage en venneliste i dag!
+FriendsModule.InGameHeaderText	Venner som spiller dette spillet for øyeblikket (__NUMBER__):
+FriendsModule.NoFriendsHavePlayed	Ingen av vennene dine spiller dette spillet
+FriendsModule.NoFriendsInGame	Ingen av vennene dine spiller spillet for øyeblikket.
+FriendsModule.WhoIsOnline	Se hvem som er på nett
+FriendsPanel.ActivityAway	Borte
+FriendsPanel.ActivityBusy	Ikke forstyrr
+FriendsPanel.ActivityInvisible	Usynlig
+FriendsPanel.AddToBlacklist	Blokker
+FriendsPanel.CancelFriendshipRequest	Avbryt venneforespørsel
+FriendsPanel.CancelGroupInvite	Avbryt invitasjon
+FriendsPanel.Category.Blocked	Blokkert
+FriendsPanel.Category.SentRequests	Sendte forespørsler
+FriendsPanel.ConnectionStatus.Connecting	Kobler til …
+FriendsPanel.Empty.Header	Du har ikke lagt til noen venner enda.
+FriendsPanel.FriendshipRequestText	vil være din venn
+FriendsPanel.GameInviteText	__INVITER_NAME__ har invitert deg til et spill
+FriendsPanel.Header	Venner
+FriendsPanel.InvisibleExplanation	Bli vist som offline for andre spillere.
+FriendsPanel.InviteToGame	Inviter venn til spill
+FriendsPanel.JoinGame	Bli med i spillet
+FriendsPanel.PresenceInGame	I et spill
+FriendsPanel.PresenceOffline	Offline
+FriendsPanel.PresenceOnline	Online
+FriendsPanel.RemoveFriend	Fjern venn
+FriendsPanel.RemoveFromBlacklist	Fjern blokkering
+FriendsPanel.RequestSent	Forespørsel sendt
+FriendsPanel.Search.AddFriend	Legg til i venner
+FriendsPanel.Search.AlreadyFriendsLabel	Denne brukeren er din venn
+FriendsPanel.Search.Info	Skriv inn et brukernavn for å finne en venn
+FriendsPanel.Search.NoMatch	Ingen match funnet
+FriendsPanel.StartChat	Start chat
+Game.AchievementsSyncError	Kunne ikke synkronisere prestasjonene
+Game.AchievementsSyncStatus	Synkroniserer prestasjonene dine med nettskyen.
+Game.ActivationAgeGated	På grunn av aldersbegrensninger kan du ikke aktivere dette spillet. Ta kontakt med Ubisofts kundestøtte hvis du ønsker mer informasjon.
+Game.BindFreeGameTitle	Når du klikker på Fortsett, binder du spillet til Ubisoft-kontoen din, så du får tilgang til det fra spillisten din på en hvilken som helst PC.
+Game.CdKeyInputPlaceholder	Aktiveringskode
+Game.ChangeLanguageLabel	Velg hvilket språk du vil bruke i spillet:
+Game.ContinueDownload	Gjenoppta nedlasting
+Game.DownloadFailure	Nedlastning feilet
+Game.DownloadGame	Last ned
+Game.DownloadPaused	Nedlastingen er satt på vent
+Game.DownloadRecommended	Det anbefales at du oppdaterer spillene dine. Hvis du hopper over denne oppdateringen, kan det påvirke spillopplevelsen negativt og hindre deg i å bruke spillets nettfunksjoner.
+Game.DownloadRequiredOnlineOnly	Du må laste ned en spilloppdatering for å kjøre spillet.
+Game.DownloadSpeed	Nedlastingshastighet:
+Game.Downloading	Laster ned
+Game.DownloadingTimeLeftValue	__REPLACE_ME_WITH_DAYS__ d __REPLACE_ME_WITH_HOURS__ t __REPLACE_ME_WITH_MINUTES__ m
+Game.EnterKey.ActivatedGame	__GAME_NAME__ er aktivert og lagt til i biblioteket ditt.
+Game.EnterKey.ItIncludes	Inneholder:
+Game.EnterKeyActivate	Aktiver
+Game.EnterKeyActivatedOn	Aktivert:
+Game.EnterKeyCancelButton	Avbryt
+Game.EnterKeyDetails	Spillet blir registrert på denne kontoen: (__ACCOUNT_EMAIL__). Dette kan ikke endres når aktiveringen er fullført, så sjekk at du er logget inn med riktig konto.
+Game.EnterKeyFailureBannedKey	Denne CD-nøkkelen eller aktiveringskoden har blitt bannlyst. For mer informasjon, vennligst ta kontakt med Ubisofts kundestøtte.
+Game.EnterKeyFailureBannedUser	Denne funksjonen er midlertidig blokkert på grunn av flere mislykkede forsøk. Aktivering vil være tilgjengelig igjen om __MIN__ minutt(er).
+Game.EnterKeyFailureNotFound	Denne CD-nøkkelen eller aktiveringskoden er ikke gyldig. Vennligst prøv igjen.
+Game.EnterKeyFailureServiceUnavailable	Vi kunne ikke registrere dette spillet på Ubisoft-kontoen din akkurat nå siden Ubisoft-serveren er utilgjengelig. Vennligst prøv igjen senere.
+Game.EnterKeyFailureUsedByOtherAccount	Denne CD-nøkkelen eller aktiveringskoden er allerede i bruk med en annen Ubisoft-konto. Hvis du vil ha mer informasjon, kan du kontakte Ubisoft Support.
+Game.EnterKeyFailureUsedByThisAccount	Denne CD-nøkkelen eller aktiveringskoden er allerede aktiv på denne kontoen. Gå til spillbiblioteket for å få tilgang til spillene dine.
+Game.EnterKeyGameAlreadyOwned	Du eier allerede dette spillet
+Game.EnterKeyHeading	Oppgi din produktnøkkel eller aktiveringskode her:
+Game.EnterKeyMainTitle	Produktaktivering
+Game.EnterKeyNoLongerAvailable	CD-nøkkelen eller aktiveringskoden du har skrevet inn har utløpt. Hvis du vil ha mer informasjon, kan du kontakte Ubisoft Support.
+Game.EnterKeyNotAvailableInRegion	Denne nøkkelen fungerer ikke i regionen din. Hvis du har kjøpt den fra en godkjent forhandler, bør du snakke med forhandleren for å få hjelp.
+Game.EnterKeyNotAvailableYet	Denne CD-nøkkelen eller aktiveringskoden kan ikke aktiveres ennå. Vent til lanseringen med å skrive den inn. Hvis du vil ha mer informasjon, kan du kontakte Ubisoft Support.
+Game.EnterKeyWarning	Skriv inn koden nøyaktig som den er oppgitt. Når du klikker for å aktivere, blir innholdet bundet til kontoen din (__ACCOUNT_EMAIL__). Før du fortsetter, bør du sjekke at du er logget inn med riktig konto.
+Game.Expired	Utløpt
+Game.FacebookLink	Facebook
+Game.ForumLink	Brukerstøtte
+Game.GameChallengesTitle	Utfordringer
+Game.GameIsNotAvailableInCurrentRegion	Dette spillet er ikke tilgjengelig i din region. Alternativt kan det hende at du bruker en proxy. Deaktiver proxy-tilkoblingen i Ubisoft Connect-innstillingene, og prøv igjen. Hvis du trenger hjelp, kan du kontakte Ubisofts kundestøtte.
+Game.GameNewsTitle	Spillnyheter
+Game.GameRewardsTitle	Belønninger
+Game.GameServiceUnavailableHeader	Tjenestevarsel
+Game.GameServiceUnavailableText	Noen av spillets nettelementer kan være utilgjengelige.
+Game.GetMoreDLC	Skaff flere nedlastinger
+Game.GetTheFullGame	Kjøp fullversjonen av spillet
+Game.GoOnlineToRegisterGame	Gå online for å aktivere dette spillet
+Game.HelpLink	Hjelp
+Game.Hidden	Skjult
+Game.InitializingDownload	Initialiserer nedlasting
+Game.InitializingOrbit	Initialiserer
+Game.Install	Installer
+Game.InstallFailure	Installasjon mislyktes
+Game.InstallFailureTryAgainButton	Prøv igjen
+Game.InstallFailureVerifyButton	Verifiser filer
+Game.Installing	Installerer
+Game.LocateGameInstall	Finn installert spill
+Game.MarkAsFavourite	Legg til i favoritter
+Game.MarkAsHidden	Skjul
+Game.News	Nyheter
+Game.OfficialWebsiteLink	Offisiell nettside
+Game.OwnedDLCTitle	Nedlastinger du har
+Game.Play	Spill
+Game.Playable	Spillbart
+Game.PreorderDescription	Dette spillet er ikke utgitt ennå. Du kan spille det når det er utgitt.
+Game.PreorderHomepageIntro	Trailere, skjermbilder og siste nytt finner du på spillets offisielle kanaler:
+Game.PreorderPreloadDescription	Forhåndsnedlasting starter
+Game.PreorderedHeader	Spillet er forhåndsbestilt. Utgivelsesdato:
+Game.RemoveFromFavourites	Fjern fra favoritter
+Game.RemoveFromHidden	Vis
+Game.RestartRequiredHeader	Du må starte datamaskinen på nytt
+Game.RestartRequiredText	Du må starte maskinen på nytt for å fullføre installasjonen av spillet. Uten omstart er det en risiko for at spillet ikke fungerer som det skal.
+Game.RollbackCloudSaveLink	Gjenopprett nettsky-lagring
+Game.SaveGame.Conflict.CloudSavegame	Cloud lagretspill
+Game.SaveGame.Conflict.Description	Den lokale lagringen er ikke synkronisert med dataene i nettskyen. Velg hvilken fil som skal brukes.
+Game.SaveGame.Conflict.Hint	De lokale lagringene dine blir sikkerhetskopiert hvis du velger nettskyen, og du kan til enhver tid gjenopprette dem via Spill-knappen på startskjermen.
+Game.SaveGame.Conflict.LocalSavegame	Lokalt lagretspill
+Game.SaveGame.Rollback.Description	Vi sikkerhetskopierte den lokale lagringen din sist du hadde en lagringskonflikt med nettskyen. Du kan erstatte nettsky-lagringen din med denne filen når du skal løse konflikten. Merk at dette vil overskrive den nyeste lagringen din.
+Game.SaveGame.Rollback.Failure	Vi kunne ikke gjenopprette lagringen. Den lokale filen kan være ødelagt.
+Game.SaveGame.Rollback.Header	Gjenopprette nettsky-lagring
+Game.SaveGame.Rollback.LastBackupDescription	Lokal sikkerhetskopi av lagring: __BACKUP_TIMESTAMP__
+Game.SaveGame.Rollback.Success	Lagringen ble gjenopprettet til __BACKUP_TIMESTAMP__
+Game.SaveGame.StorageConflict.Description	Det oppsto et problem med åpning av din siste lagring fra nettskyen. De siste tilgjengelige dataene er kanskje ikke de nyeste.
+Game.SaveGameSyncError	Synkronisering for skylagring mislyktes.
+Game.SavegameSyncStatus	Synkroniserer spillfremdriften din med nettskyen
+Game.StartGameFailed	Kunne ikke starte spillet. Vennligst kontroller at spillet ditt har blitt installert på korrekt vis. Dersom problemet vedvarer, vennligst ta kontakt med Ubisofts kundestøtte.
+Game.StartGameFailedCheckOnline	Kunne ikke starte spillet. Kontroller at spillet er installert på riktig måte. Hvis du har installert spillet nylig, kan det hende du må starte Ubisoft Connect på nytt i online-modus og sjekke at spillet er oppdatert. Hvis problemet vedvarer, kan du kontakte kundestøtte hos Ubisoft.
+Game.StartGameFailedSuspended	Du kan for øyeblikket ikke spille __GAME_NAME__ på grunn av brudd på brukeravtalen. Hvis du vil vite mer, kan du kontakte kundestøtte.
+Game.Submenu.BackToMyGames	Tilbake til Spill
+Game.Submenu.Favourites	Favoritter
+Game.Submenu.Grid	Rutenett
+Game.Submenu.GridLarge	Stor
+Game.Submenu.GridMedium	Middels
+Game.Submenu.GridSmall	Liten
+Game.Submenu.Installed	Installert
+Game.Submenu.List	Liste
+Game.Submenu.ListNarrow	Smal
+Game.Submenu.ListWide	Bred
+Game.Submenu.More	Mer
+Game.Support	Brukerstøtte
+Game.Thumb.DlcTip	Nedlastbart innhold
+Game.Thumb.UpdateGame	Oppdater
+Game.TimeLeftUntilPlayable	Spillbar om:
+Game.TimeRemaining	Tid igjen:
+Game.UnavailableButton	Utilgjengelig
+Game.UninstallLink	Avinstaller
+Game.UpdatingOrbitConfiguration	Last ned Ubisoft Connect-spillfiler
+Game.UpdatingOrbitFailure	Kunne ikke laste ned Ubisoft Connect-spillfiler
+Game.ViewAllChallengesLink	Vis alle utfordringer
+Game.ViewAllRewardsLink	Vis alle belønninger
+Game.ViewDetails	Sjekk spilldetaljer
+GameEvents.Title	Hendelser
+GameExeSelection.Text	Vennligst velg den versjonen av spillet du ønsker å kjøre. For mer informasjon om alternativene, sjekk spillmanualene.
+GameOptions.AddPreset	Legg til ny forhåndsinnstilling
+GameOptions.DeletePresetHeader	Slett forhåndsinnstilling
+GameOptions.DeletePresetText	Er du sikker på at du vil slette forhåndsinnstillingen?
+GameOptions.Description	Legg til en beskrivelse
+GameOptions.GameOptionsEditDescription	Rediger beskrivelsen
+GameOptions.OverwritePresetHeader	Skriv over forhåndsinnstilling
+GameOptions.OverwritePresetText	Det finnes allerede en forhåndsinnstilling med dette navnet. Vil du skrive over?
+GameOptions.PresetLocationPath	Forhåndsinnstillingsfilen din er lagret her: __LOCATION__PATH__
+GameOptions.Presets	Forhåndsinnstilling
+GameOptions.ResetHeader	Tilbakestill til standard
+GameOptions.ResetText	Vil du tilbakestille til standardinnstillingene?<br>Dette medfører at alle endringer du ikke har lagret, vil gå tapt.
+GameOptions.SelectAddDescription	Velg eller legg til en forhåndsinnstilling
+GameProperties.AddGameStartArguments	Legg til startargumenter
+GameProperties.DefaultVersionLabel	Ingen – Velg bort tilgang til testversjoner
+GameProperties.GameInfo.DisplayManual	Brukerveiledning
+GameProperties.GameInfo.DisplayReadme	LesMeg
+GameProperties.GameInstallLocation	Plassering for installert spill:
+GameProperties.GameStartArguments	Spillstartargumenter
+GameProperties.GameStartArgumentsInfo	Med dette alternativet kan du spesifisere ekstraargumenter i kommandolinjen når du kjører spillet.
+GameProperties.GameVersion	Spillversjon
+GameProperties.LocalFiles	Lokale filer
+GameProperties.LocalFilesOpenDirError	Ubisoft Connect får ikke tilgang til spillmappen. Kontroller at mappen eksisterer og at den ikke er i bruk.
+GameProperties.SelectVersionInfo	Med testversjoner kan utviklerne teste nye oppdateringer på nettfellesskapet før de legges ut
+GameProperties.SelectVersionLabel	Velg en testversjon av spillet:
+GameProperties.Title	Egenskaper
+GameProperties.UnlockGameVersionFailed	Det skjedde noe galt. Spillversjonen kunne ikke låses opp.
+GameProperties.UnlockTestVersion	Lås opp en testversjon
+GameProperties.UnlockVersionInfo	Hvis du har fått et passord til en testversjon, klikker du på knappen under og skriver inn passordet for å få tilgang til denne versjonen
+GameProperties.UnlockVersionPasswordError	Dette passordet er ikke gyldig
+GameProperties.UnlockVersionSuccess	__VERSION_NAME__ er låst opp og lagt til i listen over tilgjengelige versjoner
+GameProperties.VersionNotAvailable	Versjonen du valgte er ikke tilgjengelig lenger
+GameSplash.AchievementsTitle	Prestasjoner
+GameSplash.BuyAdditionalContent	Kjøp ekstrainnhold til dette spillet
+GameSplash.DLCTitle	DLC
+GameSplash.MenuItemAchievements	Prestasjoner
+GameSplash.MenuItemDeluxeContent	Deluxe-innhold
+GameSplash.MenuItemOverview	Oversikt
+GameSplash.MenuItemShop	Butikk
+GameSplash.OverviewTitle	Oversikt
+GameSplash.Statistics	Statistikk
+GameSplash.StatisticsViewAll	Sjekk mer statistikk
+GameStart.LocateGameFolder	Finn spillmappe
+GameStart.LocateGameFolderInfo	Har du flyttet spillet, eller vil du fremdeles ha de opprinnelige spillfilene? Hvis du vil det, velger du mappen der spillet er.
+GameStart.OculusClientRequired	Dette spillet må kjøres via Oculus-klienten.
+GameStart.PasswordRequired.Error	Passordet du skrev inn er ikke korrekt. Prøv igjen.
+GameStart.Title	Starter spill
+GameStream.GoToChannel	Sjekk flere strømmer
+GameVerify.Done	Alle filer er verifiserte og oppdaterte!
+GameVerify.HasCorruptedFiles	Vi har oppdaget en rekke ødelagte filer. Velg å reparere dem for å fikse problemet.
+GameVerify.MainHeader	Verifiserer nedlastede filer
+GameVerify.Repair	Reparer
+Gamepage.Store.DLC	Nedlasting
+Gamepage.Store.Merchandise	Varer
+GamepageItemEvents.Empty	Det er ingen hendelser å vise for øyeblikket
+GamepageItemNews.Empty	Det er ingen nyheter å vise for øyeblikket
+GamepageItemStream.Empty	Det er ingen videoer eller strømmer å vise for øyeblikket
+Games.NoGamesDescription	Spillene du kjøper vises her. Du har ingen spill for øyeblikket, men du finner alle spillene fra Ubisoft i Ubisoft Store.
+Games.NoGamesHeader	Spillene dine vil vises her
+General.ActionFailed	Vi kunne ikke fullføre den handlingen akkurat nå. Vennligst forsøk igjen senere.
+GeneralError.CannotActivate	Dette produktet kan ikke aktiveres for øyeblikket. Prøv igjen senere.
+GeneralError.DLLVersionMismatch	Spillets DLL-fil-versjon stemmer ikke.
+GeneralError.NetworkDisconnect	Det har oppstått et problem ved tilkoblingen til internett. Kontroller nettverksinnstillingene dine. Vi vil gjenoprette tilkoblingen så snart vi kan.
+GeneralError.PleaseCheckUplayInstalled	Sjekk at Ubisoft Connect er installert.
+GeneralError.ServiceDisconnect	Det har oppstått et problem ved tilkoblingen til Ubisoft Connect. Vi gjenoppretter tilkoblingen så snart vi kan.
+GeneralError.ServiceDisconnectGamesAvailable	Mens du spiller, gjenoppretter vi tilkoblingen din til en tjeneste som nettopp ble avbrutt. Det kan hende at noe ser litt rart ut i klienten i mellomtiden.
+GeneralError.UnableDetectUplay	Kunne ikke avgjøre om Ubisoft Connect er installert.
+GeneralError.UnableStartGame	Kunne ikke starte spillet
+GetPassword.Header	Skriv inn passord
+Groups.AddFriendsLabel	Du kan legge til __COUNT__ venner til.
+Groups.AddFriendsLimitLabel	Gruppegrensen er nådd. Du kan ikke legge til flere venner.
+Groups.AddToGroup	Legg til i gruppe
+Groups.CreateGroup	Opprett gruppe
+Groups.GroupName	Gruppenavn
+Groups.HeaderTitle	Samle vennene dine på samme sted!
+Groups.InformationText	Med grupper er det lettere å invitere og holde kontakten med venner gjennom gruppechat.
+Groups.InviteFriends	Inviter venner til gruppe
+Groups.InviteToGroup	Inviter til gruppe
+Groups.InvitedMembers	Inviterte brukere
+Groups.InvitesLabel	Invitasjoner
+Groups.LeaveDialogueHead	Forlat gruppe
+Groups.LeaveDialogueText	Er du sikker på at du vil forlate denne gruppen?
+Groups.LeaveGroup	Forlat gruppe
+Groups.NewGroup	Ny gruppe
+Groups.OnboardingHeaderTitle	Sjekk ut gruppefunksjonen!
+Groups.StartGroupChat	Start gruppechat
+Groups.UnknownMembers	Ukjent
+GroupsChat.CancelInviteStatusMessage	__CANCELER__ avbrøt en gruppeinvitasjon til __INVITEE__
+GroupsChat.GameInviteStatusMessage	__USER__ har invitert gruppen til å spille __GAME__
+GroupsChat.HideMembers	Skjul medlemmer
+GroupsChat.InvitedStatusMessage	__INVITER__ inviterte __INVITEE__
+GroupsChat.JoinedStatusMessage	__USER_NAME__ ble med i gruppen
+GroupsChat.LeftGroupStatusMessage	__USER_NAME__ forlot gruppen
+GroupsChat.ShowMembers	Vis medlemmer
+GroupsPanel.ActiveGroups	Aktive grupper
+GroupsPanel.GroupStatusReasonGroupIsFull	Gruppen er full.
+GroupsPanel.GroupStatusReasonInvalidName	Dette gruppenavnet er ugyldig.
+GroupsPanel.GroupStatusReasonNotAuthorized	Du har ikke tillatelse.
+GroupsPanel.GroupStatusReasonProfanity	Dette gruppenavnet er ikke tillatt.
+GroupsPanel.GroupStatusReasonTimeout	Det skjedde et tidsavbrudd.
+GroupsPanel.PendingGroups	Ventende grupper
+Home.Friends.AddButton	Legg til venner
+Home.Promotions.Header	Rampelys
+ImportFriends.Completed	Venneforespørsler er sendt til de valgte vennene.
+ImportFriends.FriendAddTime	Lagt til på WeGame
+ImportFriends.ImportFriendsFromWeGame	Importer venner fra WeGame
+ImportFriends.ImportFromSteam	Importer venner fra Steam
+ImportFriends.Importing	Finne venner
+ImportFriends.NoFriendsFound	Ingen venner ble funnet.
+ImportFriends.SelectFriends	Velg venner som skal importeres
+ImportFriends.SendingFriendRequests	Sende venneforespørsler
+ImportFriends.SteamFailed	Det skjedde noe galt. Vennene dine på Steam kunne ikke importeres.
+ImportFriends.SteamFailedPrivateProfile	Vi kunne ikke importere Steam-vennene dine fordi profilen din er satt til privat. Sett Steam-profilstatusen din til offentlig, og prøv igjen.
+ImportFriends.SteamName	Steam-navn
+ImportFriends.TimeOut	Vi kunne ikke importere vennene dine, da serveren brukte for lang tid til å svare.
+ImportFriends.UplayName	Ubisoft Connect-navn
+ImportFriends.WeGameFailed	Det skjedde noe galt. Vennene dine på WeGame kunne ikke importeres.
+ImportFriends.WeGameName	WeGame-navn
+ImportFriends.WeGameNotAuthorized	Vi kunne ikke importere vennene dine, da Ubisoft Connect ikke har tilgang til WeGame-dataene dine.
+ImportFriends.WeGameProfileNotFound	Vi kunne ikke finne en match til Ubisoft-profilen din på WeGame.
+InitDownload.ActivateGame	Aktiver __GAME_NAME__
+InitDownload.AllocatingDiskSpace	Tildeler lagringsplass
+InitDownload.ContinueDownload	Fortsett nedlastingen
+InitDownload.ContinueInstall	Fortsett installeringen
+InitDownload.CreateDesktopShortcut	Lag snarvei på skrivebordet
+InitDownload.CreateStartMenuShortcut	Lag snarvei på startmenyen
+InitDownload.DiskSpaceAvailable	Diskplass tilgjengelig:
+InitDownload.DiskSpaceRequired	Diskplass som kreves:
+InitDownload.DownloadChangePath	Vil du gå til innstillingene og endre filbanen?
+InitDownload.DownloadFailure	Ubisoft Connect kan ikke starte nedlastingen. Sjekk at du har en aktiv tilkobling til internett og tilstrekkelig ledig plass på harddisken, og prøv igjen.
+InitDownload.DownloadFailureCreateGameFolder	Ubisoft Connect kunne ikke finne eller opprette __GAME_INSTALLATION_PATH__.
+InitDownload.DownloadFailureHeader	Klarte ikke å starte nedlasting
+InitDownload.GoOnline	Kan ikke hente eierskapsinformasjon når du er frakoblet.
+Du må koble til Internett for å fortsette installasjonen.
+InitDownload.InstallAdditionalLanguages	Installer flere språk
+InitDownload.InstallLocation	Mappeplassering:
+InitDownload.InstallPathTooLong	Installeringsbanen er for lang. Velg et annet sted å installere.
+InitDownload.InstallingGame	Installere __GAME_NAME__
+InitDownload.NewerVersionPartiallyDownloaded	En nyere versjon av __GAME_NAME__ er allerede installert. Du kan installere en eldre versjon fra disken, eller fortsette å laste ned den nyeste versjonen via Ubisoft Connect-spillbiblioteket.
+InitDownload.SelectGameComponents	Velg spillkomponenter
+InitDownload.SelectLanguage	Vennligst velg installasjonsspråk:
+InitDownload.UnexpectedError.ConnectionIssue	Det har inntruffet et problem med å koble til én eller flere av tjenestene våre.
+InitDownload.UnexpectedError.FAQ	Vanlige spørsmål og svar
+InitDownload.UnexpectedError.InsufficientPrevilegesWindowsRegistry	Ubisoft Connect har ikke tilstrekkelige rettigheter til å skrive til registeret i Windows
+InitDownload.UnexpectedError.InsufficientPrivilegesRunOnSystem	Ubisoft Connect har ikke tilstrekkelige rettigheter til å kjøres på riktig måte på systemet ditt
+InitDownload.UnexpectedError.LocalFilesMissing	De nødvendige lokale filene ble ikke funnet eller inneholder ugyldige data.
+InitDownload.UnexpectedError.PossibleSolutions	Mulige løsninger finner du her:
+InitDownload.UnexpectedError.RetrievingDataFromServers	Det har inntruffet et problem med å hente data fra serverne våre.
+InitDownload.UnexpectedError.TargetDirectoryPathTooLong	Installasjonsbanen er for lang
+InitDownload.UnexpectedErrorHeader	Dette kan ha skjedd av følgende årsaker:
+InitDownload.UnexpectedErrorTitle	Kunne ikke starte nedlasting (kode: __ERROR_CODE__)
+InitDownload.WithdrawalAcceptanceHeader	Rett til å trekke seg
+InitDownload.WithdrawalAcceptanceText	Når jeg laster ned spillet, sier jeg meg enig i at spillet blir lastet ned umiddelbart, og jeg er klar over at jeg mister retten til å trekke meg fra kontrakten.
+InstallManager.DiskWriteError	Installeringen mislyktes på grunn av en feil under skriving til disken.
+InstallManager.InstallFailure	Ubisoft Connect kan ikke starte installeringen.
+Installs.ShowAll	Vis alle installeringer
+KeyStorage.PendingKeyDescription	Kjære  __USER__.<br><br>Vi har fått nøkkelen din til  __GAME__, men på grunn av databasevedlikehold kommer det til å ta litt tid å behandle lisensen. Vi sender deg en melding så snart nøkkelregistreringen er behandlet.<br><br>Du trenger ikke å gjøre noe annet i mellomtiden, spillet blir automatisk klargjort så snart dette er utført.
+KeyStorage.PendingKeyHeader	Lisensbehandling
+LinkAccount.AccountAlreadyLinked	Denne Ubisoft-kontoen er allerede knyttet til en __REPLACE_PLATFORM__-konto.
+LinkAccount.AccountLink.Title	Kontoer er ikke tilkoblet
+LinkAccount.ErrorHeader	Account linking mislyktes
+LinkAccount.FailureAccountAlreadyLinked	__PLATFORM__-kontoen __NAME__ er allerede koblet til en annen Ubisoft-konto.
+LinkAccount.FailureBadUserOrPass	E-postadresse for pålogging eller passord er feil. Vennligst prøv igjen.
+LinkAccount.FailureLinkingRejected	Beklager, du kan ikke koble Ubisoft-kontoen din til denne kontoen. Du må koble den til kontoen du opprinnelig koblet den til. Hvis du trenger hjelp, kan du kontakte Ubisofts kundestøtte.
+LinkAccount.FailureServiceUnavailable	Kontotilkobling er utilgjengelig, så vi kan ikke koble til kontoen din akkurat nå. Prøv igjen senere .
+LinkAccount.LinkAccounts	Tilkoble kontoer
+LinkAccount.LinkWhenAlreadyLoggedIn	Koble kontoen din til __REPLACE_PLATFORM__
+LinkAccount.LinkingInProgress	Kontoene blir koblet sammen. Vent litt ...
+LinkAccount.Oculus	Oculus
+LinkAccount.PasswordRequired	Vi har registrert en endring i tilgangsmønsteret. Av hensyn til kontoens sikkerhet må du skrive inn Ubisoft-passordet ditt på nytt.
+LinkAccount.ReEnterPassword.Body	Skriv inn passordet til Ubisoft-kontoen din på nytt for å spille dette spillet.
+LinkAccount.ReEnterPassword.Heading	Skriv inn passordet ditt på nytt
+LinkAccount.Skip.Tooltip	Du kan skru denne påminnelsen på igjen under Innstillinger > Kontosammenkobling.
+LinkAccount.Steam	Steam
+LinkAccount.UbisoftSupportLinkText	Ubisoft Support
+LinkAccount.Xbox	Xbox
+LocateGameInstall.Completed	Alle spillfilene ble funnet.
+LocateGameInstall.Failed	Det kan hende at noen av spillfilene er ødelagt eller mangler. Ubisoft Connect kan verifisere og gjenopprette dem hvis det er nødvendig (denne prosessen kan ta flere minutter).
+Login.AskMeLater	Spør meg senere
+Login.ConnectionLost	Tilkoblingen ble brutt
+Login.DateOfBirthRequired	Fødselsdatoen din er ikke oppgitt i kontoinformasjonen din. Dette kan medføre problemer med å starte enkelte spill. Oppgi fødselsdatoen din for å fortsette innloggingen:
+Login.EmailPlaceholder	E-post
+Login.EpicFailureServiceUnavailable	En av Epic Games' tjenester er utilgjengelig for øyeblikket. Prøv igjen senere.
+Login.FailureBadUserOrPass	E-postadressen eller passordet er feil. Prøv igjen.
+Login.FailureBanned	Kontoen din er midlertidig stengt på grunn av mislykket innlogging eller aktiveringsforsøk. Hvis du har problemer med å logge inn på kontoen din, kan du prøve senere eller bruke "Glemt passord?"-lenken for å gjenopprette passordet.
+Login.FailureBanned.Title	Kontoen er midlertidig sperret
+Login.FailureBannedContact	Kontoen din er midlertidig sperret i 10 minutter på grunn av mislykket pålogging eller aktiveringsforsøk. Hvis du har problemer med å logge deg på, kan du prøve igjen senere eller bruke lenken for å tilbakestille passordet. Hvis du har problemer med å aktivere et spill, kan du kontakte __LINK_UBISOFT_SUPPORT__
+Login.FailureGoOffline	Gå offline
+Login.FailureMinorVerificationRequired	E-posten eller passordet ditt var feil. Prøv igjen. Når du oppretter en konto som ung spiller, må du kontrollere at kontoen din har blitt bekreftet.
+Login.FailureNoInternet	Det ser ute til å være et problem med internett-tilkoblingen din. Vennligst kontroller innstillingene dine eller bytt til offline-modus.
+Login.FailureOffline	Hvis dette er første gang du bruker Ubisoft Connect på denne datamaskinen, må du logge inn online minst én gang før du bruker offline-modus.
+Login.FailurePasswordUpdateCompromised	Det kan hende at Ubisoft-kontoen din har blitt hacket. Vi ber deg om å tilbakestille passordet ditt for å sørge for at det er sikkert. Vi sender deg en e-post med en lenke du kan klikke på for å spesifisere et nytt passord.
+Login.FailurePasswordUpdateInactiveAccount	Du har ikke logget deg inn på Ubisoft-kontoen din på en stund.
+Login.FailurePasswordUpdateRequired	Vi ber deg om å tilbakestille passordet ditt for å sørge for at det er sikkert. Vi sender deg en e-post med en lenke du kan klikke på for å spesifisere et nytt passord.
+Login.FailureRenewal	Du har blitt logget ut av Ubisoft Connect på grunn av inaktivitet. Skriv inn Ubisoft Connect-passordet ditt på nytt for å logge inn.
+Login.FailureRetry	Prøv igjen
+Login.FailureServiceUnavailable	Ubisoft-tjenesten er utilgjengelig for øyeblikket. Du kan prøve igjen senere eller bytte til offline-modus.
+Login.FailureServiceUnavailableCN	 
+Login.FailureTryAgain	Prøv igjen
+Login.FailureWeGame	Vi kunne ikke koble til WeGame-tjenesten. Prøv igjen senere.
+Login.Header	Logg inn
+Login.LockedAccountHeader	Kontoen din er låst.
+Login.LockedAccountSection1	Kontoen din har blitt knyttet til uhederlig aktivitet eller transaksjoner som kan sette kontoen i fare og bryte bruksvilkårene våre.
+Login.LockedAccountSection2	Som en del av arbeidet med å sikre spillernes kontoer og aktivitet i spillene våre har vi låst kontoen din.
+Login.LockedAccountSection3	Hvis dette er den første gangen kontoen din har blitt knyttet til uhederlig aktivitet, blir den låst i sju (7) dager, for så å låses opp automatisk. Vær oppmerksom på at Ubisofts kundestøtterepresentanter ikke kan låse opp kontoen din i løpet av denne sjudagersperioden.
+Login.LockedAccountSection4	Hvis kontoen din allerede har blitt knyttet til uhederlig aktivitet, vil kontoen lukkes på permanent basis. Hvis du mener at denne vurderingen er gjort på feilaktig grunnlag, kan du lese gjennom denne __SUPPORT_LINK__ før du sender inn en anke.
+Login.LoggingIn	Logger inn ...
+Login.LoginButton	Logg inn
+Login.NoConnectionTitle	Ikke noe nett
+Login.NoConnectonText	Sjekk internettforbindelsen og klikk på «Prøv igjen».
+Login.PasswordCapsLockPlaceholder	Store bokstaver er på!
+Login.PasswordPlaceholder	Passord
+Login.PasswordUpdateRequired	Tilbakestill passordet ditt
+Login.RecoverPasswordButton	Gjenopprett passord
+Login.RegisterNewAccountButton	Opprett ny brukerkonto
+Login.RememberMe	Husk meg
+Login.SettingsButton	Innstillinger
+Login.SteamBigPictureHint	Du kan aktivere tastaturet på skjermen ved å trykke på angitt knapp på håndkontrolleren (standard: venstre spak)
+Login.ToSRedirectHeader	Oppdaterte tjenestevilkår for Ubisoft Connect
+Login.UbisoftSupportLinkText	Ubisoft kundestøtte
+Login.UserBanned.Section1	Ubisoft-kontoen din har blitt utestengt fordi den ble knyttet til ulovlig aktivitet som bryter med våre __TERMS_OF_USE__.
+Login.UserBanned.Section2	Første brudd fører til 7 dagers utestengelse som avsluttes automatisk. Gjentatte brudd vil føre til permanent utestengelse av kontoen din. Om du mener at kontoen ble utestengt ved en feil, kan du lese denne artikkelen før du sender inn klagen: __SUPPORT_ARTICLE__. Sjekk e-posten din for å få mer informasjon.
+Login.UsernamePlaceholder	E-post
+Login.VerificationError	Ugyldig bekreftelseskode. Oppgi bekreftelseskoden som er generert av autentiseringsappen din for å fortsette.
+Login.VerificationErrorEmail	Ugyldig bekreftelseskode.
+Login.VerificationPlaceholder	Bekreftelses
+Logout.ClientOutdated	Versjonen din av Ubisoft Connect er for gammel til å kunne kobles til Ubisoft Connect-tjenestene. Hvis problemet vedvarer, bør du kontakte kundestøtte hos Ubistoft.
+Logout.ClientOutdatedTitle	Versjonen din av Ubisoft Connect er for gammel
+Logout.MultipleLogin	Noen har brukt kontoen din fra et annet sted. Dette kan påvirke spillet ditt.
+Logout.MultipleLoginTitle	Du har blitt logget ut
+Logout.UserBanned	Kontoen din er midlertidig sperret i 10 minutter på grunn av mislykkede innlogginger eller aktiveringsforsøk.
+Main.ActivateProduct	Aktiver en nøkkel
+Main.Discover	Utforsk
+Main.EditAvatarButton	Rediger avatar
+Main.GoOffline	Gå offline
+Main.GoOnline	Gå online
+Main.Logout	Logg ut
+Main.MyGames	Spill
+Main.NewPatchAvailable	En oppdatering til Ubisoft Connect har blitt lastet ned automatisk. Den blir installert når programmet startes på nytt.
+Main.PrepareToLaunchGame	Forbereder kjøring av spillet
+Main.RestartAfterPatchButton	Start Ubisoft Connect på nytt
+Main.Shop	Butikk
+Minor.CreateAccountRegistration.ConfirmEmailInvalidError	E-postadressene er ikke like.
+Minor.CreateAccountRegistration.ConfirmParentEmailDescription	Bekreft e-post til forelder
+Minor.CreateAccountRegistration.NameInvalidError	Dette feltet er påkrevd.
+Minor.CreateAccountRegistration.ParentEmailDescription	E-post til forelder
+Minor.CreateAccountRegistration.Text	Du må spørre en forelder eller en annen foresatt om å opprette en konto for deg. Skriv inn informasjonen under for å be om å få en konto.
+Minor.CreateAccountRegistration.YourNameDescription	Navnet ditt
+Minor.CreateAccountRegistration.YourNamePlaceholder	Navn
+Minor.CreateUsername.ConfirmUsernameDescription	Bekreft brukernavnet
+Minor.CreateUsername.ConfirmUsernameInvalidError	Brukernavnene er ikke like.
+Minor.CreateUsername.Header	Opprett et brukernavn
+Minor.CreateUsername.Text	Opprett et brukernavn for Ubisoft Connect-profilen din. Du kan endre brukernavnet igjen om 30 dager, hvis du vil.
+Minor.CreateUsername.YourUsernameDescription	Brukernavnet ditt
+Minor.RequestSent.Header	Forespørselen er sendt til forelder/foresatt
+Minor.RequestSent.Text	Vi har sendt en e-post med en lenke til en av foreldrene dine eller en annen foresatt med en lenke som kan brukes til å opprette kontoen din. Du får en bekreftelse med e-post når kontoen er opprettet.
+Minor.RequestSentFailed.Header	Forespørselen din kan ikke fullføres
+MyGames.AdditionalContentWithoutBaseGame	Ekstra innhold du eier uten å ha selve spillet
+News.FilterOnboarding	Tilpass nyhetsoppdateringen din
+News.LinkErrorHeader	Det virker som om lenken du nettopp fulgte, er ødelagt.
+News.LinkErrorText	Vi fikser det. Prøv igjen senere.
+News.LoadErrorHeader	Vi kan visst ikke hente nyhetene akkurat nå.
+News.LoadErrorText	Vi fikser dette snart, så du kan oppdatere siden eller prøve igjen senere.
+News.NextArticle	Neste artikkel
+News.PreviousArticle	Forrige artikkel
+News.ViewAll	Sjekk alle nyheter
+NoAccess.Google.Link	Ingen tilgang til Google Autentisering
+NoAccess.Google.Title	Ingen tilgang til Google Autentisering
+NoVerificationCode.ContactSupport	Hvis ikke du lenger har tilgang til gjenopprettingskodene, kan du kontakte __LINK_UBISOFT_SUPPORT__ for å få hjelp til å deaktivere funksjonen.
+NoVerificationCode.Description	Hvis ikke du har tilgang til bekreftelsesmetoden din, kan du bruke en av __LINK_RECOVERY_CODES__ som ble sendt til e-postadressen din da du satte opp bekreftelse med to trinn.
+NoVerificationCode.Header	Jeg har ikke en bekreftelseskode
+NoVerificationCode.Link	Jeg har ikke en bekreftelseskode
+NoVerificationCode.RecoveryCode.Link	de seks gjenopprettingskodene
+Notification.DesktopShortcutCreated	Det ble laget en snarvei til __REPLACE_ME_WITH_GAME_NAME__ på skrivebordet.
+Notification.DownloadComplete	Nedlastingen av __GAME_NAME__ er fullført
+Notification.DownloadCompleteDescription	Nedlastingen for __REPLACE_ME_WITH_GAME_NAME__ er fullført.
+Notification.FriendGameText	spiller __GAME_NAME__
+Notification.FriendOnline.ChatLink	Start chat
+Notification.FriendOnline.Header	__FRIEND_NAME__ er online
+Notification.FriendRequestSentToUser	En venneforespørsel er sendt til __USERNAME__
+Notification.GameInviteSent	Spillinvitasjonen er sendt til __USERNAME__
+Notification.GamePatchAvailable	Det finnes en opdatering til __GAME_NAME__
+Notification.GameTrialEndingIn15MinDescription	Prøveperioden til __GAME_NAME__ utløper om 15 minutter
+Notification.GameTrialEndingIn5MinDescription	Prøveperioden til __GAME_NAME__ utløper om 5 minutter
+Notification.GroupGameInviteSent	Spillinvitasjonen er sendt til __GROUP_NAME__
+Notification.GroupInvite	__USER_NAME__ har invitert deg til å bli med i __GROUP_NAME__
+Notification.GroupInvite.NoGroupName	Du har blitt invitert til en gruppe.
+Notification.GroupInviteDenied	___USERNAME___ prøvde å legge deg til i en gruppe. Denne funksjonen er av sikkerhetsmessige årsaker aldersbegrenset.
+Notification.GroupMultipleInviteDenied	Andre spillere prøvde å legge deg til i flere grupper. Denne funksjonen er av sikkerhetsmessige årsaker aldersbegrenset.
+Notification.GroupMultipleInvites	Du har __COUNT__ ventende gruppeinvitasjon(er)
+Notification.InstallComplete	__GAME_NAME__ er ferdig installert
+Notification.InstallWrongDiscInsertedDescription	Feil disk satt inn. Sett inn disk __DISC_NUMBER__.
+Notification.OfflineMessages	Du har __COUNT__ ulest(e) melding(er)
+Notification.PlayAvailable	__GAME_NAME__ er klart til å spilles
+Notification.RewardRedeemed	Du har låst opp __REWARD__ i __GAME_NAME__
+Notifications.Empty	Ingen varsler
+Oculus.ErrorClaimedAlready	Dette produktet eies allerede av __CLAIMING_USER__. Hvis du mener at dette ikke stemmer, kan du kontakte kundestøtte.
+Oculus.GenericError	Det inntraff et problem med å bekrefte eierskapet i dette produktet. Kontakt kundestøtte hvis du trenger hjelp til å løse problemet.
+OculusAccountLinking.Description	Når du kjører et spill fra Oculus-klienen må Ubisoft- og Oculus-kontoen din være koblet sammen.
+OculusAccountLinking.Title	Ubisoft- og Oculus-kontoen din vil nå bli koblet sammen
+OculusAccountLinking.UnlinkDescription	Kontoene kan kobles fra hverandre igjen når som helst med Ubisofts kontoadministrasjonsside, men spillene vil være bundet til denne Ubisoft-kontoen.
+OfflineLaunch.DialogueButtonKeep	Behold innstillingen
+OfflineLaunch.DialogueButtonRemove	Deaktiver innstillingen
+OfflineLaunch.DialogueHeader	Ønsker du fortsatt å alltid starte offline?
+OfflineLaunch.DialogueText	For øyeblikket er «Start alltid Ubisoft Connect i offline-modus» den aktive innstillingen. Velg om du ønsker å beholde denne innstillingen eller deaktivere den:
+OrbitApi.StartGameAlertCaption	Kan ikke starte spillet.
+OrbitApi.StartGameAlertText	Det oppstod et problem under oppstart av spillet. Kontroller at du ikke har startet noen andre spill som bruker Ubisoft Connect. Hvis problemet vedvarer, kan du prøve å installere spillet på nytt.
+Overlay.ActivateProduct.ContentAdded	har blitt knyttet til din konto.
+Overlay.ActivateProduct.ExtraDataInfo	Det kan hende du må laste ned mer data før du får tilgang til dette innholdet i spillet.
+Overlay.BackToGame	Tilbake til spillet (Shift+F2)
+Overlay.InGame.PartyHeader	Party
+Overlay.Party.PlayerCount	Partymedlemmer (__PLAYERS__)
+Overlay.Party.Title	Partyet __NAME__
+Overlay.PartyInformationHeader	Start et party for å chatte!
+Overlay.PartyInformationText	Chat med vennene dine. Spill sammen.
+Overlay.PartyInviteHeader	__FRIEND_NAME__ har invitert deg til å bli med i et party for å spille __GAME_NAME__!
+Overlay.PartyNoFriends	Det er ingen venner i partyet ditt.
+Overlay.ScreenshotSaveFailed	Skjermbildet kan ikke lagres. Det er ikke nok plass eller du har ikke tillatelse til å lagre til disken.
+Overlay.ScreenshotSaved	Skjermbilde lagret
+Overlay.StartParty	Start party
+OverlayRequiredWarning.DoNotShowAgain	Ikke vis denne meldingen igjen
+OverlayRequiredWarning.EnableHint	Du kan aktivere overlegget i spillet i de generelle innstillingene når du vil.
+OverlayRequiredWarning.MergedText	Hvis du starter spillet uten Ubisoft Connect-overlegget, kan noen spillfunksjoner bli utilgjengelige. Du kan aktivere overlegget i de generelle innstillingene når du vil.
+OverlayRequiredWarning.StartButton	Start spillet (Ikke anbefalt)
+OverlayRequiredWarning.Text	Hvis du starter spillet uten Ubisoft Connect-overlegget, kan noen spillfunksjoner bli utilgjengelige.
+OverlayRequiredWarning.Title	Spilloverlegg deaktivert
+PartyChat.WaitingForPlayersToJoin	Venter på at spillere skal bli med i partyet ...
+PartyPanel.ContextMenu.LeaveParty	Forlat party
+PartyPanel.ContextMenu.PromoteToLeader	Oppgrader til partyleder
+PartyPanel.Header	Party
+PartyPanel.Invite.InviteButton	Inviter til party
+PartyPanel.PartyLeaderLabel	Partyleder
+PartyPanel.PartyMemberLabel	Partymedlem
+Patch.Looking	Ser etter oppdateringer
+Patch.Restarting	Starter på nytt ...
+PatchingLauncher.Header	Oppdaterer Ubisoft Connect
+PatchingPlatform.Failed.Description	Noe gikk galt under forsøket på å oppdatere Ubisoft Connect til siste versjon. Du kan prøve igjen eller hoppe over oppdateringen inntil videre. Alternativt kan du prøve å oppdatere klienten manuelt via __UBISOFTCONNECT_INSTALLER__.
+PatchingPlatform.Failed.Header	Ubisoft Connect-oppdateringen mislyktes
+PcBang.Acquire	Henter PC Bang-innhold ...
+PcBang.Expired	PC Bang-poengene dine for spillet er brukt opp. Hvis du vil ha PC Bang-fordeler, må PC Bang-spillet du spiller ha PC Bang-poeng. Spør en PC Bang-ansatt for å få hjelp.
+PcBang.Games	PC Bang-spill
+PcBang.ModeOff	PC Bang-modus AV
+PcBang.ModeOn	PC Bang-modus PÅ
+PcBang.TryAgain1	Du kan prøve igjen ved å trykke på «Try again»-knappen. Hvis spillet ikke kjører, kan du også spille uten fordeler ved å trykke på «Continue»-knappen.
+PcBang.TryAgain2	Du kan prøve igjen ved å trykke på «Try again»-knappen.
+PcBang.Unavailable	PC Bang-tjenesten er for øyeblikket ikke tilgjengelig. I løpet av denne perioden kan det hende at du ikke får tilgang til alt PC Bang-innholdet ditt.
+PcBang.Version	PC Bang-versjon
+PcBang.WentWrong	Du har for øyeblikket ikke tilgang til PC Bang-fordeler.
+PcBang.WentWrong1	1. Systemvedlikehold utføres for øyeblikket.
+PcBang.WentWrong2	2. Noe gikk galt, så du ikke kan motta fordelene.
+PendingDeactivation.CancelClosureDescription	Vi har sendt deg en e-post med en lenke du kan bruke til å avbryte stengingen av kontoen din.
+PendingDeactivation.CancelClosureHeader	Kanseller stenging av konto
+PendingDeactivation.Description	Kontoen din er for øyeblikket sperret på grunn av inaktivitet eller at du har bedt om å få den sperret.
+PendingDeactivation.PromptHeader	Vi kunne ikke logge deg på kontoen din
+PendingDeactivation.byGuardian.Description1	Barnekontoen din er for øyeblikket suspendert på grunn av inaktivitet eller en lukkeanmodning sendt av din foresatte.
+PendingDeactivation.byGuardian.Description2	Det er bare din foresatte som kan avbryte stengningen av kontoen.
+PersistentClient.ExitLabel	Avslutt program
+PersistentClient.MinimizeToTrayDescription	Ubisoft Connect fortsetter å kjøre i bakgrunnen for å sikre raskere tilgang til spillene dine.
+PersistentClient.MinimizeToTrayLabel	Minimer til systemstatusfeltet (anbefalt)
+PersistentClient.SelectClosingBehavior	Velg hva som skal skje når du lukker Ubisoft Connect:
+Platform.YoureOffline	Ubisoft Connect er i offline-modus. Noen spill og tjenester er kun tilgjengelige i online-modus. Start online-modus for å få tilgang til alle Ubisoft Connect-funksjonene.
+PlayerStats.VisitWebsite	Ta turen innom nettsiden for å sjekke ut mer statistikk
+PrepareDownload.InstallingGame	Installerer __GAME_NAME__
+Profile.Edit	Rediger profilen min
+Profile.NoClubGamesHeader	Her vises spillene dine
+Profile.NoClubGamesText	Når du spiller spill fra Ubisoft, får du erfaringspoeng og Units som du kan bruke til å kjøpe eksklusive belønninger, og få tilgang til unikt innhold. Fremdriften og statistikken for Ubisoft-spillene dine vises på denne siden.
+Promotab.OnboardingE3Text	Få siste nytt fra E3 her!
+QuitWarningDialog.Header	Avslutt
+QuitWarningDialog.NoButton	Avbryt
+QuitWarningDialog.WarningMessage	Hvis du lukker Ubisoft Connect mens spillet kjører, kan dette ha en uønsket virkning på spillet. Avslutt __GAME_RUNNING__ før du lukker Ubisoft Connect. Selv om det frarådes, kan du også prøve tvinge avslutning av Ubisoft Connect.
+QuitWarningDialog.YesButton	Tving avslutning
+RecoveryCode.MoreInfo.Link	Hva er gjenopprettingskoder?
+RememberDevice.LimitReached	Antallet enheter du stoler på har nådd den maksimale grensen for tillatte enheter. __MANAGE__
+RememberDevice.SupportText	Du vil ikke lenger trenge en bekreftelseskode når du logger inn med denne enheten.
+RememberMe.SupportText	I fremtiden kommer denne datamaskinen til å huske brukernavnet og passordet ditt.
+RemoteEvent.AllowGamepadControl	Tillat kontroll over gamepad
+RemoteEvent.AllowKbMouseControl	Tillat kontroll over tastatur/mus
+RemoteEvent.BandwidthUsage	Bruk av båndbredde
+RemoteEvent.Connected	Tilkoblet
+RemoteEvent.ConnectionInProgress	Tilkobling pågår
+RemoteEvent.ConnectionStatus	Forbindelsesstatus
+RemoteEvent.ControllingThisDesktop	Styrer dette skrivebordet
+RemoteEvent.Controls	Kontroller
+RemoteEvent.DecodingLatency	Avkrypteringsforsinkelse
+RemoteEvent.Details	Detaljer
+RemoteEvent.Disconnect	Koble fra
+RemoteEvent.EncodingLatency	Krypteringsforsinkelse
+RemoteEvent.Error	Feil
+RemoteEvent.Error.GuestDisconnection	Gjesten ble koblet fra
+RemoteEvent.Error.GuestTimeout	Gjesten fikk tidsavbrudd
+RemoteEvent.Error.InitializationFailed	Initialisering mislyktes
+RemoteEvent.Error.InvitationFailed	Invitasjonen ble ikke sendt
+RemoteEvent.FriendWillHaveFullControl	__NAME__ får full kontroll over skrivebordet og kan vise et spill til en gjest
+RemoteEvent.GiveDesktopControl	Gi kontroll over skrivebordet
+RemoteEvent.InvitationAwaiting	Invitasjon venter
+RemoteEvent.InviteFriend	Inviter en venn
+RemoteEvent.InviteFriendToStart	Inviter en venn for å starte
+RemoteEvent.InviteToStreaming	Inviter til strømming
+RemoteEvent.Menu.Invite	Inviter
+RemoteEvent.Menu.Settings	Innstillinger
+RemoteEvent.Menu.Streaming	Strømmer
+RemoteEvent.NetworkLatency	Nettverksforsinkelse
+RemoteEvent.None	Ingen
+RemoteEvent.OnlyWhenUsingApplication	Kun når programmet er i bruk
+RemoteEvent.PacketLoss	Pakketap
+RemoteEvent.Quality.High	Høy
+RemoteEvent.Quality.Medium	Middels
+RemoteEvent.RecommendDisconnectToSeeGuests	Vi anbefaler at du kobler fra den gjeldende gjesten, sånn at du kan se oversikten
+RemoteEvent.Recording	Opptak
+RemoteEvent.Recording.AudioBitrate	Bithastighet for lyd
+RemoteEvent.Recording.AudioCaptureTrack	Lydopptaksspor
+RemoteEvent.Recording.CaptureAppAudio	Ta opp lyd fra applikasjoner som kjører
+RemoteEvent.Recording.CaptureHostAudio	Ta opp PC-lyd
+RemoteEvent.Recording.KeyframeInterval	Intervall for referanse-videobilde
+RemoteEvent.Recording.RecordingPath	Opptaksmappe
+RemoteEvent.Recording.RecordingTag	Opptakstagg
+RemoteEvent.Recording.Status	Status
+RemoteEvent.Recording.VideoBitrate	Bithastighet for video
+RemoteEvent.Recording.VideoCodec	Videokodek
+RemoteEvent.ScreenSharing	Skjermdeling
+RemoteEvent.SeeAnyway	Se likevel
+RemoteEvent.SelectApplication	Velg et program
+RemoteEvent.StartStreaming	Begynn å strømme
+RemoteEvent.StreamIsActive	Strømmen er aktiv. Vil du avslutte strømmen og lukke dette vinduet?
+RemoteEvent.StreamingQuality	Strømmekvalitet
+RemoteEvent.StreamingTo	Strømmer til
+RemoteEvent.YouAreNotStreaming	Du strømmer ikke nå
+RemoteEvent.YouWillLoseControl	__NAME__, du kommer til å miste kontrollen over skrivebordet
+RemotePlay.EnableAction	Ja, aktiver Remote Play
+RemotePlay.EnableSubText1	Du må aktivere Remote Play for å spille spill på enheten din.
+RemotePlay.EnableSubText2	Dette kan slås på i innstillingene i pc-appen Ubisoft Connect.
+RemotePlay.EnableTitle	Men først …
+RemotePlay.FaqLinkToWebsite	Vanlige spørsmål om Remote Play
+RemotePlay.FaqTitle	Trenger du hjelp?
+RemotePlay.FaqTitleSubText	Vi har svarene. Stikk innom vanlige spørsmål.
+RemotePlay.FooterNotification	Du har aktivert Remote Play for alle spill som har støtte for det. Dette kan slås av i innstillingene.
+RemotePlay.FooterNotification.GoToSettings	Gå til innstillingene
+RemotePlay.Metrics.Latency	Latens
+RemotePlay.Metrics.MS	ms
+RemotePlay.Metrics.Network	Nettverk
+RemotePlay.Metrics.Status.Fair	OK
+RemotePlay.Metrics.Status.Good	Bra
+RemotePlay.Metrics.Status.Poor	Dårlig
+RemotePlay.ScanAndPlaySubText	Skann denne QR-koden med den mobile enheten din for å starte Remote Play
+RemotePlay.ScanAndPlayTitle	Skann og spill
+RemotePlay.Session.CurrentlyStreaming	Strømmer nå
+RemotePlay.Session.NoOngoing	Ingen pågående økter
+RemotePlay.Session.Status	Remote Play-økt
+RetailInstaller.InitFailureHeader	Kunne ikke installere spillet.
+Rewards.Download	Last ned
+Rewards.MaxUnlocksReached	Maksimalt antall opplåsinger nådd
+Rewards.RedeemForAmount	Få den for __UNIT__
+Rewards.RedeemFree	Få den gratis
+Rewards.RedeemFromLauncher	Du kan laste ned denne belønningen fra Ubisoft Connect.
+Rewards.RedeemNeed	Du må tjene opp flere Units for å låse opp denne belønningen.
+Rewards.ServiceUnavailable	Belønninger er utilgjengelig for øyeblikket. Dersom problemet vedvarer, kan du ta kontakt med Ubisofts kundestøtte.
+Rewards.UnlockMultipleTimes	Lås opp flere ganger:
+Rewards.UnlockXTimes	__NUMBER__X for __COST__
+Rewards.UnlocksLeft	Gjenværende opplåsinger: __NUMBER__
+Rewards.UnlocksRemaining	Lås opp denne belønningen __NUMBER__ ganger
+SavingOptInFailed.Header	Feil under lagring av innstillinger
+SavingOptInFailed.Info	Noe gikk galt under lagring av innstillingene dine, så de har blitt satt til standard. Hvis du vil endre innstillingene, kan du gå til Ubisofts nettside for kontoadministrasjon.
+SecurityPhoneNumber.CountryPlaceholder	Land
+SecurityPhoneNumber.Header	Sikkerhetstelefonnummer
+SecurityPhoneNumber.InputInvalid	Telefonnummeret er ikke gyldig
+SecurityPhoneNumber.InputRequired	Telefonnummer er påkrevd
+SecurityPhoneNumber.Intro	Gjenopprett kontoen din ved å motta bekreftelseskoder på telefonen. Dette telefonnummeret brukes bare til sikkerhetsformål og autentisering.
+SecurityPhoneNumber.InvalidVerificationCode	Bekreftelseskoden er ugyldig eller utgått.
+SecurityPhoneNumber.PNAlreadyUsed	Dette telefonnummeret er allerede knyttet til en annen konto.
+SecurityPhoneNumber.PNCantBeUsed	Dette telefonnummeret kan ikke legges til på kontoen din. Bruk et annet.
+SecurityPhoneNumber.PNPlaceholder	Telefonnummer
+SecurityPhoneNumber.ReceiveNewCode	Klikk her for å motta en ny kode
+SecurityPhoneNumber.TooManyAttempts	Denne handlingen kunne ikke behandles på grunn av for mange forsøk innenfor en kort periode. Prøv igjen senere.
+SecurityPhoneNumber.VerificationCompleted	Dette telefonnummeret er lagt til kontoen din.
+SecurityPhoneNumber.VerificationStarted	Vi har sendt en bekreftelseskode til telefonnummeret ditt. Skriv inn bekreftelseskoden i feltet under.
+Service.Initializing	Initialiserer ...
+ServiceUnavailable.Failure	Ubisofts tjenester er ikke tilgjengelige for øyeblikket. Vennligst prøv igjen senere.
+Settings.AccountLinking.SteamReminder	Minn meg om kontosammenkobling neste gang jeg kjører et Steam-spill
+Settings.AutoPatchingGame	Aktiver automatiske oppdateringer til dette spillet hvis det er spilt nylig.
+Settings.AutoPatchingGlobal	Aktiver automatiske spilloppdateringer for spill som er spilt nylig.
+Settings.AutoWallPosts	Aktiver oppdateringer på sosiale nettsteder
+Settings.BandwidthLimit	Begrens bruk av båndbredde
+Settings.ChangeDownloadDirLabel	Endre
+Settings.ChangeInstallerCachePathButton	Endre
+Settings.ChangeProxy	Endre proxy-innstillinger
+Settings.ChangeScreenshotsRootPathButton	Endre
+Settings.ChatEnableTaskbarTabs	Gruppesamtaler med en separat knapp i oppgavelinjen
+Settings.CurrentGameInstallationPath	Standardsspillets installeringssted
+Settings.CurrentGameInstallationPathHelp	Nyere spill vil bli installert på denne plasseringen som standard
+Settings.CurrentInstallerCacheHelp	Installatører for eldre spill vil lastes ned her
+Settings.CurrentInstallerCachePath	Nedlastinger - Plassering for gjeldende installasjons-cache
+Settings.CurrentScreenshotsRootPath	Skjermbilde lagringssted
+Settings.DeleteInstallersButton	Slett alle spillinstallasjonsprogrammer
+Settings.DeleteInstallersError	Du kan ikke slette installasjonsprogrammer mens en nedlasting eller installasjon er i gang
+Settings.DesktopNotificationsInfo	Skrivebordsvarsler vises nederst til høyre på skjermen når viktige hendelser inntreffer.
+Settings.DontUploadCrashReports	Ikke send krasjrapporter
+Settings.DownloadLimitNone	Ingen
+Settings.EnableAchievementsScreenshots	Ta et automatisk skjermbilde når prestasjonen er låst opp.
+Settings.EnableDesktopNotifications	Aktiver varsler på skrivebordet
+Settings.GameInstallationDefaultButton	Standard
+Settings.InGameNotificationsInfo	Varsler i spillet vises som et lite vindu ved kanten av skjermen. Disse gir deg informasjon uten å avbryte det som skjer i spillet.
+Settings.InGameSocial	Aktiver varsler i spillet
+Settings.LandingPageGames	Spill
+Settings.LandingPageLastPlayedGame	Sist spilte spill
+Settings.LandingPageNews	Nyheter
+Settings.LandingPageUplayPlus	Ubisoft+
+Settings.Language	Språk for grensesnitt
+Settings.Language.arAA	العربية الموحدة
+Settings.Language.arSA	العربية
+Settings.Language.beBY	Беларуская
+Settings.Language.bgBG	Български
+Settings.Language.bnBD	বাংলা
+Settings.Language.bsBA	Bosanski
+Settings.Language.caES	Català
+Settings.Language.csCZ	Čeština
+Settings.Language.daDK	Dansk
+Settings.Language.deDE	Deutsch
+Settings.Language.elGR	Ελληνικά
+Settings.Language.enAU	English (Australia)
+Settings.Language.enBZ	English (Belize)
+Settings.Language.enCA	English (Canadian)
+Settings.Language.enCB	English (Caribbean)
+Settings.Language.enGB	English (UK)
+Settings.Language.enIE	English (Ireland)
+Settings.Language.enJM	English (Jamaica)
+Settings.Language.enNZ	English (New Zealand)
+Settings.Language.enPH	English (Philippines)
+Settings.Language.enTT	English (Trinidad and Tobago)
+Settings.Language.enUS	English
+Settings.Language.enZA	English (South Africa)
+Settings.Language.enZW	English (Zimbabwe)
+Settings.Language.es419	Español (LATAM)
+Settings.Language.esES	Español
+Settings.Language.esMX	Español (LATAM)
+Settings.Language.etEE	Eesti
+Settings.Language.euES	Euskara
+Settings.Language.faIR	فارسی
+Settings.Language.fiFI	Suomi
+Settings.Language.foFO	Føroyskt
+Settings.Language.frCA	Français (Canadien)
+Settings.Language.frFR	Français
+Settings.Language.glES	Galego
+Settings.Language.guIN	ગુજરાતી
+Settings.Language.heIL	עִבְרִית
+Settings.Language.hiIN	हिन्दी
+Settings.Language.hrHR	Hrvatski
+Settings.Language.huHU	Magyar
+Settings.Language.idID	Bahasa Indonesia
+Settings.Language.isIS	Íslenska
+Settings.Language.itIT	Italiano
+Settings.Language.jaJP	日本語
+Settings.Language.knIN	ಕನ್ನಡ
+Settings.Language.koKO	한국어
+Settings.Language.koKR	한국어
+Settings.Language.ltLT	Lietuvių kalba
+Settings.Language.lvLV	Latviešu valoda
+Settings.Language.mkMK	Македонски
+Settings.Language.mnMN	Монгол
+Settings.Language.mrIN	मराठी
+Settings.Language.msMY	Bahasa Melayu
+Settings.Language.nbNO	Norsk
+Settings.Language.nlNL	Nederlands
+Settings.Language.nnNO	Norsk (nynorsk)
+Settings.Language.plPL	Polski
+Settings.Language.ptBR	Português brasileiro
+Settings.Language.ptPT	Português
+Settings.Language.roRO	Română
+Settings.Language.ruRU	Русский
+Settings.Language.saIN	संस्कृतम्
+Settings.Language.skSK	Slovenčina
+Settings.Language.slSI	Slovenščina
+Settings.Language.srRS	Српски језик
+Settings.Language.svSE	Svenska
+Settings.Language.taIN	தமிழ்
+Settings.Language.teIN	తెలుగు
+Settings.Language.thTH	ไทย
+Settings.Language.trTR	Türkçe
+Settings.Language.ukUA	Українська
+Settings.Language.urPK	اردو
+Settings.Language.viVN	Tiếng Việt
+Settings.Language.zhCN	简体中文
+Settings.Language.zhTW	繁體中文
+Settings.MainHeader	Innstillinger
+Settings.MinimizeToTrayInfo	Hvis du huker av dette, fortsetter Ubisoft Connect å kjøre i bakgrunnen og sørger for raskere tilgang til spillene dine.
+Settings.MinimizeToTrayLabel	Minimer Ubisoft Connect til systemstatusfeltet når programvinduet lukkes
+Settings.Need2FAVerification	Hvis du skal kunne frakoble Steam-kontoen din, må du lukke Ubisoft Connect og logge inn igjen med totrinnsbekreftelse eller med husk enhet-funksjonen aktivert.
+Settings.NonFriendGameInvite	Muliggjør invitasjoner fra folk som ikke er på vennelisten din
+Settings.NotificationAchievements	Du har oppnådd en prestasjon
+Settings.NotificationChat	Du mottar en ny chat-melding
+Settings.NotificationClubChallenge	Du har fullført en utfordring
+Settings.NotificationDownloadComplete	Et spill er ferdig lastet ned
+Settings.NotificationFriendGame	En venn starter et spill
+Settings.NotificationFriendOnline	En venn går online
+Settings.NotificationFriendRequest	Du mottar en venneforespørsel
+Settings.NotificationGameInvite	En venn inviterer deg til et spill
+Settings.NotificationGamePatchAvailable	Det finnes en spilloppdatering
+Settings.NotificationGroupInvite	Du har fått en gruppeinvitasjon
+Settings.NotificationPartyInvite	En venn har invitert deg med i et party
+Settings.NotificationPlayAvailable	Et spill er klart til å spilles
+Settings.OfflineMode	Start Ubisoft Connect i offline-modus
+Settings.OptInForBeta	Prøv tidlige versjoner
+Settings.OptInForBetaInfo	Med tidlige versjoner kan du prøve funksjoner som fremdeles er under utvikling. Du kan gå tilbake til den siste stabile versjonen ved å fjerne merket i boksen og starte Ubisoft Connect på nytt.
+Settings.OverlayDescription	Aktiver in-game overlay for kompatible spill
+Settings.OverlayShiftF2	Shift + F2
+Settings.OverlayShortcutDescription	Trykk på Shift + F2 mens du spiller for å aktivere overlayet.
+Settings.PauseDownloadsOnGameLaunches	Sett spillnedlastinger på pause mens du spiller
+Settings.RemotePlayEnable.SubText	Hvis du huker av for dette, kan du strømme spill som har støtte for Remote Play, på de mobile enhetene dine (Android eller iOS).
+Settings.RemotePlayEnable.Title	Aktiver Remote Play
+Settings.Restart	Start på nytt
+Settings.RestartForEffect	Du må starte Ubisoft Connect på nytt for at språkvalget skal tre i kraft.
+Settings.RestartForLanguage	Du må starte Ubisoft Connect på nytt for at språkvalget skal tre i kraft.
+Settings.SaveScreenshotUncompressedCopy	Lagre en ukomprimert (.png)-kopi av skjermbilder
+Settings.SavegameSync	Aktiver synkronisering for skylagring
+Settings.ScreenshotTaken	Det blir tatt et skjermbilde
+Settings.ScreenshotsHotkey	Snarvei for lagring av skjermbilde
+Settings.SelectLandingPage	Velg siden som skal vises etter når klienten kjøres eller åpnes på nytt.
+Settings.ShowFPSCounter	Vis billedfrekvensteller i spillet
+Settings.ShowNotificationsWhen	Vis varsler når:
+Settings.ShowSpotlight	Aktiver informasjon etter spillet om kommende lanseringer, hendelser, kampanjer og tillegg i spillene mine.
+Settings.StartOnWindowsStart	Kjør Ubisoft Connect når Windows starter
+Settings.Tabs.AccountLinking	Kontosammenkobling
+Settings.Tabs.Downloads	Nedlastinger
+Settings.Tabs.General	Generelt
+Settings.Tabs.Network	Nettverk
+Settings.Tabs.Notifications	Varsler
+Settings.Tabs.Other	Annet
+SharePlay.CoopTag	Strømming av co-op
+SharePlay.CoopTag.Tooltip	Når spillere blir med i en økt, kan den ene bruke mus og tastatur, mens resten må bruke spillkontrollere.
+SharePlay.Coupon.Description	Gjester som du spiller dette spillet med, vil motta en hemmelig gave: en rabatt for å kjøpe spillet du delte. Rabatten er gyldig én gang for hver gjest. Gaven kan brukes på enhver plattform dette spillet er tilgjengelig på.
+SharePlay.Coupon.Title	Eksklusiv delingsspill-gave
+SharePlay.CreateLink.Copy	Kopier
+SharePlay.CreateLink.CreateNewLink	Lag ny lenke
+SharePlay.CreateLink.EnableOverlay	Ops, du må både starte spillet og ha overleggfunksjonen aktiv for å starte en økt. Start spillet, og aktiver overlegget i innstillingene.
+SharePlay.CreateLink.Error	Noe gikk galt
+SharePlay.CreateLink.GuestCapacityReached	Du kan ikke invitere flere gjester. Økten har nådd maks kapasitet.
+SharePlay.CreateLink.InviteLinkExpired	Invitasjonen er utløpt
+SharePlay.CreateLink.PendingTime.Description	Invitasjonen utløper om 5 minutter
+SharePlay.CreateLink.Retry	Prøv igjen
+SharePlay.CreateLink.StartGameFirst	Du må starte spillet før du sender invitasjoner
+SharePlay.CreateLink.Title	Lag lenke
+SharePlay.CreateLink.WithoutLink.Title	Inviter inntil __MAX_GUESTS_ALLOWED__ gjest(er) med en lenke du kan dele overalt!
+SharePlay.FAQ.Link	Vanlige spørsmål om Share Play
+SharePlay.FAQ.Title	Har du flere spørsmål? Da kan du gå til vanlige spørsmål på Ubisofts kundestøtte.
+SharePlay.FriendList.GuestLimit	Share Play-økten har en grense på én gjest
+SharePlay.Guest.CancelInvite	Avbryt invitasjon
+SharePlay.Guest.Guest	Gjest
+SharePlay.Guest.RemoveGuest	Fjern gjest
+SharePlay.OnBoarding.Next	Neste
+SharePlay.OnBoarding.OkGotIt	Skjønner!
+SharePlay.OnBoarding.Previous	Forrige
+SharePlay.OnBoarding.ReadFaq	Les vanlige spørsmål.
+SharePlay.OnBoarding.Skip	Hopp over
+SharePlay.Onboarding.Description1	Strøm og gi kontroll over spilløkten på PC-en din til én eller flere venner. Disse kan spille spillet på en Windows-kompatibel PC.
+SharePlay.Onboarding.Description2	Gjester trenger ikke å eie eller laste ned spillet for å spille. Du kan bruke en kontroller til å spille solo eller co-op når det er tilgjengelig.
+SharePlay.Onboarding.Description2.NoLimit	Vennen din trenger ikke eie spillet for å spille. Med Share Play kan vennen din prøve det og spille det uten å laste det ned. Du kan invitere en venn til så mange økter du vil.
+SharePlay.Onboarding.Description2.One	Gjestene dine trenger ikke eie spillet for å spille. Med Share Play kan de prøve det og spille det i økter på __TIME__ minutt uten å laste det ned. Du kan invitere gjester til så mange økter du vil.
+SharePlay.Onboarding.Description3	Share Play-økter gir tilgang til spillagringene dine og den virtuelle valutaen din, men ikke til PC-en eller Ubisoft-kontoen din. Under spilløkten kan du når som helst overstyre gjestenes tilgang ved å bruke <Shift + F2>. Handlinger som foretas av gjestene dine under en Share Play-økt, kan ikke omgjøres. Gjester kan holdes ansvarlig for handlingene sine under en Share Play-økt.
+SharePlay.Onboarding.Description4	Spillere må oppfylle spillets alderskrav og ha en stabil internettforbindelse (10 mbps er minste anbefalte hastighet). Det er også tidsbegrensninger.
+SharePlay.Onboarding.Title1	Hva er Share Play?
+SharePlay.Onboarding.Title2	Hva skal gjestene mine gjøre for å spille?
+SharePlay.Onboarding.Title3	Hva deles?
+SharePlay.Onboarding.Title4	Krav
+SharePlay.PageError.AnotherGameRunning.Description	Du kan ikke sende Delingsspill-invitasjoner til denne mens du spiller en annen.
+SharePlay.PageError.AnotherGameRunning.Title	Det er allerede et spill i gang
+SharePlay.PageError.AnotherStreamingSession.Description	Du kan ikke sende Delingsspill-invitasjoner under en pågående strømmeøkt.
+SharePlay.PageError.AnotherStreamingSession.Title	Det er allerede en økt i gang
+SharePlay.Participants.HostNick	Du
+SharePlay.Participants.Title	Deltakere
+SharePlay.PostSession.Form.AudioIssue	Problemer med lyden
+SharePlay.PostSession.Form.GuestPerformanceIssue	Ytelsesproblem for gjest
+SharePlay.PostSession.Form.HostPerformanceIssue	Ytelsesproblem for vert
+SharePlay.PostSession.Form.InputLag	Sene reaksjoner på knappetrykk
+SharePlay.PostSession.Form.InvitationFailed	Invitasjon mislyktes
+SharePlay.PostSession.Form.Other	Annet
+SharePlay.PostSession.Form.PoorConnection	Dårlig tilkobling
+SharePlay.PostSession.Form.PoorGuestBehavior	Dårlig oppførsel fra gjest
+SharePlay.PostSession.Form.VideoIssue	Videoproblem
+SharePlay.PostSession.GoToStore	Gå til butikken
+SharePlay.PostSession.HearAboutExp	Vi vil gjerne høre hva du synes om Share Play!
+SharePlay.PostSession.LookingForMore	På jakt etter mer?
+SharePlay.PostSession.PurchaseGame	Hvis du likte å spille __GAME_NAME__, kan du nå kjøpe det!
+SharePlay.PostSession.Send	Send
+SharePlay.PostSession.TellUsMore	Du må gjerne fortelle mer om opplevelsen din.
+SharePlay.PostSession.Thanks	Takk for tilbakemeldingen!
+SharePlay.Session.CurrentlyStreaming	Strømmer nå
+SharePlay.Session.EndSession	Avslutt økt
+SharePlay.Session.GuestPaused	Gjestekontroller satt på pause
+SharePlay.Session.InviteGuest	Inviter inntil __MAX_GUESTS_ALLOWED__ gjest(er) til økten
+SharePlay.Session.NoOngoing	Ingen pågående Share Play-økt
+SharePlay.Session.SharePlay	Del spilløkt
+SharePlay.Session.Status	Øktens status
+SharePlay.WindowError.Close	Lukk
+SharePlay.WindowError.Description	Du kan ikke bli med i din egen økt.
+SharePlay.WindowError.FAQ	Vanlige spørsmål om Delingsspill
+SharePlay.WindowError.Title	Det er du som er vert for denne økten. Du kan ikke bli med som gjest.
+Shop.AddToCartError	Dette kunne ikke legges til å handlekurven for øyeblikket. Prøv igjen.
+Shop.AllDLC	Alt nedlastingsinnhold:
+Shop.AllEditions	Alle utgaver:
+Shop.Discover	Utforsk
+Shop.ErrorHeader	Ubisoft Store er ikke tilgjengelig.
+Shop.ErrorText	Ubisoft Store er midlertidig utilgjengelig. Dersom problemet vedvarer, kan du ta kontakt med Ubisofts kundestøtte.
+Shop.PriceFrom	Fra __PRICE__
+Shop.SupportLink	Ubisofts kundestøtte
+Stats.Title	Statistikk
+SteamAccountLinking.Description	Når du kobler sammen konti, kommer du fortere i gang, ved å logge inn automatisk på Ubisoft Connect når du starter et spill via Steam. Ubisoft Connect deler ikke innloggingsinformasjonen din på Steam.
+SteamOverlayRequiredWarning.Text	Hvis du starter spillet uten Steams spilloverlegg, kan det hende at det er noen spillfunksjoner du ikke får tilgang til.
+SteamOverlayRequiredWarning.Title	Steams spilloverlegg deaktivert
+SteamPop.ActivationDescription	Dette aktiverer følgende produkter på kontoen din: __USER_NAME__ (__MAIL__):
+SteamPop.ErrorClaimedAlready	Dette produktet er allerede gjort beslag på av __CLAIMING_USER__. Hvis du føler at dette er feil, kan du kontakte kundestøtte.
+SteamPop.ErrorGeneric	Det var et problem med å verifisere eierskapet i dette produktet. Kontakt kundestøtte hvis du trenger hjelp til å løse dette problemet.
+Store.Checkout	Betal
+Store.CheckoutBackToPayment	Velg en annen betalingsmetode
+Store.CheckoutDismissProviderBrowserHeader	Vil du gå bort fra siden?
+Store.CheckoutDismissProviderBrowserText	Er du sikker på at du vil gå bort fra denne siden?<br>Dobbeltsjekk at transaksjonen din er fullført, hvis ikke du vil avbryte betalingen.
+Store.CheckoutErrorText	Noe gikk galt. Prøv igjen om en liten stund.
+Store.CheckoutProductNotFoundMessage	Produktet du prøver å kjøpe er ikke tilgjengelig i landet ditt.
+Store.CheckoutRedirectErrorText	Det er for øyeblikket et problem med å behandle betalingen din. Du har ikke blitt belastet for denne transaksjonen. Prøv igjen.
+Store.CheckoutSuccessHeader	Takk for at du handlet hos oss!
+Store.CheckoutSuccessOwnership	Innholdet ditt er tilgjengelig!
+Store.CheckoutSuccessText	Transaksjonen din er fullført, og en bekreftelse på ordren er sendt til deg med e-post.
+Store.CheckoutTermsOfSale	Ved å bekrefte ordren min, sier jeg meg enig i <a>salgsvilkårene</a>.
+Store.CheckoutUnknownErrorText	Det skjedde et problem under innhenting av betalingsinformasjon. Hvis transaksjonen var vellykket, vil det du har kjøpt bli lagt til på kontoen din om et øyeblikk.
+Store.CheckoutWaitingOwnership	Legger til innhold på kontoen din. Dette kan ta litt tid ...
+Store.CheckoutWaitingOwnershipTimeout	Dette tar lenger tid enn forventet. Hvis problemet vedvarer, bør du kontakte kundestøtte hos Ubisoft.
+Store.CheckoutWithdrawalRights	Jeg sier meg herved enig i at kontrakten iverksettes umiddelbart, og jeg bekrefter at jeg mister retten til å trekke meg fra kontrakten så snart nedlastingen eller strømmingen av innholdet har begynt.
+Store.ErrorGettingStoreInfo	Butikken er ikke tilgjengelig for øyeblikket. Prøv igjen, eller kom tilbake senere.
+Store.GoToHomepage	Gå til butikken
+Store.IncludingVat	Med moms
+Store.LegalInfo	© Ubisoft Entertainment. Med enerett. Ubisoft og Ubisoft-logoen er varemerker for Ubisoft Entertainment i USA og/eller andre land.
+Store.LegalInformation	Juridisk informasjon
+Store.LocaleMismatchMessage	Vi har registrert at du har gått til butikken i et annet land, derfor sender vi deg til butikken i landet ditt. Hvis du vil oppdatere innstillingene for lokal butikk, kan du gjøre det i innstillingene for Steam-kontoen din.
+Store.NoProductsAvailable	Det er ingen tilgjengelige produkter i regionen din for øyeblikket
+Store.OrderColor	Farge:
+Store.OrderQuantity	Antall:
+Store.OrderSize	Størrelse:
+Store.OrderSummary	Ordresammendrag
+Store.Purchased	Kjøpt
+Store.RedirectMessage	Vi har registrert at du har gått til butikken i et annet land. Vi du bytte til butikken i landet ditt?
+Store.RedirectingToProvider	Omdirigerer ...
+Store.SelectPayment	Velg betalingsmetode
+Store.StockLevel	Bare __REPLACE_WITH_STOCKLEVEL__ igjen på lager
+Store.StoreServiceOffline	Noe gikk galt. Prøv igjen senere.
+Store.SwitchStore	Bytt butikk
+Store.TagBundles	Samlinger
+Store.TagCurrency	Valuta
+Store.TagDLC	DLC
+Store.TagGame	Spill
+Store.TagSeasonPass	Season Pass
+Store.TagSets	Sett
+Store.TagSkins	Skins
+Store.TagULC	ULC
+StoreFront.AddonsTitle	Nedlastinger til spillene dine
+StoreFront.RecommendationsTitle	Anbefalte spill
+StoreFront.ShowLess	Vis færre
+StoreFront.ShowMore	Vis flere
+StoreFront.TopPick	Utvalgte for deg
+StorePage.Developer	Utvikler:
+StorePage.Genre	Sjanger:
+StorePage.Multiplayer	Flerspiller:
+StorePage.Overview	Oversikt
+StorePage.ReleaseDate	Lanseringsdato:
+StorePage.Singleplayer	Solospill:
+StorePage.SizeChart	Størrelser
+StorePage.SystemRequirements	Systemkrav
+Subscription.Active	Ubisoft+-abonnementet ditt er aktivt.
+Subscription.AvailableWith	Tilgjengelig med
+Subscription.Expired	Ubisoft+-abonnementet ditt har utløpt.
+Subscription.ExpiredHeader	Abonnementet har utløpt
+Subscription.ExpiredText	Ubisoft+-abonnementet ditt har utløpt. Forny det for å fortsette å spille.
+Subscription.FailureNoInternet	Ubisoft+ er bare tilgjengelig når du er tilkoblet internett. Når tilkoblingen er gjenopprettet, kan du kjøre Ubisoft+-spillene dine umiddelbart.
+Subscription.GameNotIncluded	Dette spillet er for øyeblikket ikke tilgjengelig i noen abonnementer.
+Subscription.GameUnavailableText	Dette spillet og innholdet er ikke tilgjengelig med det gjeldende Ubisoft+-abonnementet ditt.
+Subscription.InactiveRibbon	Ubisoft+-abonnementet ditt er for øyeblikket inaktivt.
+Subscription.InactiveText	Ubisoft+-abonnementet ditt er for øyeblikket inaktivt.__LINE_BREAK__<a>Aktiver abonnementet på nytt</a>
+Subscription.Manage	Administrer Ubisoft+-abonnementet ditt.
+Subscription.ManageButton	Administrer abonnementet
+Subscription.MembershipStatus	Medlemskapsstatus:
+Subscription.MembershipStatusActive	Aktivt
+Subscription.MembershipStatusExpired	Utløpt
+Subscription.Name	Ubisoft+
+Subscription.NoInternetHeader	Ingen internettilkobling
+Subscription.Re-activateButton	Aktiver abonnementet på nytt
+Subscription.RenewButton	Forny abonnementet
+Subscription.UnavailableRibbon	Enkelte spill er utilgjengelige med det gjeldende Ubisoft+-abonnementet ditt.
+Switch.GamePlayerSuspended	Du kan for øyeblikket ikke spille på grunn av brudd på brukeravtalen. Hvis du vil vite mer, kan du kontakte Ubisofts kundestøtte.
+Switch.GenericError	Det oppsto et problem under oppstart av spillet. Prøv igjen senere. Hvis problemet vedvarer, bør du kontakte Ubisofts kundestøtte.
+Switch.LoginBanned	Kontoen din er midlertidig stengt i grunnet flere mislykkede innlogginger. Hvis du har problemer med å logge inn på kontoen din, kan du prøve senere eller ta kontakt med Ubisofts kundestøtte.
+Switch.LoginPasswordRequired	For å beskytte kontoen din krever vi at du oppdaterer passordet. Gå til http://account.ubisoft.com for å oppdatere.
+Switch.ServiceUnavailable	En av Ubisofts tjenester er ikke tilgjengelig for øyeblikket. Prøv igjen senere. Hvis problemet vedvarer, bør du kontakte Ubisofts kundestøtte.
+ThirdParty.LimitedModeBanner	Noen funksjoner er blitt deaktivert fordi Ubisoft Connect ble startet eller installert fra en annen applikasjon.
+ThirdPartyPlatform.DiskIsFullError	Du har ikke nok tilgjengelig ledig diskplass. Vennligst frigjør plass, og prøv igjen.
+ThirdPartyPlatform.DownloadFailureHeader	Kunne ikke laste ned __PLATFORM_NAME__
+ThirdPartyPlatform.GenericDiskError	Diskfeil under nedlasting av installeringsprogrammet til __PLATFORM_NAME__
+ThirdPartyPlatform.GenericDownloadError	Nedlasting mislyktes. Kontroller at du har en aktiv internettforbindelse og tilstrekkelig ledig plass på harddisken, og trykk på Prøv igjen for å starte nedlastingen på nytt. Hvis ikke dette går, kan du forsøke igjen senere.
+ThirdPartyPlatform.InstallFailureHeader	Kunne ikke installere __PLATFORM_NAME__
+ThirdPartyPlatform.InstallFailureText	Sjekk installeringsprogrammet til __PLATFORM_NAME__ for å undersøke hva som er grunnen til feilen
+Tooltip.Common.MoreActions	Flere handlinger
+Tooltip.Library.GridView	Rutenettvisning
+Tooltip.Library.ListView	Listevisning
+Tooltip.Library.TextView	Tekstvisning
+TrustedDevice.Check	Dette er en godkjent enhet
+TwoStepCode.PromptTimeExpires	Økten ble avsluttet på grunn av inaktivitet. Logg inn på nytt.
+TwoStepVerification.ActivateReason1	Gi Ubisoft-kontoen din et ekstra sikkerhetslag ved å aktivere 2-trinns bekreftelse med Google Autentisering.
+TwoStepVerification.ActivateReason2	Aktiver 2-trinns bekreftelse med Google Autentisering for å gi Ubisoft-kontoen din et ekstra sikkerhetslag.
+TwoStepVerification.ActivateReason3	Beskytt Ubisoft-kontoen din ytterligere ved å aktivere 2-trinns bekreftelse med Google Autentisering.
+TwoStepVerification.CheckBrowser.Description	Vi har åpnet nettsiden for administrasjon av Ubisoft-kontoen din, der du kan sette opp 2-trinns bekreftelse. Kom tilbake og fortsett når oppsettet er fullført.
+TwoStepVerification.CheckBrowser.Title	Sjekk nettleseren din
+TwoStepVerification.ClickToReceiveSmsCode	Eller klikk her for å motta en kode på SMS
+TwoStepVerification.EnterCode	Skriv inn bekreftelseskoden i feltet under:
+TwoStepVerification.EnterEmailCode	Vi har nettopp sendt deg en e-post med en sikkerhetskode du kan bruke til å bekrefte at det er du som eier kontoen din. Skriv inn bekreftelseskoden i feltet under:
+TwoStepVerification.IncorrectVerificationCode	Ugyldig bekreftelseskode.
+TwoStepVerification.InfoAuthenticator	Du har aktivert totrinnsbekreftelse med Google Autentisering.
+TwoStepVerification.InfoEmail	Du har aktivert totrinnsbekreftelse med e-post.
+TwoStepVerification.InfoEmail.MergedText	Du har aktivert godkjenning med 2 faktorer med e-post. Skriv inn koden vi har sendt til e-postadressen din:
+TwoStepVerification.InfoSms	Du har aktivert godkjenning med 2 faktorer med SMS. Skriv inn koden vi har sendt til telefonen din:
+TwoStepVerification.NewCodeSent	En ny kode er blitt sendt til e-postadressen din!
+TwoStepVerification.NewSmsCodeSent	En ny kode er sendt til telefonnummeret ditt!
+TwoStepVerification.Onboarding.Description	Gi Ubisoft-kontoen din et ekstra lag av sikkerhet ved å aktivere 2-trinns bekreftelse med Google Autentisering, e-post eller via SMS.
+TwoStepVerification.Onboarding.Title	Beskytt kontoen din med 2-stegsverifisering
+TwoStepVerification.ReceiveNewCode	Få en ny kode.
+TwoStepVerification.RecoveryCodesHint	Hvis ikke du får tilgang til Google Autentisering, bruker du en av gjenopprettingskodene i bekreftelsesfeltet. Kodene ble sendt til deg da du aktiverte totrinnsbekreftelse.
+TwoStepVerification.SetUp	Sett opp 2-stegsverifisering
+TwoStepVerification.StatusUpdateInfo	Du må åpne denne siden på nytt for å se endringene i status for 2-stegsverifiseringen.
+TwoStepVerification.Title	Totrinnsbekreftelse
+UplayMenu.AccountInformation	Kontoinfo
+UplayMenu.ChangeUser	Endre bruker
+UplayMenu.GoOffline	Gå offline
+UplayMenu.GoOnline	Gå online
+UplayMenu.ReleaseNotes	Versjonsmerknader
+UplayMenu.StoreBillingAddress	Betalingsadresse
+UplayMenu.StoreBillingInformation	Betalingsinformasjon
+UplayMenu.StoreHelp	Vanlige spørsmål / Hjelp
+UplayMenu.StoreOrderHistory	Mine ordre
+UplayMenu.Subscriptions	Mine abonnementer
+VerifyCode.Resend	Send bekreftelseskode på nytt
+VerifyEmail.EmailNotVerified	Denne e-postadressen er ikke bekreftet!
+VerifyEmail.EmailSentFailed	Det skjedde en feil mens du sendte forespørselen. Prøv igjen senere.
+VerifyEmail.EmailSentSuccess	Vi har sendt deg en e-post fra AccountSupport@ubi.com slik at du kan bekrefte e-postadressen din.
+VerifyEmail.EmailSentSuccess1	AccountSupport@ubi.com sender deg en e-post med mer informasjon om hvordan du kan bekrefte e-postadressen din.
+VerifyEmail.EmailSentSuccess2	Det er en e-post på vei til deg fra AccountSupport@ubi.com med mer informasjon om hvordan du kan bekrefte e-postadressen din.
+VerifyEmail.PromptEmailSentHeader	Du er nesten ferdig
+VerifyEmail.PromptHeader	Bekreft e-postadressen din
+VerifyEmail.Resend	Send bekreftelse med e-post på nytt
+VerifyEmail.Verified	E-postadressen din er bekreftet!
+VerifyEmail.Verify	Bekreft
+VerifyEmail.VerifyLink	Bekreft e-postadresse
+VerifyEmail.VerifyReason	Bekreft e-postadressen din slik at vi kan holde kontoen din trygg, og du kan motta rask hjelp når du trenger det.
+VerifyEmail.VerifyReason1	Forbedre sikkerheten til kontoen din, og sørg for at du får effektiv hjelp når du trenger det, ved å bekrefte e-postadressen din.
+VerifyEmail.VerifyReason2	Bekreft e-postadressen din for å bedre sikkerheten til kontoen din og sørge for at du får mer effektiv kundestøtte.
+VerifyEmail.VerifyReason3	Er kontoinfoen din oppdatert? Sørg for at e-postadressen er bekreftet for å sikre kontoen din.
+VerifyGame.Completed	Alle spill filer har blitt validert.
+VerifyGame.Failed	Kunne ikke kontrollere og godkjenne spillfilene. Prøv å installere spillet på nytt. Hvis problemet vedvarer, kan du kontakte Ubisoft Support
+VerifyGame.Header	Kontrollerer spillfiler
+VerifyGame.Initializing	Initialiserer ...
+VerifyGame.Resolve	Løser filer
+VerifyGame.TotalProgress	Total framgang:
+Videos.Title	Videoer
+Wallet	Ubisofts lommebok
+Wallet.Activate.Link	Aktiver lommeboken din
+Wallet.AddFunds.Link	Fyll på midler
+Wallet.CheckoutTerms	Når jeg bekrefter ordren min, godtar jeg <a>salgsbetingelsene/a> og <a>betingelsene for Lommeboken</a>.
+Wallet.ConfirmButton	Bekreft
+Wallet.CurrencyMismatch	Lommebokvalutaen din støttes for øyeblikket ikke av landet du er tilkoblet i.
+Wallet.CustomerSupport.Link	Kundestøtte
+Wallet.Deactivated	Lommeboken din er deaktivert av sikkerhetsårsaker.
+Wallet.FundsBalance	Midler i lommeboken: __BALANCE__
+Wallet.IngamePayment.Confirm	Bekreft og betal
+Wallet.IngamePayment.Disclaimer	<0/> Lommebokbelønninger kan ikke brukes til kjøp i spillet. <1>Mer info</1>
+Wallet.IngamePayment.IncludingRewards	Med lommebokbelønninger: <0/> {{amount}}
+Wallet.IngamePayment.RemainingBalance	Midler igjen i lommeboken:
+Wallet.IngamePayment.RewardsTitle	Din lommeboksaldo:
+Wallet.IngamePayment.Title	Betaling via Lynlommebok
+Wallet.IngamePayment.TotalSum	Totalt:
+Wallet.IngamePayment.WalletBalance	Lommeboksaldo:
+Wallet.IngamePayment.WalletFunds	Midler i lommeboken:
+Wallet.InsufficientFunds	Du har ikke nok midler i lommeboken til å fullføre kjøpet.
+Wallet.LearnMore	Mer info
+Wallet.Payment	Betaling via Ubisofts lommebok
+Wallet.RemainingFunds	Midler igjen i lommeboken: __REMAINING FUNDS BALANCE__
+Wallet.ReviewOrder	Se over ordren din
+Wallet.RewardsDisclaimer	Lommebokbelønninger kan ikke brukes til kjøp i spillet.
+Wallet.RewardsExcluded	Uten lommebokbelønninger: __REWARDS BALANCE__
+Wallet.RewardsIncluded	Med lommebokbelønninger: __REWARDS BALANCE__
+Wallet.SetUp	Lommeboken din er ikke aktivert ennå.
+Wallet.YourBalance	Din lommeboksaldo
+WalletFunds	Lommebokmidler
+WalletRewards	Lommebokbelønninger
+Win.MyGamesTitle	Mine spill
+Win.Owned	Eid
+Wishlist.Header	Ønskeliste
+XboxAccountLinking.Description	Kontoen du er i ferd med å tilknytte, vil bli Xbox-referansekontoen for hos Ubisoft. Du finner mer informasjon om sammenknytting av kontoer på nettsiden til Ubisofts kundestøtte.

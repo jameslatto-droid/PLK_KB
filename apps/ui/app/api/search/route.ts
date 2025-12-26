@@ -1,9 +1,13 @@
 import { spawn } from "node:child_process";
+import path from "node:path";
 
 import { loadEnv } from "@/lib/server/env";
 
-const PYTHON = "/home/jim/PLK_KB/.venv/bin/python";
-const ROOT = "/home/jim/PLK_KB";
+const DEFAULT_ROOT = path.resolve(process.cwd(), "..", "..");
+const ROOT = process.env.PLK_ROOT || DEFAULT_ROOT;
+const PYTHON = process.env.PLK_PYTHON || path.join(ROOT, ".venv", "bin", "python");
+const MAX_OUTPUT_BYTES = 500_000;
+const MAX_MS = 30_000;
 
 type ContextPayload = {
   actor?: string;
@@ -52,16 +56,30 @@ async function runSearch(query: string, topK: number, context?: ContextPayload) 
     const proc = spawn(PYTHON, script, { cwd: ROOT, env });
     let stdout = "";
     let stderr = "";
+    const timer = setTimeout(() => {
+      proc.kill("SIGKILL");
+      reject(new Error("search failed: python execution timed out"));
+    }, MAX_MS);
     proc.stdout.on("data", (data) => {
       stdout += data.toString();
+      if (stdout.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error("search failed: python output exceeded limit"));
+      }
     });
     proc.stderr.on("data", (data) => {
       stderr += data.toString();
+      if (stderr.length > MAX_OUTPUT_BYTES) {
+        proc.kill("SIGKILL");
+        reject(new Error("search failed: python error output exceeded limit"));
+      }
     });
     proc.on("error", (err) => {
+      clearTimeout(timer);
       reject(new Error(`search failed to start: ${err.message}`));
     });
     proc.on("close", (code) => {
+      clearTimeout(timer);
       if (code !== 0) {
         reject(new Error(`search failed: ${stderr.trim() || `exit code ${code}`}`));
         return;

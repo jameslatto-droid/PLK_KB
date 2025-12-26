@@ -34,6 +34,11 @@ Access is enforced before retrieval using metadata dimensions:
 - Commercial sensitivity
 - Classification
 
+Notes:
+- Access is deny-by-default; a document is allowed only if at least one access rule fully matches the request context.
+- Classification matching is equality-based (no implicit clearance hierarchy).
+- There is no hard-coded SUPERUSER bypass in the engine; SUPERUSER access is granted via explicit access rules.
+
 ## 5. LLM Guardrails
 
 LLMs:
